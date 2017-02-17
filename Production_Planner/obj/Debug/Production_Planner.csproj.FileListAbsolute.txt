@@ -1,0 +1,179 @@
+D:\00.Development(Mizan)\PP_Mizan\ProductionPlanner\Production_Planner\bin\Production_Planner.dll.config
+D:\00.Development(Mizan)\PP_Mizan\ProductionPlanner\Production_Planner\bin\Production_Planner.dll
+D:\00.Development(Mizan)\PP_Mizan\ProductionPlanner\Production_Planner\bin\Production_Planner.pdb
+D:\00.Development(Mizan)\PP_Mizan\ProductionPlanner\Production_Planner\bin\Antlr3.Runtime.dll
+D:\00.Development(Mizan)\PP_Mizan\ProductionPlanner\Production_Planner\bin\EntityFramework.dll
+D:\00.Development(Mizan)\PP_Mizan\ProductionPlanner\Production_Planner\bin\EntityFramework.SqlServer.dll
+D:\00.Development(Mizan)\PP_Mizan\ProductionPlanner\Production_Planner\bin\Microsoft.Web.Infrastructure.dll
+D:\00.Development(Mizan)\PP_Mizan\ProductionPlanner\Production_Planner\bin\Newtonsoft.Json.dll
+D:\00.Development(Mizan)\PP_Mizan\ProductionPlanner\Production_Planner\bin\Oracle.ManagedDataAccess.dll
+D:\00.Development(Mizan)\PP_Mizan\ProductionPlanner\Production_Planner\bin\Oracle.ManagedDataAccess.EntityFramework.dll
+D:\00.Development(Mizan)\PP_Mizan\ProductionPlanner\Production_Planner\bin\PagedList.dll
+D:\00.Development(Mizan)\PP_Mizan\ProductionPlanner\Production_Planner\bin\PagedList.Mvc.dll
+D:\00.Development(Mizan)\PP_Mizan\ProductionPlanner\Production_Planner\bin\System.Web.Helpers.dll
+D:\00.Development(Mizan)\PP_Mizan\ProductionPlanner\Production_Planner\bin\System.Web.Mvc.dll
+D:\00.Development(Mizan)\PP_Mizan\ProductionPlanner\Production_Planner\bin\System.Web.Optimization.dll
+D:\00.Development(Mizan)\PP_Mizan\ProductionPlanner\Production_Planner\bin\System.Web.Razor.dll
+D:\00.Development(Mizan)\PP_Mizan\ProductionPlanner\Production_Planner\bin\System.Web.WebPages.Deployment.dll
+D:\00.Development(Mizan)\PP_Mizan\ProductionPlanner\Production_Planner\bin\System.Web.WebPages.dll
+D:\00.Development(Mizan)\PP_Mizan\ProductionPlanner\Production_Planner\bin\System.Web.WebPages.Razor.dll
+D:\00.Development(Mizan)\PP_Mizan\ProductionPlanner\Production_Planner\bin\WebGrease.dll
+D:\00.Development(Mizan)\PP_Mizan\ProductionPlanner\Production_Planner\bin\EntityFramework.xml
+D:\00.Development(Mizan)\PP_Mizan\ProductionPlanner\Production_Planner\bin\EntityFramework.SqlServer.xml
+D:\00.Development(Mizan)\PP_Mizan\ProductionPlanner\Production_Planner\bin\Newtonsoft.Json.xml
+D:\00.Development(Mizan)\PP_Mizan\ProductionPlanner\Production_Planner\bin\PagedList.xml
+D:\00.Development(Mizan)\PP_Mizan\ProductionPlanner\Production_Planner\bin\PagedList.Mvc.xml
+D:\00.Development(Mizan)\PP_Mizan\ProductionPlanner\Production_Planner\bin\System.Web.Helpers.xml
+D:\00.Development(Mizan)\PP_Mizan\ProductionPlanner\Production_Planner\bin\System.Web.Mvc.xml
+D:\00.Development(Mizan)\PP_Mizan\ProductionPlanner\Production_Planner\bin\System.Web.Optimization.xml
+D:\00.Development(Mizan)\PP_Mizan\ProductionPlanner\Production_Planner\bin\System.Web.Razor.xml
+D:\00.Development(Mizan)\PP_Mizan\ProductionPlanner\Production_Planner\bin\System.Web.WebPages.xml
+D:\00.Development(Mizan)\PP_Mizan\ProductionPlanner\Production_Planner\bin\System.Web.WebPages.Deployment.xml
+D:\00.Development(Mizan)\PP_Mizan\ProductionPlanner\Production_Planner\bin\System.Web.WebPages.Razor.xml
+D:\00.Development(Mizan)\PP_Mizan\ProductionPlanner\Production_Planner\bin\Antlr3.Runtime.pdb
+D:\00.Development(Mizan)\PP_Mizan\ProductionPlanner\Production_Planner\obj\Debug\Production_Planner.dll
+D:\00.Development(Mizan)\PP_Mizan\ProductionPlanner\Production_Planner\obj\Debug\Production_Planner.pdb
+E:\Hassan\PP from Mizan 12112016\PP_Mizan\ProductionPlanner\Production_Planner\bin\Production_Planner.dll.config
+E:\Hassan\PP from Mizan 12112016\PP_Mizan\ProductionPlanner\Production_Planner\bin\Production_Planner.dll
+E:\Hassan\PP from Mizan 12112016\PP_Mizan\ProductionPlanner\Production_Planner\bin\Production_Planner.pdb
+E:\Hassan\PP from Mizan 12112016\PP_Mizan\ProductionPlanner\Production_Planner\bin\Antlr3.Runtime.dll
+E:\Hassan\PP from Mizan 12112016\PP_Mizan\ProductionPlanner\Production_Planner\bin\EntityFramework.dll
+E:\Hassan\PP from Mizan 12112016\PP_Mizan\ProductionPlanner\Production_Planner\bin\EntityFramework.SqlServer.dll
+E:\Hassan\PP from Mizan 12112016\PP_Mizan\ProductionPlanner\Production_Planner\bin\Microsoft.Web.Infrastructure.dll
+E:\Hassan\PP from Mizan 12112016\PP_Mizan\ProductionPlanner\Production_Planner\bin\Newtonsoft.Json.dll
+E:\Hassan\PP from Mizan 12112016\PP_Mizan\ProductionPlanner\Production_Planner\bin\Oracle.ManagedDataAccess.dll
+E:\Hassan\PP from Mizan 12112016\PP_Mizan\ProductionPlanner\Production_Planner\bin\Oracle.ManagedDataAccess.EntityFramework.dll
+E:\Hassan\PP from Mizan 12112016\PP_Mizan\ProductionPlanner\Production_Planner\bin\PagedList.dll
+E:\Hassan\PP from Mizan 12112016\PP_Mizan\ProductionPlanner\Production_Planner\bin\PagedList.Mvc.dll
+E:\Hassan\PP from Mizan 12112016\PP_Mizan\ProductionPlanner\Production_Planner\bin\System.Web.Helpers.dll
+E:\Hassan\PP from Mizan 12112016\PP_Mizan\ProductionPlanner\Production_Planner\bin\System.Web.Mvc.dll
+E:\Hassan\PP from Mizan 12112016\PP_Mizan\ProductionPlanner\Production_Planner\bin\System.Web.Optimization.dll
+E:\Hassan\PP from Mizan 12112016\PP_Mizan\ProductionPlanner\Production_Planner\bin\System.Web.Razor.dll
+E:\Hassan\PP from Mizan 12112016\PP_Mizan\ProductionPlanner\Production_Planner\bin\System.Web.WebPages.Deployment.dll
+E:\Hassan\PP from Mizan 12112016\PP_Mizan\ProductionPlanner\Production_Planner\bin\System.Web.WebPages.dll
+E:\Hassan\PP from Mizan 12112016\PP_Mizan\ProductionPlanner\Production_Planner\bin\System.Web.WebPages.Razor.dll
+E:\Hassan\PP from Mizan 12112016\PP_Mizan\ProductionPlanner\Production_Planner\bin\WebGrease.dll
+E:\Hassan\PP from Mizan 12112016\PP_Mizan\ProductionPlanner\Production_Planner\bin\EntityFramework.xml
+E:\Hassan\PP from Mizan 12112016\PP_Mizan\ProductionPlanner\Production_Planner\bin\EntityFramework.SqlServer.xml
+E:\Hassan\PP from Mizan 12112016\PP_Mizan\ProductionPlanner\Production_Planner\bin\Newtonsoft.Json.xml
+E:\Hassan\PP from Mizan 12112016\PP_Mizan\ProductionPlanner\Production_Planner\bin\PagedList.xml
+E:\Hassan\PP from Mizan 12112016\PP_Mizan\ProductionPlanner\Production_Planner\bin\PagedList.Mvc.xml
+E:\Hassan\PP from Mizan 12112016\PP_Mizan\ProductionPlanner\Production_Planner\bin\System.Web.Helpers.xml
+E:\Hassan\PP from Mizan 12112016\PP_Mizan\ProductionPlanner\Production_Planner\bin\System.Web.Mvc.xml
+E:\Hassan\PP from Mizan 12112016\PP_Mizan\ProductionPlanner\Production_Planner\bin\System.Web.Optimization.xml
+E:\Hassan\PP from Mizan 12112016\PP_Mizan\ProductionPlanner\Production_Planner\bin\System.Web.Razor.xml
+E:\Hassan\PP from Mizan 12112016\PP_Mizan\ProductionPlanner\Production_Planner\bin\System.Web.WebPages.xml
+E:\Hassan\PP from Mizan 12112016\PP_Mizan\ProductionPlanner\Production_Planner\bin\System.Web.WebPages.Deployment.xml
+E:\Hassan\PP from Mizan 12112016\PP_Mizan\ProductionPlanner\Production_Planner\bin\System.Web.WebPages.Razor.xml
+E:\Hassan\PP from Mizan 12112016\PP_Mizan\ProductionPlanner\Production_Planner\bin\Antlr3.Runtime.pdb
+E:\Hassan\PP from Mizan 12112016\PP_Mizan\ProductionPlanner\Production_Planner\obj\Debug\Production_Planner.dll
+E:\Hassan\PP from Mizan 12112016\PP_Mizan\ProductionPlanner\Production_Planner\obj\Debug\Production_Planner.pdb
+E:\Hassan\PP from Mizan 12112016\PP_Mizan\ProductionPlanner\Production_Planner\obj\Debug\Production_Planner.csprojResolveAssemblyReference.cache
+E:\Production Planner\Production_Planner\bin\Production_Planner.dll.config
+E:\Production Planner\Production_Planner\bin\Production_Planner.dll
+E:\Production Planner\Production_Planner\bin\Production_Planner.pdb
+E:\Production Planner\Production_Planner\bin\Antlr3.Runtime.dll
+E:\Production Planner\Production_Planner\bin\EntityFramework.dll
+E:\Production Planner\Production_Planner\bin\EntityFramework.SqlServer.dll
+E:\Production Planner\Production_Planner\bin\Microsoft.Web.Infrastructure.dll
+E:\Production Planner\Production_Planner\bin\Newtonsoft.Json.dll
+E:\Production Planner\Production_Planner\bin\Oracle.ManagedDataAccess.dll
+E:\Production Planner\Production_Planner\bin\Oracle.ManagedDataAccess.EntityFramework.dll
+E:\Production Planner\Production_Planner\bin\PagedList.dll
+E:\Production Planner\Production_Planner\bin\PagedList.Mvc.dll
+E:\Production Planner\Production_Planner\bin\System.Web.Helpers.dll
+E:\Production Planner\Production_Planner\bin\System.Web.Mvc.dll
+E:\Production Planner\Production_Planner\bin\System.Web.Optimization.dll
+E:\Production Planner\Production_Planner\bin\System.Web.Razor.dll
+E:\Production Planner\Production_Planner\bin\System.Web.WebPages.Deployment.dll
+E:\Production Planner\Production_Planner\bin\System.Web.WebPages.dll
+E:\Production Planner\Production_Planner\bin\System.Web.WebPages.Razor.dll
+E:\Production Planner\Production_Planner\bin\WebGrease.dll
+E:\Production Planner\Production_Planner\bin\EntityFramework.xml
+E:\Production Planner\Production_Planner\bin\EntityFramework.SqlServer.xml
+E:\Production Planner\Production_Planner\bin\Newtonsoft.Json.xml
+E:\Production Planner\Production_Planner\bin\PagedList.xml
+E:\Production Planner\Production_Planner\bin\PagedList.Mvc.xml
+E:\Production Planner\Production_Planner\bin\System.Web.Helpers.xml
+E:\Production Planner\Production_Planner\bin\System.Web.Mvc.xml
+E:\Production Planner\Production_Planner\bin\System.Web.Optimization.xml
+E:\Production Planner\Production_Planner\bin\System.Web.Razor.xml
+E:\Production Planner\Production_Planner\bin\System.Web.WebPages.xml
+E:\Production Planner\Production_Planner\bin\System.Web.WebPages.Deployment.xml
+E:\Production Planner\Production_Planner\bin\System.Web.WebPages.Razor.xml
+E:\Production Planner\Production_Planner\bin\Antlr3.Runtime.pdb
+E:\Production Planner\Production_Planner\obj\Debug\Production_Planner.csprojResolveAssemblyReference.cache
+E:\Production Planner\Production_Planner\obj\Debug\Production_Planner.dll
+E:\Production Planner\Production_Planner\obj\Debug\Production_Planner.pdb
+E:\_Mizu\OLD PC\OLD PC\E Drive\Production Planner\Production_Planner\bin\Production_Planner.dll.config
+E:\_Mizu\OLD PC\OLD PC\E Drive\Production Planner\Production_Planner\bin\Production_Planner.dll
+E:\_Mizu\OLD PC\OLD PC\E Drive\Production Planner\Production_Planner\bin\Production_Planner.pdb
+E:\_Mizu\OLD PC\OLD PC\E Drive\Production Planner\Production_Planner\bin\Antlr3.Runtime.dll
+E:\_Mizu\OLD PC\OLD PC\E Drive\Production Planner\Production_Planner\bin\EntityFramework.dll
+E:\_Mizu\OLD PC\OLD PC\E Drive\Production Planner\Production_Planner\bin\EntityFramework.SqlServer.dll
+E:\_Mizu\OLD PC\OLD PC\E Drive\Production Planner\Production_Planner\bin\Microsoft.Web.Infrastructure.dll
+E:\_Mizu\OLD PC\OLD PC\E Drive\Production Planner\Production_Planner\bin\Newtonsoft.Json.dll
+E:\_Mizu\OLD PC\OLD PC\E Drive\Production Planner\Production_Planner\bin\Oracle.ManagedDataAccess.dll
+E:\_Mizu\OLD PC\OLD PC\E Drive\Production Planner\Production_Planner\bin\Oracle.ManagedDataAccess.EntityFramework.dll
+E:\_Mizu\OLD PC\OLD PC\E Drive\Production Planner\Production_Planner\bin\PagedList.dll
+E:\_Mizu\OLD PC\OLD PC\E Drive\Production Planner\Production_Planner\bin\PagedList.Mvc.dll
+E:\_Mizu\OLD PC\OLD PC\E Drive\Production Planner\Production_Planner\bin\System.Web.Helpers.dll
+E:\_Mizu\OLD PC\OLD PC\E Drive\Production Planner\Production_Planner\bin\System.Web.Mvc.dll
+E:\_Mizu\OLD PC\OLD PC\E Drive\Production Planner\Production_Planner\bin\System.Web.Optimization.dll
+E:\_Mizu\OLD PC\OLD PC\E Drive\Production Planner\Production_Planner\bin\System.Web.Razor.dll
+E:\_Mizu\OLD PC\OLD PC\E Drive\Production Planner\Production_Planner\bin\System.Web.WebPages.Deployment.dll
+E:\_Mizu\OLD PC\OLD PC\E Drive\Production Planner\Production_Planner\bin\System.Web.WebPages.dll
+E:\_Mizu\OLD PC\OLD PC\E Drive\Production Planner\Production_Planner\bin\System.Web.WebPages.Razor.dll
+E:\_Mizu\OLD PC\OLD PC\E Drive\Production Planner\Production_Planner\bin\WebGrease.dll
+E:\_Mizu\OLD PC\OLD PC\E Drive\Production Planner\Production_Planner\bin\EntityFramework.xml
+E:\_Mizu\OLD PC\OLD PC\E Drive\Production Planner\Production_Planner\bin\EntityFramework.SqlServer.xml
+E:\_Mizu\OLD PC\OLD PC\E Drive\Production Planner\Production_Planner\bin\Newtonsoft.Json.xml
+E:\_Mizu\OLD PC\OLD PC\E Drive\Production Planner\Production_Planner\bin\PagedList.xml
+E:\_Mizu\OLD PC\OLD PC\E Drive\Production Planner\Production_Planner\bin\PagedList.Mvc.xml
+E:\_Mizu\OLD PC\OLD PC\E Drive\Production Planner\Production_Planner\bin\System.Web.Helpers.xml
+E:\_Mizu\OLD PC\OLD PC\E Drive\Production Planner\Production_Planner\bin\System.Web.Mvc.xml
+E:\_Mizu\OLD PC\OLD PC\E Drive\Production Planner\Production_Planner\bin\System.Web.Optimization.xml
+E:\_Mizu\OLD PC\OLD PC\E Drive\Production Planner\Production_Planner\bin\System.Web.Razor.xml
+E:\_Mizu\OLD PC\OLD PC\E Drive\Production Planner\Production_Planner\bin\System.Web.WebPages.xml
+E:\_Mizu\OLD PC\OLD PC\E Drive\Production Planner\Production_Planner\bin\System.Web.WebPages.Deployment.xml
+E:\_Mizu\OLD PC\OLD PC\E Drive\Production Planner\Production_Planner\bin\System.Web.WebPages.Razor.xml
+E:\_Mizu\OLD PC\OLD PC\E Drive\Production Planner\Production_Planner\bin\Antlr3.Runtime.pdb
+E:\_Mizu\OLD PC\OLD PC\E Drive\Production Planner\Production_Planner\obj\Debug\Production_Planner.csprojResolveAssemblyReference.cache
+E:\_Mizu\OLD PC\OLD PC\E Drive\Production Planner\Production_Planner\obj\Debug\Production_Planner.dll
+E:\_Mizu\OLD PC\OLD PC\E Drive\Production Planner\Production_Planner\obj\Debug\Production_Planner.pdb
+D:\00.Development(Mizan)\PP_From Mizu\Production Planner\Production_Planner\bin\Production_Planner.dll.config
+D:\00.Development(Mizan)\PP_From Mizu\Production Planner\Production_Planner\bin\Production_Planner.dll
+D:\00.Development(Mizan)\PP_From Mizu\Production Planner\Production_Planner\bin\Production_Planner.pdb
+D:\00.Development(Mizan)\PP_From Mizu\Production Planner\Production_Planner\bin\Antlr3.Runtime.dll
+D:\00.Development(Mizan)\PP_From Mizu\Production Planner\Production_Planner\bin\EntityFramework.dll
+D:\00.Development(Mizan)\PP_From Mizu\Production Planner\Production_Planner\bin\EntityFramework.SqlServer.dll
+D:\00.Development(Mizan)\PP_From Mizu\Production Planner\Production_Planner\bin\Microsoft.Web.Infrastructure.dll
+D:\00.Development(Mizan)\PP_From Mizu\Production Planner\Production_Planner\bin\Newtonsoft.Json.dll
+D:\00.Development(Mizan)\PP_From Mizu\Production Planner\Production_Planner\bin\Oracle.ManagedDataAccess.dll
+D:\00.Development(Mizan)\PP_From Mizu\Production Planner\Production_Planner\bin\Oracle.ManagedDataAccess.EntityFramework.dll
+D:\00.Development(Mizan)\PP_From Mizu\Production Planner\Production_Planner\bin\PagedList.dll
+D:\00.Development(Mizan)\PP_From Mizu\Production Planner\Production_Planner\bin\PagedList.Mvc.dll
+D:\00.Development(Mizan)\PP_From Mizu\Production Planner\Production_Planner\bin\System.Web.Helpers.dll
+D:\00.Development(Mizan)\PP_From Mizu\Production Planner\Production_Planner\bin\System.Web.Mvc.dll
+D:\00.Development(Mizan)\PP_From Mizu\Production Planner\Production_Planner\bin\System.Web.Optimization.dll
+D:\00.Development(Mizan)\PP_From Mizu\Production Planner\Production_Planner\bin\System.Web.Razor.dll
+D:\00.Development(Mizan)\PP_From Mizu\Production Planner\Production_Planner\bin\System.Web.WebPages.Deployment.dll
+D:\00.Development(Mizan)\PP_From Mizu\Production Planner\Production_Planner\bin\System.Web.WebPages.dll
+D:\00.Development(Mizan)\PP_From Mizu\Production Planner\Production_Planner\bin\System.Web.WebPages.Razor.dll
+D:\00.Development(Mizan)\PP_From Mizu\Production Planner\Production_Planner\bin\WebGrease.dll
+D:\00.Development(Mizan)\PP_From Mizu\Production Planner\Production_Planner\bin\EntityFramework.xml
+D:\00.Development(Mizan)\PP_From Mizu\Production Planner\Production_Planner\bin\EntityFramework.SqlServer.xml
+D:\00.Development(Mizan)\PP_From Mizu\Production Planner\Production_Planner\bin\Newtonsoft.Json.xml
+D:\00.Development(Mizan)\PP_From Mizu\Production Planner\Production_Planner\bin\PagedList.xml
+D:\00.Development(Mizan)\PP_From Mizu\Production Planner\Production_Planner\bin\PagedList.Mvc.xml
+D:\00.Development(Mizan)\PP_From Mizu\Production Planner\Production_Planner\bin\System.Web.Helpers.xml
+D:\00.Development(Mizan)\PP_From Mizu\Production Planner\Production_Planner\bin\System.Web.Mvc.xml
+D:\00.Development(Mizan)\PP_From Mizu\Production Planner\Production_Planner\bin\System.Web.Optimization.xml
+D:\00.Development(Mizan)\PP_From Mizu\Production Planner\Production_Planner\bin\System.Web.Razor.xml
+D:\00.Development(Mizan)\PP_From Mizu\Production Planner\Production_Planner\bin\System.Web.WebPages.xml
+D:\00.Development(Mizan)\PP_From Mizu\Production Planner\Production_Planner\bin\System.Web.WebPages.Deployment.xml
+D:\00.Development(Mizan)\PP_From Mizu\Production Planner\Production_Planner\bin\System.Web.WebPages.Razor.xml
+D:\00.Development(Mizan)\PP_From Mizu\Production Planner\Production_Planner\bin\Antlr3.Runtime.pdb
+D:\00.Development(Mizan)\PP_From Mizu\Production Planner\Production_Planner\obj\Debug\Production_Planner.csprojResolveAssemblyReference.cache
+D:\00.Development(Mizan)\PP_From Mizu\Production Planner\Production_Planner\obj\Debug\Production_Planner.dll
+D:\00.Development(Mizan)\PP_From Mizu\Production Planner\Production_Planner\obj\Debug\Production_Planner.pdb

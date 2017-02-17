@@ -1,0 +1,91 @@
+﻿@model Production_Planner.Models.HRP_HOLIDAY
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>HRP_HOLIDAY</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.HOLTYPE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HOLTYPE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WDAYBEFOREHDAY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WDAYBEFOREHDAY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WDAYAFTERHDAY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WDAYAFTERHDAY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WORKDAY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WORKDAY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HOLREMARKS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HOLREMARKS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.INSERTBY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INSERTBY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.INSERTDT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INSERTDT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UPDATEBY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UPDATEBY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UPDATEDT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UPDATEDT)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.HOLDATE }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

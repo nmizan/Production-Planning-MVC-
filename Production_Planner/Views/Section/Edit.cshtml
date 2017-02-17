@@ -1,0 +1,218 @@
+﻿@model Production_Planner.Models.HRP_SECTION
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<h2 style=" text-align:center;">Section Information</h2>
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.SECCODE)
+
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.SECNAME, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SECNAME)
+                @Html.ValidationMessageFor(model => model.SECNAME)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SECNMBG, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SECNMBG)
+                @Html.ValidationMessageFor(model => model.SECNMBG)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SECFLOOR, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SECFLOOR)
+                @Html.ValidationMessageFor(model => model.SECFLOOR)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PRSYMBOL, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PRSYMBOL)
+                @Html.ValidationMessageFor(model => model.PRSYMBOL)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PSLNO, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PSLNO)
+                @Html.ValidationMessageFor(model => model.PSLNO)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.INSERTBY, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.INSERTBY)
+                @Html.ValidationMessageFor(model => model.INSERTBY)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.INSERTDT, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.INSERTDT)
+                @Html.ValidationMessageFor(model => model.INSERTDT)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.UPDATEBY, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.UPDATEBY)
+                @Html.ValidationMessageFor(model => model.UPDATEBY)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.UPDATEDT, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.UPDATEDT)
+                @Html.ValidationMessageFor(model => model.UPDATEDT)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.LAGGING_SLNO, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.LAGGING_SLNO)
+                @Html.ValidationMessageFor(model => model.LAGGING_SLNO)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.LAGGING_HEADING, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.LAGGING_HEADING)
+                @Html.ValidationMessageFor(model => model.LAGGING_HEADING)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>*@
+        <style type="text/css">
+            table, td {
+                padding: 5px;
+                margin-left: 20px;
+                margin-top: 0px;
+            }
+        </style>
+
+        <table>
+           
+            <tr>
+                <td>Section Name</td>
+                <td>
+                    @Html.TextBoxFor(model => model.SECNAME, new { @style = "width:240px;" })
+                    @Html.ValidationMessageFor(model => model.SECNAME)
+                </td>
+            </tr>
+
+            <tr>
+                <td>Section Name(Bangla)</td>
+                <td>
+                    @Html.TextBoxFor(model => model.SECNMBG, new { @style = "width:240px;" })
+                    @Html.ValidationMessageFor(model => model.SECNMBG)
+                </td>
+            </tr>
+            <tr>
+                <td>Section Floor</td>
+                <td>
+                    @Html.TextBoxFor(model => model.SECFLOOR, new { @style = "width:240px;" })
+                    @Html.ValidationMessageFor(model => model.SECFLOOR)
+                </td>
+            </tr>
+            <tr>
+                <td> PR Symbol </td>
+                <td>
+                    @Html.TextBoxFor(model => model.PRSYMBOL, new { @style = "width:240px;" })
+                    @Html.ValidationMessageFor(model => model.PRSYMBOL)
+                </td>
+            </tr>
+            <tr>
+                <td> Print SL No</td>
+                <td>
+                    @Html.TextBoxFor(model => model.PSLNO, new { @style = "width:240px;" })
+                    @Html.ValidationMessageFor(model => model.PSLNO)
+                </td>
+
+            </tr>
+
+            <tr>
+                <td>Inserted By</td>
+                <td>
+                    @Html.TextBoxFor(model => model.INSERTBY, new { @style = "width:240px;" })
+                    @Html.ValidationMessageFor(model => model.INSERTBY)
+                </td>
+            </tr>
+            <tr>
+                <td>Inserted Date</td>
+                <td>
+                    @Html.TextBoxFor(model => model.INSERTDT, new { @style = "width:240px;" })
+                    @Html.ValidationMessageFor(model => model.INSERTDT)
+                </td>
+            <tr>
+                <td>Updated By</td>
+                <td>
+                    @Html.TextBoxFor(model => model.UPDATEBY, new { @style = "width:240px;" })
+                    @Html.ValidationMessageFor(model => model.UPDATEBY)
+                </td>
+            </tr>
+            <tr>
+                <td>Updated Date</td>
+                <td>
+                    @Html.TextBoxFor(model => model.UPDATEDT, new { @style = "width:240px;" })
+                    @Html.ValidationMessageFor(model => model.UPDATEDT)
+                </td>
+            </tr>
+            <tr>
+                <td>Lagging SL No</td>
+                <td>
+                    @Html.TextBoxFor(model => model.LAGGING_SLNO, new { @style = "width:240px;" })
+                    @Html.ValidationMessageFor(model => model.LAGGING_SLNO)
+                </td>
+            </tr>
+            <tr>
+                <td>Lagging Heading</td>
+                <td>
+                    @Html.TextBoxFor(model => model.LAGGING_HEADING, new { @style = "width:240px;" })
+                    @Html.ValidationMessageFor(model => model.LAGGING_HEADING)
+                </td>
+            </tr>
+        </table>
+
+        <div class="form-group" style=" margin-left:25px;padding-top:10px;">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-sm btn-success" />
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        </div>
+    </div>
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

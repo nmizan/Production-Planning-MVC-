@@ -1,0 +1,62 @@
+﻿@model PagedList.IPagedList<Production_Planner.Models.PRP_MODULE>
+@using PagedList.Mvc;
+
+    <table class="table table-bordered table-striped">
+        <tr>
+            
+            <th>
+                Module Name
+            </th>
+            <th>
+                Machine Type
+            </th>
+            <th>
+                Machine Quantity
+            </th>
+            <th>
+                Guage
+            </th>
+            <th>
+                Company Name
+            </th>
+            <th>
+                Section Name
+            </th>
+
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.MODULENM)
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MACTYPE)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MACQTY)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MER_GAUGE.GAUGENM)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HRP_COMPUNIT.COMPNM)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HRP_SECTION.SECNAME)
+                </td>
+            </tr>
+        }
+
+    </table>
+
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+   
+
+
+        @Html.PagedListPager(Model, page => Url.Action("myPView", "DashboardV1", new { page }), PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions() { HttpMethod = "POST", UpdateTargetId = "unobtrusive" }))
+
+

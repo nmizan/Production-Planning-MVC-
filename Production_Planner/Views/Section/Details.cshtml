@@ -1,0 +1,109 @@
+﻿@model Production_Planner.Models.HRP_SECTION
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<h2 style=" text-align: center; text-decoration: underline;">Section Information</h2>
+
+
+<div>
+    
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Section Name:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SECNAME)
+        </dd>
+
+        <dt>
+            Section Name(Bangla):
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SECNMBG)
+        </dd>
+
+        <dt>
+            Section Floor:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SECFLOOR)
+        </dd>
+
+        <dt>
+           PR Symbol:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PRSYMBOL)
+        </dd>
+
+        <dt>
+            Print SL No:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PSLNO)
+        </dd>
+
+        <dt>
+            Inserted By:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INSERTBY)
+        </dd>
+
+        <dt>
+            Inserted Date:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INSERTDT)
+        </dd>
+
+        <dt>
+           Updated By:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UPDATEBY)
+        </dd>
+
+        <dt>
+            Updated Date:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UPDATEDT)
+        </dd>
+
+        <dt>
+            Lagging SL No:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LAGGING_SLNO)
+        </dd>
+
+        <dt>
+            Lagging Heading:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LAGGING_HEADING)
+        </dd>
+
+    </dl>
+</div>
+<p style=" margin-left:90px; font-size:15px;">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SECCODE }) |
+    @Html.ActionLink("Delete", "Delete", new { id = Model.SECCODE }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,478 @@
+﻿@model Production_Planner.ViewDataModel.Order
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div style="font-size:11px;">
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary()
+    <div class="well well-lg" style="width:800px; margin-left:100px; margin-top:-20px; margin-bottom:5px; background-color:white">
+
+        <table>
+            <tr>
+                <td>BOM Ref No</td>
+                <td>@Html.TextBoxFor(model=>model.SKETCHNO)</td>
+                <td>L/C No</td>
+                <td>@Html.DropDownListFor(model => model.LCSLNO, (IEnumerable<SelectListItem>)ViewBag.LC)</td>
+
+
+                <td>Buyer</td>
+                <td>@Html.DropDownListFor(model => model.COMPCD, (IEnumerable<SelectListItem>)ViewBag.Buyer)</td>
+
+
+
+                <td>Style Type</td>
+                <td>
+                    @Html.DropDownListFor(model=>model.ORDTYPE, new List<SelectListItem>
+                                                                       {
+                                                                           new SelectListItem{Text="Foreign",Value="F"},
+                                                                           new SelectListItem{Text="Sub Contact",Value="S"},
+                                                                           new SelectListItem{Text="Local",Value="L"},
+                                                                       })
+                </td>
+            
+               
+        </tr>
+        <tr>
+            <td>Style No</td>
+            <td>@Html.TextBoxFor(model=>model.STYLENO)</td>
+            <td>Style Method</td>
+            <td>
+                @Html.DropDownListFor(model=>model.ORDMETHOD, new List<SelectListItem>
+                                                                       {
+                                                                           new SelectListItem{Text="FOB",Value="FOB"},
+                                                                           new SelectListItem{Text="CNF",Value="CNF"},
+                                                                           new SelectListItem{Text="CIF",Value="CIF"},
+                                                                       })
+            </td>
+     
+            <td>Guage</td>
+            <td>@Html.DropDownListFor(model=>model.GAUGECD,(IEnumerable<SelectListItem>)ViewBag.Guage)</td>
+            <td>Status</td>
+            <td>
+                @Html.DropDownListFor(model=>model.STATUS, new List<SelectListItem>
+                                                                       {
+                                                                           new SelectListItem{Text="Running",Value="R"},
+                                                                           new SelectListItem{Text="Finished",Value="F"},
+                                                                           new SelectListItem{Text="Cancled",Value="C"},
+                                                                       })
+
+              
+            </td>
+        </tr>
+        <tr>
+           
+      
+            <td>Remarks</td>
+            <td colspan="7">@Html.TextBoxFor(model=>model.REMARKS,null, new { style="width:550px;"})</td>
+        </tr>
+    </table>
+        <br />
+    @*<input type="submit" class="btn btn-success btn-xs pull-right" value="Save" onclick='Create();' />*@
+        <input type="submit" class="btn btn-success btn-xs pull-right" value="Save" />
+      
+        <br />
+
+
+
+
+    </div>
+    
+}
+
+<div class="panel panel-info" >
+
+    <div class="panel-body">
+
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#OrderInfo" aria-controls="OrderInfo" role="tab" data-toggle="tab" aria-expanded="true">Order Info</a></li>
+            <li><a href="#OrderDetails" aria-controls="OrderDetails" role="tab" data-toggle="tab" aria-expanded="false">Order Details</a></li>
+        </ul>
+
+
+
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="OrderInfo">
+                @using (@Html.BeginForm())
+{
+
+
+
+
+        <table>
+            <tr>
+                <td><br /></td>
+            </tr>
+            <tr>
+                <th>Order Ref No</th>
+                <th>Order No</th>
+                <th>Order Color/Combo</th>
+                <th>Yarn Type</th>
+                <th>Order Quantity</th>
+                <th>Order Date</th>
+                <th>Shipment Date</th>
+                <th></th>
+            </tr>
+            <tr>
+
+                <td>@Html.TextBox("OrderRefNo", null, new { style = "width:100px;", @readonly = "true" })</td>
+                <td>@Html.TextBox("OrderNo", null, new { style = "width:100px;" })</td>
+                <td>@Html.DropDownList("OrderColor", "-- Select Order Color --")</td>
+                <td>@Html.DropDownList("YarnType", "-- Select Yarn Type --")</td>
+                <td>@Html.TextBox("OrderQty", null, new { style = "width:100px;" })</td>
+                <td>@Html.TextBox("OrderDate", null, new { style = "width:100px;", @id="ORD0"})</td>
+                <td>@Html.TextBox("ShipDate", null, new { style = "width:100px;", @id="SHP0"})</td>
+                <td><input type="button" class="btn btn-primary btn-xs" value="Add Order" onclick='addNewOrderRow();' /></td>
+               
+            </tr>
+        </table>
+
+
+        <table>
+
+            <tr>
+                <td>
+
+                    <ul id="newOrderInfo" style="list-style-type: none; padding-left: 0px;"></ul>  
+
+                </td>
+
+            </tr>
+        </table>
+      <input type="button" class="btn btn-success btn-xs pull-right" value="Save Order Info" onclick='CreateOrdInfo();' />
+      
+
+}
+ </div>
+            <div role="tabpanel" class="tab-pane" id="OrderDetails">
+
+               
+                <table>
+                    <tr>
+                        <td><br /></td>
+                    </tr>
+
+                    <tr>
+                       
+                        <th>Order Ref No</th>
+                        <th>Section</th>
+                        <th>SMV</th>
+                        <th>Category</th>
+                        <th>Start Date(CP)</th>
+                        <th>End Date(CP)</th>
+                    </tr>
+                    <tr>
+                        <td>@Html.TextBox("OrderRefNoD", null, new { style = "width:100px;" })</td>
+                        <td>@Html.DropDownList("Section", "-- Select Section --")</td>
+                        <td>@Html.TextBox("SMV", null, new { style = "width:100px;" })</td>
+                        <td>@Html.DropDownList("Category", new List<SelectListItem>
+            {
+                new SelectListItem {Text = "A", Value = "A"},
+                new SelectListItem {Text = "B", Value = "B"},
+                new SelectListItem {Text = "C", Value = "C"},
+                new SelectListItem {Text = "D", Value = "D"},
+                new SelectListItem {Text = "E", Value = "E"},
+                new SelectListItem {Text = "F", Value = "F"},
+                new SelectListItem {Text = "G", Value = "G"},
+                new SelectListItem {Text = "H", Value = "H"}
+            },"--Select Category--")</td>
+                        <td>@Html.TextBox("StartDate", null, new { style = "width:100px;", @id = "SRT0" })</td>
+                        <td>@Html.TextBox("EndDate", null, new { style = "width:100px;", @id = "END0"})</td>
+                        <td><input type="button" class="btn btn-primary btn-xs" value="Add Order" onclick='addNewOrderDetailsRow();' /></td>
+                    </tr>
+                </table>
+           
+                <table>
+
+                    <tr>
+                        <td>
+                          <ul id="newOrderDetails" style="list-style-type: none; padding-left: 0px;"></ul>
+                        </td>
+
+                    </tr>
+                </table>
+
+               
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+    
+
+</div>
+
+<script>
+    var i = document.getElementsByName("OrderDate").length;
+
+   function addNewOrderRow() {
+     
+            
+
+       $.get('/OrderInfo/AddOrderInfoRow/', function (template) {
+            var k = Math.floor((Math.random() * 100))
+            $("#newOrderInfo").append(template);
+            if (document.getElementsByName("OrderDate")[i] == null)
+            {
+                var j = document.getElementsByName("OrderDate").length;
+                i = j-1;
+                document.getElementsByName("OrderDate")[i].setAttribute("id", "ORD" + k + "");
+                document.getElementsByName("ShipDate")[i].setAttribute("id", "SHP" + k + "");
+            }
+            else
+            {
+                document.getElementsByName("OrderDate")[i].setAttribute("id", "ORD" + k + "");
+                document.getElementsByName("ShipDate")[i].setAttribute("id", "SHP" + k + "");
+            }
+            $(document).on('focus', '#ORD' + k + '', function () {
+
+                $(this).datepicker({
+                    dateFormat: 'dd/mm/yy',
+                    changeMonth: true,
+                    changeYear: true,
+                    yearRange: "-60:+0"
+                });
+
+            });
+            $(document).on('focus', '#SHP' + k + '', function () {
+                $(this).datepicker({
+                    dateFormat: 'dd/mm/yy',
+                    changeMonth: true,
+                    changeYear: true,
+                    yearRange: "-60:+0"
+                });
+
+            });
+            i++;
+          
+        });
+       
+   };
+   
+
+
+   var l = document.getElementsByName("EndDate").length;
+   function addNewOrderDetailsRow() {
+
+
+
+       $.get('/OrderInfo/AddOrderDetailsRow/', function (template) {
+           var m = Math.floor((Math.random() * 100))
+           $("#newOrderDetails").append(template);
+           if (document.getElementsByName("EndDate")[l] == null) {
+               var n = document.getElementsByName("EndDate").length;
+               l = n - 1;
+               document.getElementsByName("StartDate")[l].setAttribute("id", "SRT" + m + "");
+               document.getElementsByName("EndDate")[l].setAttribute("id", "END" + m + "");
+           }
+           else {
+               document.getElementsByName("StartDate")[l].setAttribute("id", "SRT" + m + "");
+               document.getElementsByName("EndDate")[l].setAttribute("id", "END" + m + "");
+           }
+           $(document).on('focus', '#SRT' + m + '', function () {
+
+               $(this).datepicker({
+                   dateFormat: 'dd/mm/yy',
+                   changeMonth: true,
+                   changeYear: true,
+                   yearRange: "-60:+0"
+               });
+
+           });
+           $(document).on('focus', '#END' + m + '', function () {
+               $(this).datepicker({
+                   dateFormat: 'dd/mm/yy',
+                   changeMonth: true,
+                   changeYear: true,
+                   yearRange: "-60:+0"
+               });
+
+           });
+           l++;
+
+       });
+
+   };
+
+
+        
+
+   function CreateOrdInfo()
+    {
+
+
+        var OrderRefNo = document.getElementsByName("OrderRefNo");
+        var OrderNo = document.getElementsByName("OrderNo");
+        var OrderColor = document.getElementsByName("OrderColor");
+        var YarnType = document.getElementsByName("YarnType");
+        var OrderQty = document.getElementsByName("OrderQty");
+        var OrderDate = document.getElementsByName("OrderDate");
+        var ShipDate = document.getElementsByName("ShipDate");
+       
+
+
+        //   var OrderDetails = [{Ord_RefNo:1},{Ord_RefNo:2},{Ord_RefNo:3}];
+        var OrderDetails = [];
+
+        for (var i = 0; i < OrderRefNo.length; i++) {
+            if (OrderNo[i].value == '')
+            {
+                alert("Insert Order No !");
+                OrderNo[i].style.backgroundColor = "#FFFFDC";
+                return;
+            }
+            else
+            {
+                OrderNo[i].style.backgroundColor = "";
+            }
+
+
+            if (OrderColor[i].value == '') {
+                alert("Insert Order Color !");
+                OrderColor[i].style.backgroundColor = "#FFFFDC";
+                return;
+            }
+            else {
+                OrderColor[i].style.backgroundColor = "";
+            }
+
+            if (YarnType[i].value == '') {
+                alert("Insert YarnType !");
+                YarnType[i].style.backgroundColor = "#FFFFDC";
+                return;
+            }
+            else {
+                YarnType[i].style.backgroundColor = "";
+            }
+
+
+            if (OrderQty[i].value == '') {
+                alert("Insert Order Quantity !");
+                OrderQty[i].style.backgroundColor = "#FFFFDC";
+                return;
+            }
+            else {
+                OrderQty[i].style.backgroundColor = "";
+            }
+
+
+            if (OrderDate[i].value == '') {
+                alert("Insert Order Date !");
+                OrderDate[i].style.backgroundColor = "#FFFFDC";
+                return;
+            }
+            else {
+                OrderDate[i].style.backgroundColor = "";
+            }
+
+            if (ShipDate[i].value == '') {
+                alert("Insert Shipment Date !");
+                ShipDate[i].style.backgroundColor = "#FFFFDC";
+                return;
+            }
+            else {
+                ShipDate[i].style.backgroundColor = "";
+            }
+
+        }
+
+
+
+
+        for (var i = 0; i < OrderRefNo.length; i++)
+        {
+           
+          
+         //   OrderDetails.push({ Ord_RefNo: OrderRefNo[i].value }, { OrderNo: OrderNo[i].value }, { OrdColCd: OrderColor[i].value }, { YarnCd: YarnType[i].value }, { OrdQty: OrderQty[i].value }, { OrdDated: OrderDate[i].value }, { ShipDate: ShipDate[i].value });
+            OrderDetails.push({ Ord_RefNo: OrderRefNo[i].value ,  OrderNo: OrderNo[i].value ,  OrdColCd: OrderColor[i].value ,  YarnCd: YarnType[i].value ,  OrdQty: OrderQty[i].value ,  OrdDated: OrderDate[i].value ,  ShipDate: ShipDate[i].value });
+
+
+        }
+  
+
+        var OrderSLNo= @ViewBag.OrderSLNo
+
+        OrderDetails = JSON.stringify({ 'OrderDetails': OrderDetails, 'OrderSLNo': OrderSLNo });
+  
+        $.ajax({
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            type: 'POST',
+            url: '/OrderInfo/CreateOrderInfo',
+            traditional: true,
+            data: OrderDetails,
+            success: function () {
+              //  $('#result').html('"PassThings()" successfully called.');
+            },
+            failure: function (response) {
+              //  $('#result').html(response);
+            }
+        });
+
+};
+    
+
+
+
+
+    //end create function
+
+
+
+
+
+</script>
+
+<link href="http://code.jquery.com/ui/1.12.1/themes/redmond/jquery-ui.css" rel="stylesheet" />
+
+
+<script type="text/javascript">
+
+
+
+    $(document).ready(function () {
+
+
+        $("input[id^='ORD']").datepicker({
+            dateFormat: 'dd/mm/yy',
+            changeMonth: true,
+            changeYear: true,
+            yearRange: "-60:+0"
+        });
+
+      
+
+        $("input[id^='SHP']").datepicker({
+            dateFormat: 'dd/mm/yy',
+            changeMonth: true,
+            changeYear: true,
+            yearRange: "-60:+0"
+        });
+
+        $("input[id^='SRT']").datepicker({
+            dateFormat: 'dd/mm/yy',
+            changeMonth: true,
+            changeYear: true,
+            yearRange: "-60:+0"
+        });
+
+
+
+        $("input[id^='END']").datepicker({
+            dateFormat: 'dd/mm/yy',
+            changeMonth: true,
+            changeYear: true,
+            yearRange: "-60:+0"
+        });
+
+
+
+
+    });
+</script>
+  
+

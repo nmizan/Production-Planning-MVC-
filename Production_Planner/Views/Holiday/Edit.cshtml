@@ -1,0 +1,107 @@
+﻿@model Production_Planner.Models.HRP_HOLIDAY
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>HRP_HOLIDAY</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.HOLDATE)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.HOLTYPE, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.HOLTYPE)
+                @Html.ValidationMessageFor(model => model.HOLTYPE)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.WDAYBEFOREHDAY, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.WDAYBEFOREHDAY)
+                @Html.ValidationMessageFor(model => model.WDAYBEFOREHDAY)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.WDAYAFTERHDAY, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.WDAYAFTERHDAY)
+                @Html.ValidationMessageFor(model => model.WDAYAFTERHDAY)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.WORKDAY, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.WORKDAY)
+                @Html.ValidationMessageFor(model => model.WORKDAY)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.HOLREMARKS, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.HOLREMARKS)
+                @Html.ValidationMessageFor(model => model.HOLREMARKS)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.INSERTBY, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.INSERTBY)
+                @Html.ValidationMessageFor(model => model.INSERTBY)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.INSERTDT, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.INSERTDT)
+                @Html.ValidationMessageFor(model => model.INSERTDT)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.UPDATEBY, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.UPDATEBY)
+                @Html.ValidationMessageFor(model => model.UPDATEBY)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.UPDATEDT, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.UPDATEDT)
+                @Html.ValidationMessageFor(model => model.UPDATEDT)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

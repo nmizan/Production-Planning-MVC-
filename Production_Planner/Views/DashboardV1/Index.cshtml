@@ -1,0 +1,665 @@
+﻿<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+@{
+    ViewBag.Title = "Index";
+   
+}
+
+<div id='loading'><b>loading...</b></div>
+
+<div id='calendar' class="context-menu-one"></div>
+
+<div id="fullCalModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">x</span> <span class="sr-only">close</span></button>
+                <h4 id="modalTitle" class="modal-title"></h4>
+            </div>
+            <div id="modalBody" class="modal-body"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <!--<button class="btn btn-primary"><a id="eventUrl" target="_blank">Event Page</a></button>-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="ModalAddEvent" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <script>
+
+        function addNewEvent() {
+
+            if ($('#ModalAddEvent #title').val().trim().length <= 0) {
+                $('#ModalAddEvent').modal('toggle');
+                //$("#calendar").fullCalendar("unselect");
+                alert("!! Title required. No event added !!");
+                return false;
+            }
+
+            if ($('#ModalAddEvent #moduleNo').val().trim().length <= 0) {
+                $('#ModalAddEvent').modal('toggle');
+                //$("#calendar").fullCalendar("unselect");
+                alert("!! Module required. No event added !!");
+                return false;
+            }
+
+            var i;
+            var eveRes = $('#calendar').fullCalendar('getResources');
+
+            var flagModuleFound = false;
+
+            var resId;
+            for (i = 0, l = eveRes.length; i < l; i++) {
+                if ($('#ModalAddEvent #moduleNo').val().trim() == eveRes[i].title) {
+                    resId = eveRes[i].id;
+                    flagModuleFound = true;
+                    break;
+                };
+            }
+
+            if (flagModuleFound == false) {
+                $('#ModalAddEvent').modal('toggle');
+                alert("!! Module not found. No event added !!");
+                return false;
+            }
+
+
+            //------------
+            var request = $.ajax({
+                url: "/WorkOrder/Create",
+                method: "POST",
+                data: {
+                    event_id: 0,
+                    title: $('#ModalAddEvent #title').val(),
+                    event_start: $('#ModalAddEvent #start').val(),
+                    event_end: $('#ModalAddEvent #end').val(),
+                    module_no: resId,
+                    color_id: $('#ModalAddEvent #color').val()
+                },
+                dataType: "html"
+            });
+
+            request.done(function (msg) {
+                //$("#log").html(msg);
+
+                if (msg == '"failed"') {
+                    alert('!! Could not be saved. try again. !!');
+                    return;
+                }
+                else {
+
+                    $("#calendar").fullCalendar('addEventSource', [{
+                        id: msg,
+                        title: $('#ModalAddEvent #title').val(),
+                        start: $('#ModalAddEvent #start').val(),
+                        end: $('#ModalAddEvent #end').val(),
+                        resourceId: resId,
+                        color: $('#ModalAddEvent #color').val()
+                        //rendering: 'background',
+                        //block: true,
+                    }, ]);
+
+                    alert('Saved.');
+                }
+            });
+
+            request.fail(function (jqXHR, textStatus) {
+                alert("Request failed: " + textStatus);
+
+                //alert('!! update request error !!')
+
+
+            });
+            //----------
+
+            $('#ModalAddEvent').modal('toggle');
+
+            return false;
+        }
+    </script>
+
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form class="form-horizontal" method="POST" action="javascript::void()">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Add Event</h4>
+                </div>
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <label for="module" class="col-sm-2 control-label">Mod No</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="module" class="form-control" id="moduleNo">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="title" class="col-sm-2 control-label">Order No</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="title" class="form-control" id="title" placeholder="Order No">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="color" class="col-sm-2 control-label">Color</label>
+                        <div class="col-sm-10">
+                            <select name="color" class="form-control" id="color">
+                                <option value="">Choose</option>
+                                <option style="color:#0071c5;" value="#0071c5">&#9724; Dark blue</option>
+                                <option style="color:#40E0D0;" value="#40E0D0">&#9724; Turquoise</option>
+                                <option style="color:#008000;" value="#008000">&#9724; Green</option>
+                                <option style="color:#FFD700;" value="#FFD700">&#9724; Yellow</option>
+                                <option style="color:#FF8C00;" value="#FF8C00">&#9724; Orange</option>
+                                <option style="color:#FF0000;" value="#FF0000">&#9724; Red</option>
+                                <option style="color:#000;" value="#000">&#9724; Black</option>
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="start" class="col-sm-2 control-label">Start date</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="start" class="form-control" id="start" placeholder="yyyy-mm-dd">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="end" class="col-sm-2 control-label">End date</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="end" class="form-control" id="end" placeholder="yyyy-mm-dd">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="addNewEvent()">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</div>
+
+@*my test2*@
+
+<div class="modal fade" id="MInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+
+
+    <div class="modal-dialog" style="width:60%;" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" style="text-align:center">Module Information</h4>
+            </div>
+
+            <div id="unobtrusive">
+              
+                @Html.Action("myPView", "DashboardV1")
+
+
+
+                </div>
+
+
+
+
+
+
+
+            </div>
+
+
+    </div>
+
+</div>
+
+
+
+
+@*my test2        end*@
+
+
+
+@*my test*@
+
+<div class="modal fade" id="ModalAddPModule" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <script>
+
+        function addNewModule() {
+
+            var request = $.ajax({
+                url: "/myModule/Create",
+                method: "POST",
+
+            });
+
+        }
+    </script>
+
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+
+            @using (Html.BeginForm("create", "myModule", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                <div class="form-horizontal">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Add Pendora Module</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="factory" class="col-sm-2 control-label">Factory</label>
+                            <div class="col-sm-10">
+                                @Html.DropDownList("COMPCD", ViewBag.COMPCD as SelectList)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="section" class="col-sm-2 control-label">Section</label>
+                            <div class="col-sm-10">
+                                @Html.DropDownList("SECCODE", ViewBag.SECCODE as SelectList)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="module" class="col-sm-2 control-label">Module Name</label>
+                            <div class="col-sm-10">
+                                @Html.TextBox("ModuleNm")
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="module" class="col-sm-2 control-label">Machine Type</label>
+                            <div class="col-sm-10">
+                                @Html.TextBox("MACTYPE")
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="section" class="col-sm-2 control-label">Gauge</label>
+                            <div class="col-sm-10">
+                                @Html.DropDownList("GAUGECD", ViewBag.GAUGECD as SelectList)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="module" class="col-sm-2 control-label">Work Mints</label>
+                            <div class="col-sm-10">
+                                @Html.TextBox("WORKMINTS")
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="module" class="col-sm-2 control-label">Machine QTY</label>
+                            <div class="col-sm-10">
+                                @Html.TextBox("MACQTY")
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="module" class="col-sm-2 control-label">Machine Efficiency</label>
+                            <div class="col-sm-10">
+                                @Html.TextBox("MACEFF")
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="module" class="col-sm-2 control-label">Per day mins</label>
+                            <div class="col-sm-10">
+                                @Html.TextBox("PERDAYMINTS")
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="module" class="col-sm-2 control-label">Catagory</label>
+                            <div class="col-sm-10">
+                                @Html.TextBox("CATAGORY")
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        @*<button type="button" class="btn btn-primary" onclick="addNewModule()">Add</button>*@
+                        <input type="submit" class="btn btn-primary" value="Add Module Info" />
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+
+
+</div>
+
+
+
+@*my test end*@
+
+<!-- Modal -->
+<div class="modal fade" id="ModalAdd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <script>
+
+        function addEvent() {
+
+            if ($('#ModalAdd #title').val().trim().length <= 0) {
+                $('#ModalAdd').modal('toggle');
+                $("#calendar").fullCalendar("unselect");
+                alert("!! No event added !!");
+                return false;
+            }
+
+            //------------
+            var request = $.ajax({
+                url: "/WorkOrder/Create",
+                method: "POST",
+                data: {
+                    event_id: 0,
+                    title: $('#ModalAdd #title').val(),
+                    event_start: $('#ModalAdd #start').val(),
+                    event_end: $('#ModalAdd #end').val(),
+                    module_no: $('#ModalAdd #moduleId').val(),
+                    color_id: $('#ModalAdd #color').val()
+                },
+                dataType: "html"
+            });
+
+            request.done(function (msg) {
+                //$("#log").html(msg);
+
+                if (msg == '"failed"') {
+                    alert('!! Could not be saved. try again. !!');
+                    return;
+                }
+                else {
+
+                    $("#calendar").fullCalendar('addEventSource', [{
+                        id: msg,
+                        title: $('#ModalAdd #title').val(),
+                        start: $('#ModalAdd #start').val(),
+                        end: $('#ModalAdd #end').val(),
+                        resourceId: $('#ModalAdd #moduleId').val(),
+                        color: $('#ModalAdd #color').val()
+                        //rendering: 'background',
+                        //block: true,
+                    }, ]);
+
+                    alert('Saved.');
+                }
+            });
+
+            request.fail(function (jqXHR, textStatus) {
+                alert("Request failed: " + textStatus);
+
+                //alert('!! update request error !!')
+
+
+            });
+            //----------
+
+
+
+            $('#ModalAdd').modal('toggle');
+
+            $("#calendar").fullCalendar("unselect");
+
+            return false;
+        }
+    </script>
+
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form class="form-horizontal" method="POST" action="javascript::void()">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Add Event</h4>
+                </div>
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <label for="module" class="col-sm-2 control-label">Mod No</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="module" class="form-control" id="module" readonly>
+                            <input type="hidden" name="moduleId" id="moduleId" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="title" class="col-sm-2 control-label">Order No</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="title" class="form-control" id="title" placeholder="Order No">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="color" class="col-sm-2 control-label">Color</label>
+                        <div class="col-sm-10">
+                            <select name="color" class="form-control" id="color">
+                                <option value="">Choose</option>
+                                <option style="color:#0071c5;" value="#0071c5">&#9724; Dark blue</option>
+                                <option style="color:#40E0D0;" value="#40E0D0">&#9724; Turquoise</option>
+                                <option style="color:#008000;" value="#008000">&#9724; Green</option>
+                                <option style="color:#FFD700;" value="#FFD700">&#9724; Yellow</option>
+                                <option style="color:#FF8C00;" value="#FF8C00">&#9724; Orange</option>
+                                <option style="color:#FF0000;" value="#FF0000">&#9724; Red</option>
+                                <option style="color:#000;" value="#000">&#9724; Black</option>
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="start" class="col-sm-2 control-label">Start date</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="start" class="form-control" id="start" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="end" class="col-sm-2 control-label">End date</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="end" class="form-control" id="end" readonly>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="addEvent()">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="ModalEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <script>
+
+        function editEvent() {
+
+            var eveId = $('#ModalEdit #id').val();
+
+            if ($('#ModalEdit #deleteEvent').is(':checked')) {
+
+                $('#ModalEdit #deleteEvent').prop('checked', false);
+
+                if (confirm("Do you really want to delete?")) {
+
+                    //------------
+                    var request = $.ajax({
+                        url: "/WorkOrder/Delete",
+                        method: "POST",
+                        data: { id: eveId },
+                        dataType: "html"
+                    });
+
+                    request.done(function (msg) {
+                        //$("#log").html(msg);
+
+                        if (msg == '"failed"') {
+                            $('#ModalEdit').modal('toggle');
+                            alert('!! Could not be deleted. try again. !!');
+                            return;
+                        }
+                        else {
+
+                            $("#calendar").fullCalendar('removeEvents', eveId);
+                            $('#ModalEdit').modal('toggle');
+                            $("#calendar").fullCalendar("unselect");
+                            alert("!! Event deleted !!");
+                        }
+                    });
+
+                    request.fail(function (jqXHR, textStatus) {
+                        alert("Request failed: " + textStatus);
+
+                        //alert('!! update request error !!')
+                        $('#ModalEdit').modal('toggle');
+                        $("#calendar").fullCalendar("unselect");
+
+                    });
+                    //----------
+                };
+
+
+
+
+                return false;
+
+            }
+
+            if ($('#ModalEdit #title').val().trim().length <= 0) {
+
+                $('#ModalEdit').modal('toggle');
+                //alert($('#ModalEdit #id').val());
+                $("#calendar").fullCalendar("unselect");
+                alert("!! Order required. Event not updated !!");
+                //alert($('#ModalEdit #id'));
+                return false;
+            }
+
+            var allEvents = $("#calendar").fullCalendar('clientEvents', eveId);
+
+            //-------------
+
+            if (allEvents.length > 0) {
+
+
+                //------------
+                var request = $.ajax({
+                    url: "/WorkOrder/Edit",
+                    method: "POST",
+                    data: {
+                        id: eveId,
+                        title: $('#ModalEdit #title').val().trim(),
+                        eveColor: $('#ModalEdit #color').val()
+                    },
+                    dataType: "html"
+                });
+
+                request.done(function (msg) {
+                    //$("#log").html(msg);
+
+                    if (msg == '"failed"') {
+                        $('#ModalEdit').modal('toggle');
+                        alert('!! Could not be saved. try again. !!');
+                        return;
+                    }
+                    else {
+                        allEvents[0].title = $('#ModalEdit #title').val().trim();
+                        allEvents[0].color = $('#ModalEdit #color').val();
+                        $('#calendar').fullCalendar('updateEvent', allEvents[0]);
+
+                        alert('Saved.');
+                    }
+                });
+
+                request.fail(function (jqXHR, textStatus) {
+                    alert("Request failed: " + textStatus);
+
+                    //alert('!! update request error !!')
+
+
+                });
+                //----------
+
+
+
+                //alert(allEvents[0].title);
+
+            }
+
+            $('#ModalEdit').modal('toggle');
+
+            return false;
+
+        }
+
+    </script>
+
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form class="form-horizontal" method="POST">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Edit Event</h4>
+                </div>
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <label for="title" class="col-sm-2 control-label">Order No</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="title" class="form-control" id="title" placeholder="Order No">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="color" class="col-sm-2 control-label">Color</label>
+                        <div class="col-sm-10">
+                            <select name="color" class="form-control" id="color">
+                                <option value="">Choose</option>
+                                <option style="color:#0071c5;" value="#0071c5">&#9724; Dark blue</option>
+                                <option style="color:#40E0D0;" value="#40E0D0">&#9724; Turquoise</option>
+                                <option style="color:#008000;" value="#008000">&#9724; Green</option>
+                                <option style="color:#FFD700;" value="#FFD700">&#9724; Yellow</option>
+                                <option style="color:#FF8C00;" value="#FF8C00">&#9724; Orange</option>
+                                <option style="color:#FF0000;" value="#FF0000">&#9724; Red</option>
+                                <option style="color:#000;" value="#000">&#9724; Black</option>
+
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="start" class="col-sm-2 control-label">Start date</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="start" class="form-control" id="start" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="end" class="col-sm-2 control-label">End date</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="end" class="form-control" id="end" readonly>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <div class="checkbox">
+                                <label class="text-danger"><input type="checkbox" name="delete" id="deleteEvent"> Delete event</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <input type="hidden" name="id" class="form-control" id="id">
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="return editEvent()">Save changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<p><span class="context-menu-one btn">right click me</span></p>

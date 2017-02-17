@@ -1,0 +1,84 @@
+﻿@model Production_Planner.Models.MER_UNIT
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<h2 style=" text-align: center; text-decoration: underline;">Unit Information</h2>
+
+<div>
+   
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+          Unit Name:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UNITNM)
+        </dd>
+
+        <dt>
+           Base Flag:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BASEFLAG)
+        </dd>
+
+        <dt>
+            Conversion Unit Code:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CONVUNITCD)
+        </dd>
+
+        <dt>
+            Conversion Value:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CONVVALUE)
+        </dd>
+
+        <dt>
+            Inserted By:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INSERTBY)
+        </dd>
+
+        <dt>
+            Inserted Date:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INSERTDT)
+        </dd>
+
+        <dt>
+            Updated By:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UPDATEBY)
+        </dd>
+
+        <dt>
+            Updated Date:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UPDATEDT)
+        </dd>
+
+    </dl>
+</div>
+<p style=" margin-left:90px; font-size:15px;">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.UNITCD }) |
+    @Html.ActionLink("Delete", "Delete", new { id = Model.UNITCD })|
+    @Html.ActionLink("Back to List", "Index")
+</p>

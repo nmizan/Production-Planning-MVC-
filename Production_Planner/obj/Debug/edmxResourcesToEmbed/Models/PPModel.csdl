@@ -1,0 +1,1375 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CMN_COUNTRY">
+    <Key>
+      <PropertyRef Name="CONCD" />
+    </Key>
+    <Property Name="CONCD" Type="Byte" Nullable="false" />
+    <Property Name="CONNM" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="COUNTRY_CODE" Type="Int16" />
+    <Property Name="INSERTBY" Type="Int16" Nullable="false" />
+    <Property Name="INSERTDT" Type="DateTime" Nullable="false" />
+    <Property Name="UPDATEBY" Type="Int16" />
+    <Property Name="UPDATEDT" Type="DateTime" />
+    <NavigationProperty Name="MER_COMPCODE" Relationship="Self.FK2_MER_COMPCODE" FromRole="CMN_COUNTRY" ToRole="MER_COMPCODE" />
+  </EntityType>
+  <EntityType Name="HRP_COMPUNIT">
+    <Key>
+      <PropertyRef Name="COMPCD" />
+    </Key>
+    <Property Name="COMPCD" Type="Byte" Nullable="false" />
+    <Property Name="COMPNM" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SHORTNM" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="COMPNMB" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="ADDRS1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ADDRS2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ADDRSBG1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ADDRSBG2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PHONE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MOBILNO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FAX" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="WEB" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="LOGO_IMAGE" Type="Binary" MaxLength="2147483647" FixedLength="false" />
+    <Property Name="INSERTBY" Type="Int16" Nullable="false" />
+    <Property Name="INSERTDT" Type="DateTime" Nullable="false" />
+    <Property Name="UPDATEBY" Type="Int16" />
+    <Property Name="UPDATEDT" Type="DateTime" />
+    <NavigationProperty Name="PRP_ASSIGNMAS" Relationship="Self.FK1_PRP_ASSIGNMAS" FromRole="HRP_COMPUNIT" ToRole="PRP_ASSIGNMAS" />
+    <NavigationProperty Name="PRP_DISTTOFACT" Relationship="Self.FK1_PRP_DISTTOFACT" FromRole="HRP_COMPUNIT" ToRole="PRP_DISTTOFACT" />
+    <NavigationProperty Name="PRP_MODULE" Relationship="Self.FK1_PRP_MODULE" FromRole="HRP_COMPUNIT" ToRole="PRP_MODULE" />
+    <NavigationProperty Name="PRP_PRODMAS" Relationship="Self.FK1_PRP_PRODMAS" FromRole="HRP_COMPUNIT" ToRole="PRP_PRODMAS" />
+  </EntityType>
+  <EntityType Name="HRP_HOLIDAY">
+    <Key>
+      <PropertyRef Name="HOLDATE" />
+    </Key>
+    <Property Name="HOLDATE" Type="DateTime" Nullable="false" />
+    <Property Name="HOLTYPE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="WDAYBEFOREHDAY" Type="DateTime" />
+    <Property Name="WDAYAFTERHDAY" Type="DateTime" />
+    <Property Name="WORKDAY" Type="Byte" Nullable="false" />
+    <Property Name="HOLREMARKS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="INSERTBY" Type="Int16" Nullable="false" />
+    <Property Name="INSERTDT" Type="DateTime" Nullable="false" />
+    <Property Name="UPDATEBY" Type="Int16" />
+    <Property Name="UPDATEDT" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="HRP_SECTION">
+    <Key>
+      <PropertyRef Name="SECCODE" />
+    </Key>
+    <Property Name="SECCODE" Type="Byte" Nullable="false" />
+    <Property Name="SECNAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SECNMBG" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="SECFLOOR" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="PRSYMBOL" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="PSLNO" Type="Byte" Nullable="false" />
+    <Property Name="INSERTBY" Type="Int16" Nullable="false" />
+    <Property Name="INSERTDT" Type="DateTime" Nullable="false" />
+    <Property Name="UPDATEBY" Type="Int16" />
+    <Property Name="UPDATEDT" Type="DateTime" />
+    <Property Name="LAGGING_SLNO" Type="Byte" />
+    <Property Name="LAGGING_HEADING" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="MER_CP" Relationship="Self.FK2_MER_CP" FromRole="HRP_SECTION" ToRole="MER_CP" />
+    <NavigationProperty Name="MER_CP_ORDER" Relationship="Self.FK2_MER_CP_ORDER" FromRole="HRP_SECTION" ToRole="MER_CP_ORDER" />
+    <NavigationProperty Name="MER_ORDER_CATEGORY" Relationship="Self.FK2_MER_ORDER_CATEGORY" FromRole="HRP_SECTION" ToRole="MER_ORDER_CATEGORY" />
+    <NavigationProperty Name="MER_SMV" Relationship="Self.FK2_MER_SMV" FromRole="HRP_SECTION" ToRole="MER_SMV" />
+    <NavigationProperty Name="PRP_ASSIGNMAS" Relationship="Self.FK2_PRP_ASSIGNMAS" FromRole="HRP_SECTION" ToRole="PRP_ASSIGNMAS" />
+    <NavigationProperty Name="PRP_MODULE" Relationship="Self.FK2_PRP_MODULE" FromRole="HRP_SECTION" ToRole="PRP_MODULE" />
+    <NavigationProperty Name="PRP_PRODMAS" Relationship="Self.FK2_PRP_PRODMAS" FromRole="HRP_SECTION" ToRole="PRP_PRODMAS" />
+  </EntityType>
+  <EntityType Name="MER_COMPCODE">
+    <Key>
+      <PropertyRef Name="COMPCD" />
+    </Key>
+    <Property Name="COMPCD" Type="Int16" Nullable="false" />
+    <Property Name="COMPTYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="COMPNM" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SHORTNM" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="ADDRS1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ADDRS2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CONCD" Type="Byte" Nullable="false" />
+    <Property Name="POSTCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PHONE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FAX" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CONPER" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="BHCD" Type="Int16" />
+    <Property Name="STATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ATTN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="REF" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TERRITORY" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="INSERTBY" Type="Int16" Nullable="false" />
+    <Property Name="INSERTDT" Type="DateTime" Nullable="false" />
+    <Property Name="UPDATEBY" Type="Int16" />
+    <Property Name="UPDATEDT" Type="DateTime" />
+    <NavigationProperty Name="CMN_COUNTRY" Relationship="Self.FK2_MER_COMPCODE" FromRole="MER_COMPCODE" ToRole="CMN_COUNTRY" />
+    <NavigationProperty Name="MER_COMPCODE1" Relationship="Self.FK1_MER_COMPCODE" FromRole="MER_COMPCODE" ToRole="MER_COMPCODE1" />
+    <NavigationProperty Name="MER_COMPCODE2" Relationship="Self.FK1_MER_COMPCODE" FromRole="MER_COMPCODE1" ToRole="MER_COMPCODE" />
+    <NavigationProperty Name="MER_SKETCHMAS" Relationship="Self.FK1_MER_SKETCHMAS" FromRole="MER_COMPCODE" ToRole="MER_SKETCHMAS" />
+    <NavigationProperty Name="MER_ORDERMAS" Relationship="Self.FK3_MER_ORDERMAS" FromRole="MER_COMPCODE" ToRole="MER_ORDERMAS" />
+  </EntityType>
+  <EntityType Name="MER_CP">
+    <Key>
+      <PropertyRef Name="CPCD" />
+      <PropertyRef Name="ORDSLNO" />
+    </Key>
+    <Property Name="CPCD" Type="Int16" Nullable="false" />
+    <Property Name="ORDSLNO" Type="Int32" Nullable="false" />
+    <Property Name="SECCODE" Type="Byte" Nullable="false" />
+    <Property Name="STARTDATE" Type="DateTime" Nullable="false" />
+    <Property Name="ENDDATE" Type="DateTime" Nullable="false" />
+    <Property Name="INSERTBY" Type="Int16" Nullable="false" />
+    <Property Name="INSERTDT" Type="DateTime" Nullable="false" />
+    <Property Name="UPDATEBY" Type="Int16" />
+    <Property Name="UPDATEDT" Type="DateTime" />
+    <NavigationProperty Name="HRP_SECTION" Relationship="Self.FK2_MER_CP" FromRole="MER_CP" ToRole="HRP_SECTION" />
+    <NavigationProperty Name="MER_ORDERMAS" Relationship="Self.FK1_MER_CP" FromRole="MER_CP" ToRole="MER_ORDERMAS" />
+  </EntityType>
+  <EntityType Name="MER_CP_ORDER">
+    <Key>
+      <PropertyRef Name="CPCD" />
+      <PropertyRef Name="SLNO" />
+      <PropertyRef Name="ORDSLNO" />
+    </Key>
+    <Property Name="CPCD" Type="Int16" Nullable="false" />
+    <Property Name="SLNO" Type="Byte" Nullable="false" />
+    <Property Name="ORDSLNO" Type="Int32" Nullable="false" />
+    <Property Name="SECCODE" Type="Byte" Nullable="false" />
+    <Property Name="STARTDATE" Type="DateTime" Nullable="false" />
+    <Property Name="ENDDATE" Type="DateTime" Nullable="false" />
+    <Property Name="INSERTBY" Type="Int16" Nullable="false" />
+    <Property Name="INSERTDT" Type="DateTime" Nullable="false" />
+    <Property Name="UPDATEBY" Type="Int16" />
+    <Property Name="UPDATEDT" Type="DateTime" />
+    <NavigationProperty Name="HRP_SECTION" Relationship="Self.FK2_MER_CP_ORDER" FromRole="MER_CP_ORDER" ToRole="HRP_SECTION" />
+    <NavigationProperty Name="MER_ORDERDET" Relationship="Self.FK1_MER_CP_ORDER" FromRole="MER_CP_ORDER" ToRole="MER_ORDERDET" />
+  </EntityType>
+  <EntityType Name="MER_GAUGE">
+    <Key>
+      <PropertyRef Name="GAUGECD" />
+    </Key>
+    <Property Name="GAUGECD" Type="Byte" Nullable="false" />
+    <Property Name="GAUGENM" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="INSERTBY" Type="Int16" Nullable="false" />
+    <Property Name="INSERTDT" Type="DateTime" Nullable="false" />
+    <Property Name="UPDATEBY" Type="Int16" />
+    <Property Name="UPDATEDT" Type="DateTime" />
+    <NavigationProperty Name="MER_SKETCHMAS" Relationship="Self.FK2_MER_SKETCHMAS" FromRole="MER_GAUGE" ToRole="MER_SKETCHMAS" />
+    <NavigationProperty Name="PRP_MODULE" Relationship="Self.FK3_PRP_MODULE" FromRole="MER_GAUGE" ToRole="PRP_MODULE" />
+    <NavigationProperty Name="MER_ORDERMAS" Relationship="Self.FK4_MER_ORDERMAS" FromRole="MER_GAUGE" ToRole="MER_ORDERMAS" />
+  </EntityType>
+  <EntityType Name="MER_LABDIP">
+    <Key>
+      <PropertyRef Name="LABCD" />
+    </Key>
+    <Property Name="LABCD" Type="Int16" Nullable="false" />
+    <Property Name="LABDIPNO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ORDSLNO" Type="Int32" Nullable="false" />
+    <Property Name="SKETCHID" Type="Int32" Nullable="false" />
+    <Property Name="SKETCHSLNO" Type="Int32" />
+    <Property Name="YARNCD" Type="Int16" />
+    <Property Name="COLCD" Type="Int16" Nullable="false" />
+    <Property Name="PANTONNO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SHADE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="REQDT" Type="DateTime" />
+    <Property Name="SENDDT" Type="DateTime" Nullable="false" />
+    <Property Name="APPDT" Type="DateTime" />
+    <Property Name="STATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="REMARKS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="INSERTBY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="INSERTDATE" Type="DateTime" />
+    <Property Name="INSERTTIME" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="EDITBY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="EDITDATE" Type="DateTime" />
+    <Property Name="EDITTIME" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="MER_YARNCOLOR" Relationship="Self.FK4_MER_LABDIP" FromRole="MER_LABDIP" ToRole="MER_YARNCOLOR" />
+  </EntityType>
+  <EntityType Name="MER_LCREGIS">
+    <Key>
+      <PropertyRef Name="YEAR" />
+      <PropertyRef Name="LCSLNO" />
+    </Key>
+    <Property Name="YEAR" Type="Int16" Nullable="false" />
+    <Property Name="LCSLNO" Type="Int32" Nullable="false" />
+    <Property Name="LCDT" Type="DateTime" Nullable="false" />
+    <Property Name="LCTYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LCNO" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AMDT" Type="DateTime" />
+    <Property Name="LCCONBANK" Type="Int16" Nullable="false" />
+    <Property Name="LCISSBANK" Type="Int16" Nullable="false" />
+    <Property Name="LCPARTY" Type="Int16" />
+    <Property Name="LCQTY" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="LCAMNT" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="EXPDT" Type="DateTime" />
+    <Property Name="SHIPDT" Type="DateTime" />
+    <Property Name="ATSIGHTDAYS" Type="Byte" />
+    <Property Name="PRCTYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IRCNO" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="LCANO" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="REMARKS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ATSIGHTTYPE" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="INSERTBY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="INSERTDATE" Type="DateTime" />
+    <Property Name="INSERTTIME" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="EDITBY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="EDITDATE" Type="DateTime" />
+    <Property Name="EDITTIME" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CONTRACTNO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LCDISCOUNT" Type="Decimal" Precision="4" Scale="2" />
+    <NavigationProperty Name="MER_ORDERMAS" Relationship="Self.FK2_MER_ORDERMAS" FromRole="MER_LCREGIS" ToRole="MER_ORDERMAS" />
+  </EntityType>
+  <EntityType Name="MER_ORDER_CATEGORY">
+    <Key>
+      <PropertyRef Name="SLNO" />
+      <PropertyRef Name="ORDSLNO" />
+      <PropertyRef Name="SECCODE" />
+    </Key>
+    <Property Name="SLNO" Type="Byte" Nullable="false" />
+    <Property Name="ORDSLNO" Type="Int32" Nullable="false" />
+    <Property Name="SECCODE" Type="Byte" Nullable="false" />
+    <Property Name="CATEGORY" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="INSERTBY" Type="Int16" Nullable="false" />
+    <Property Name="INSERTDT" Type="DateTime" Nullable="false" />
+    <Property Name="UPDATEBY" Type="Int16" />
+    <Property Name="UPDATEDT" Type="DateTime" />
+    <NavigationProperty Name="HRP_SECTION" Relationship="Self.FK2_MER_ORDER_CATEGORY" FromRole="MER_ORDER_CATEGORY" ToRole="HRP_SECTION" />
+    <NavigationProperty Name="MER_ORDERDET" Relationship="Self.FK1_MER_ORDER_CATEGORY" FromRole="MER_ORDER_CATEGORY" ToRole="MER_ORDERDET" />
+  </EntityType>
+  <EntityType Name="MER_ORDERCOLOR">
+    <Key>
+      <PropertyRef Name="ORDCOLCD" />
+    </Key>
+    <Property Name="ORDCOLCD" Type="Int16" Nullable="false" />
+    <Property Name="ORDCOLNM" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="INSERTBY" Type="Int16" Nullable="false" />
+    <Property Name="INSERTDT" Type="DateTime" Nullable="false" />
+    <Property Name="UPDATEBY" Type="Int16" />
+    <Property Name="UPDATEDT" Type="DateTime" />
+    <NavigationProperty Name="MER_SKETCHDET" Relationship="Self.FK2_MER_SKETCHDET" FromRole="MER_ORDERCOLOR" ToRole="MER_SKETCHDET" />
+    <NavigationProperty Name="MER_ORDERDET" Relationship="Self.FK3_MER_ORDERDET" FromRole="MER_ORDERCOLOR" ToRole="MER_ORDERDET" />
+  </EntityType>
+  <EntityType Name="MER_ORDERDET">
+    <Key>
+      <PropertyRef Name="SLNO" />
+      <PropertyRef Name="ORDSLNO" />
+    </Key>
+    <Property Name="SLNO" Type="Byte" Nullable="false" />
+    <Property Name="ORDSLNO" Type="Int32" Nullable="false" />
+    <Property Name="SKETCHID" Type="Int32" />
+    <Property Name="SKETCHSLNO" Type="Int32" />
+    <Property Name="ORDCD" Type="Int32" />
+    <Property Name="ORDERNO" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ORD_REFNO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ORDCOLCD" Type="Int16" />
+    <Property Name="ORDCOLNM" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="SIZECD" Type="Int16" />
+    <Property Name="ORDQTY" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="PRDPERCENT" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="PRODQTY" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="UNPRICE" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="TOTPRICE" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="TOTPRICEUSD" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="ORDDATED" Type="DateTime" />
+    <Property Name="SHIPDATE" Type="DateTime" />
+    <Property Name="KNITTYPE" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="YARNCD" Type="Int16" />
+    <Property Name="YARNDESC" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="YARNQTY" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="PERYARNWATG" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="TOTYARNQTY" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="SMV_TYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SMV" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="INSERTBY" Type="Int16" Nullable="false" />
+    <Property Name="INSERTDT" Type="DateTime" Nullable="false" />
+    <Property Name="UPDATEBY" Type="Int16" />
+    <Property Name="UPDATEDT" Type="DateTime" />
+    <NavigationProperty Name="MER_CP_ORDER" Relationship="Self.FK1_MER_CP_ORDER" FromRole="MER_ORDERDET" ToRole="MER_CP_ORDER" />
+    <NavigationProperty Name="MER_ORDER_CATEGORY" Relationship="Self.FK1_MER_ORDER_CATEGORY" FromRole="MER_ORDERDET" ToRole="MER_ORDER_CATEGORY" />
+    <NavigationProperty Name="MER_ORDERCOLOR" Relationship="Self.FK3_MER_ORDERDET" FromRole="MER_ORDERDET" ToRole="MER_ORDERCOLOR" />
+    <NavigationProperty Name="MER_ORDERMAS" Relationship="Self.FK1_MER_ORDERDET" FromRole="MER_ORDERDET" ToRole="MER_ORDERMAS" />
+    <NavigationProperty Name="MER_SMV" Relationship="Self.FK1_MER_SMV" FromRole="MER_ORDERDET" ToRole="MER_SMV" />
+    <NavigationProperty Name="MER_SKETCHDET" Relationship="Self.FK2_MER_ORDERDET" FromRole="MER_ORDERDET" ToRole="MER_SKETCHDET" />
+    <NavigationProperty Name="PRP_DISTTOFACT" Relationship="Self.FK2_PRP_DISTTOFACT" FromRole="MER_ORDERDET" ToRole="PRP_DISTTOFACT" />
+    <NavigationProperty Name="PRP_PRODDET" Relationship="Self.FK2_PRP_PRODDET" FromRole="MER_ORDERDET" ToRole="PRP_PRODDET" />
+    <NavigationProperty Name="PRP_ASSIGNMAS" Relationship="Self.FK3_PRP_ASSIGNMAS" FromRole="MER_ORDERDET" ToRole="PRP_ASSIGNMAS" />
+    <NavigationProperty Name="MER_SIZEINFO" Relationship="Self.FK4_MER_ORDERDET" FromRole="MER_ORDERDET" ToRole="MER_SIZEINFO" />
+    <NavigationProperty Name="MER_YARNINFO" Relationship="Self.FK5_MER_ORDERDET" FromRole="MER_ORDERDET" ToRole="MER_YARNINFO" />
+  </EntityType>
+  <EntityType Name="MER_ORDERMAS">
+    <Key>
+      <PropertyRef Name="ORDSLNO" />
+    </Key>
+    <Property Name="ORDSLNO" Type="Int32" Nullable="false" />
+    <Property Name="SKETCHID" Type="Int32" />
+    <Property Name="SKETCHNO" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LCYEAR" Type="Int16" />
+    <Property Name="LCSLNO" Type="Int32" />
+    <Property Name="STYLENO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="COMPCD" Type="Int16" Nullable="false" />
+    <Property Name="GAUGECD" Type="Byte" Nullable="false" />
+    <Property Name="ORDTYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ORDMETHOD" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ORDDATE" Type="DateTime" />
+    <Property Name="DELDATE" Type="DateTime" />
+    <Property Name="ORDFLAG" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="STATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FLAGIMG" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="GOODSDESC" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="REMARKS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="INSERTBY" Type="Int16" Nullable="false" />
+    <Property Name="INSERTDT" Type="DateTime" Nullable="false" />
+    <Property Name="UPDATEBY" Type="Int16" />
+    <Property Name="UPDATEDT" Type="DateTime" />
+    <NavigationProperty Name="MER_COMPCODE" Relationship="Self.FK3_MER_ORDERMAS" FromRole="MER_ORDERMAS" ToRole="MER_COMPCODE" />
+    <NavigationProperty Name="MER_CP" Relationship="Self.FK1_MER_CP" FromRole="MER_ORDERMAS" ToRole="MER_CP" />
+    <NavigationProperty Name="MER_GAUGE" Relationship="Self.FK4_MER_ORDERMAS" FromRole="MER_ORDERMAS" ToRole="MER_GAUGE" />
+    <NavigationProperty Name="MER_LCREGIS" Relationship="Self.FK2_MER_ORDERMAS" FromRole="MER_ORDERMAS" ToRole="MER_LCREGIS" />
+    <NavigationProperty Name="MER_ORDERDET" Relationship="Self.FK1_MER_ORDERDET" FromRole="MER_ORDERMAS" ToRole="MER_ORDERDET" />
+    <NavigationProperty Name="MER_SKETCHMAS" Relationship="Self.FK1_MER_ORDERMAS" FromRole="MER_ORDERMAS" ToRole="MER_SKETCHMAS" />
+  </EntityType>
+  <EntityType Name="MER_SIZEINFO">
+    <Key>
+      <PropertyRef Name="SIZECD" />
+    </Key>
+    <Property Name="SIZECD" Type="Int16" Nullable="false" />
+    <Property Name="SIZENM" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="INSERTBY" Type="Int16" Nullable="false" />
+    <Property Name="INSERTDT" Type="DateTime" Nullable="false" />
+    <Property Name="UPDATEBY" Type="Int16" />
+    <Property Name="UPDATEDT" Type="DateTime" />
+    <NavigationProperty Name="MER_ORDERDET" Relationship="Self.FK4_MER_ORDERDET" FromRole="MER_SIZEINFO" ToRole="MER_ORDERDET" />
+    <NavigationProperty Name="MER_SKETCHDET" Relationship="Self.FK3_MER_SKETCHDET" FromRole="MER_SIZEINFO" ToRole="MER_SKETCHDET" />
+  </EntityType>
+  <EntityType Name="MER_SKETCHDET">
+    <Key>
+      <PropertyRef Name="SKETCHID" />
+      <PropertyRef Name="SKETCHSLNO" />
+    </Key>
+    <Property Name="SKETCHID" Type="Int32" Nullable="false" />
+    <Property Name="SKETCHSLNO" Type="Int32" Nullable="false" />
+    <Property Name="ORDCD" Type="Int32" Nullable="false" />
+    <Property Name="ORDERNO" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="YARNCD" Type="Int16" />
+    <Property Name="ORDCOLCD" Type="Int16" />
+    <Property Name="SIZECD" Type="Int16" />
+    <Property Name="ORDQTY" Type="Int32" />
+    <Property Name="PRODQTY" Type="Int32" />
+    <Property Name="WEIGHT" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="SHIPDT" Type="DateTime" />
+    <Property Name="IMGFLAG" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SEASON" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="KNITTYPE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="BRANDCD" Type="Byte" />
+    <Property Name="FLAGIMG" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SAMPLECD" Type="Byte" />
+    <Property Name="REMARKS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="INSERTBY" Type="Int16" Nullable="false" />
+    <Property Name="INSERTDT" Type="DateTime" Nullable="false" />
+    <Property Name="UPDATEBY" Type="Int16" />
+    <Property Name="UPDATEDT" Type="DateTime" />
+    <NavigationProperty Name="MER_ORDERCOLOR" Relationship="Self.FK2_MER_SKETCHDET" FromRole="MER_SKETCHDET" ToRole="MER_ORDERCOLOR" />
+    <NavigationProperty Name="MER_ORDERDET" Relationship="Self.FK2_MER_ORDERDET" FromRole="MER_SKETCHDET" ToRole="MER_ORDERDET" />
+    <NavigationProperty Name="MER_SIZEINFO" Relationship="Self.FK3_MER_SKETCHDET" FromRole="MER_SKETCHDET" ToRole="MER_SIZEINFO" />
+    <NavigationProperty Name="MER_SKETCHMAS" Relationship="Self.FK1_MER_SKETCHDET" FromRole="MER_SKETCHDET" ToRole="MER_SKETCHMAS" />
+    <NavigationProperty Name="MER_YARNINFO" Relationship="Self.FK4_MER_SKETCHDET" FromRole="MER_SKETCHDET" ToRole="MER_YARNINFO" />
+  </EntityType>
+  <EntityType Name="MER_SKETCHMAS">
+    <Key>
+      <PropertyRef Name="SKETCHID" />
+    </Key>
+    <Property Name="SKETCHID" Type="Int32" Nullable="false" />
+    <Property Name="SKETCHNO" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="STYLENO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ORDERTYPE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SKECTHCRDT" Type="DateTime" />
+    <Property Name="SKECTHDLDT" Type="DateTime" />
+    <Property Name="COMPCD" Type="Int16" />
+    <Property Name="GAUGECD" Type="Byte" />
+    <Property Name="IMGFLAG" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="FLAGIMG" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="INSERTBY" Type="Int16" Nullable="false" />
+    <Property Name="INSERTDT" Type="DateTime" Nullable="false" />
+    <Property Name="UPDATEBY" Type="Int16" />
+    <Property Name="UPDATEDT" Type="DateTime" />
+    <NavigationProperty Name="MER_COMPCODE" Relationship="Self.FK1_MER_SKETCHMAS" FromRole="MER_SKETCHMAS" ToRole="MER_COMPCODE" />
+    <NavigationProperty Name="MER_GAUGE" Relationship="Self.FK2_MER_SKETCHMAS" FromRole="MER_SKETCHMAS" ToRole="MER_GAUGE" />
+    <NavigationProperty Name="MER_ORDERMAS" Relationship="Self.FK1_MER_ORDERMAS" FromRole="MER_SKETCHMAS" ToRole="MER_ORDERMAS" />
+    <NavigationProperty Name="MER_SKETCHDET" Relationship="Self.FK1_MER_SKETCHDET" FromRole="MER_SKETCHMAS" ToRole="MER_SKETCHDET" />
+  </EntityType>
+  <EntityType Name="MER_SMV">
+    <Key>
+      <PropertyRef Name="SLNO" />
+      <PropertyRef Name="ORDSLNO" />
+      <PropertyRef Name="SECCODE" />
+    </Key>
+    <Property Name="SLNO" Type="Byte" Nullable="false" />
+    <Property Name="ORDSLNO" Type="Int32" Nullable="false" />
+    <Property Name="SECCODE" Type="Byte" Nullable="false" />
+    <Property Name="SMV_TYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SMV" Type="Decimal" Precision="7" Scale="2" Nullable="false" />
+    <Property Name="INSERTBY" Type="Int16" Nullable="false" />
+    <Property Name="INSERTDT" Type="DateTime" Nullable="false" />
+    <Property Name="UPDATEBY" Type="Int16" />
+    <Property Name="UPDATEDT" Type="DateTime" />
+    <NavigationProperty Name="HRP_SECTION" Relationship="Self.FK2_MER_SMV" FromRole="MER_SMV" ToRole="HRP_SECTION" />
+    <NavigationProperty Name="MER_ORDERDET" Relationship="Self.FK1_MER_SMV" FromRole="MER_SMV" ToRole="MER_ORDERDET" />
+  </EntityType>
+  <EntityType Name="MER_UNIT">
+    <Key>
+      <PropertyRef Name="UNITCD" />
+    </Key>
+    <Property Name="UNITCD" Type="Byte" Nullable="false" />
+    <Property Name="UNITNM" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BASEFLAG" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CONVUNITCD" Type="Byte" />
+    <Property Name="CONVVALUE" Type="Decimal" Precision="14" Scale="4" />
+    <Property Name="INSERTBY" Type="Int16" Nullable="false" />
+    <Property Name="INSERTDT" Type="DateTime" Nullable="false" />
+    <Property Name="UPDATEBY" Type="Int16" />
+    <Property Name="UPDATEDT" Type="DateTime" />
+    <NavigationProperty Name="MER_YARNINFO" Relationship="Self.FK1_MER_YARNINFO" FromRole="MER_UNIT" ToRole="MER_YARNINFO" />
+    <NavigationProperty Name="PRP_ASSIGNDET" Relationship="Self.FK3_PRP_ASSIGNDET" FromRole="MER_UNIT" ToRole="PRP_ASSIGNDET" />
+    <NavigationProperty Name="PRP_DISTTOFACT" Relationship="Self.FK3_PRP_DISTTOFACT" FromRole="MER_UNIT" ToRole="PRP_DISTTOFACT" />
+    <NavigationProperty Name="PRP_PRODDET" Relationship="Self.FK4_PRP_PRODDET" FromRole="MER_UNIT" ToRole="PRP_PRODDET" />
+  </EntityType>
+  <EntityType Name="MER_YARNCOLOR">
+    <Key>
+      <PropertyRef Name="COLCD" />
+    </Key>
+    <Property Name="COLCD" Type="Int16" Nullable="false" />
+    <Property Name="COLNM" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="MER_LABDIP" Relationship="Self.FK4_MER_LABDIP" FromRole="MER_YARNCOLOR" ToRole="MER_LABDIP" />
+  </EntityType>
+  <EntityType Name="MER_YARNINFO">
+    <Key>
+      <PropertyRef Name="YARNCD" />
+    </Key>
+    <Property Name="YARNCD" Type="Int16" Nullable="false" />
+    <Property Name="YARNDESC" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UNITCD" Type="Byte" Nullable="false" />
+    <Property Name="INSERTBY" Type="Int16" Nullable="false" />
+    <Property Name="INSERTDT" Type="DateTime" Nullable="false" />
+    <Property Name="UPDATEBY" Type="Int16" />
+    <Property Name="UPDATEDT" Type="DateTime" />
+    <NavigationProperty Name="MER_ORDERDET" Relationship="Self.FK5_MER_ORDERDET" FromRole="MER_YARNINFO" ToRole="MER_ORDERDET" />
+    <NavigationProperty Name="MER_SKETCHDET" Relationship="Self.FK4_MER_SKETCHDET" FromRole="MER_YARNINFO" ToRole="MER_SKETCHDET" />
+    <NavigationProperty Name="MER_UNIT" Relationship="Self.FK1_MER_YARNINFO" FromRole="MER_YARNINFO" ToRole="MER_UNIT" />
+  </EntityType>
+  <EntityType Name="PRP_ASSIGNDET">
+    <Key>
+      <PropertyRef Name="ASSIGNCD" />
+      <PropertyRef Name="ASSIGNDETCD" />
+    </Key>
+    <Property Name="ASSIGNCD" Type="Int32" Nullable="false" />
+    <Property Name="ASSIGNDETCD" Type="Int16" Nullable="false" />
+    <Property Name="MODCD" Type="Int32" Nullable="false" />
+    <Property Name="MACQTY" Type="Int16" Nullable="false" />
+    <Property Name="MACEFF" Type="Byte" Nullable="false" />
+    <Property Name="STARTDATE" Type="DateTime" Nullable="false" />
+    <Property Name="ENDDATE" Type="DateTime" Nullable="false" />
+    <Property Name="DAYS" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="ASSIGNQTY" Type="Int32" Nullable="false" />
+    <Property Name="UNITCD" Type="Byte" Nullable="false" />
+    <Property Name="INSERTBY" Type="Int16" Nullable="false" />
+    <Property Name="INSERTDT" Type="DateTime" Nullable="false" />
+    <Property Name="UPDATEBY" Type="Int16" />
+    <Property Name="UPDATEDT" Type="DateTime" />
+    <NavigationProperty Name="MER_UNIT" Relationship="Self.FK3_PRP_ASSIGNDET" FromRole="PRP_ASSIGNDET" ToRole="MER_UNIT" />
+    <NavigationProperty Name="PRP_ASSIGNMAS" Relationship="Self.FK1_PRP_ASSIGNDET" FromRole="PRP_ASSIGNDET" ToRole="PRP_ASSIGNMAS" />
+    <NavigationProperty Name="PRP_MODULE" Relationship="Self.FK2_PRP_ASSIGNDET" FromRole="PRP_ASSIGNDET" ToRole="PRP_MODULE" />
+  </EntityType>
+  <EntityType Name="PRP_ASSIGNMAS">
+    <Key>
+      <PropertyRef Name="ASSIGNCD" />
+    </Key>
+    <Property Name="ASSIGNCD" Type="Int32" Nullable="false" />
+    <Property Name="DISTFACTCD" Type="Int32" />
+    <Property Name="COMPCD" Type="Byte" Nullable="false" />
+    <Property Name="SECCODE" Type="Byte" Nullable="false" />
+    <Property Name="SLNO" Type="Byte" Nullable="false" />
+    <Property Name="ORDSLNO" Type="Int32" Nullable="false" />
+    <Property Name="INSERTBY" Type="Int16" Nullable="false" />
+    <Property Name="INSERTDT" Type="DateTime" Nullable="false" />
+    <Property Name="UPDATEBY" Type="Int16" />
+    <Property Name="UPDATEDT" Type="DateTime" />
+    <NavigationProperty Name="HRP_COMPUNIT" Relationship="Self.FK1_PRP_ASSIGNMAS" FromRole="PRP_ASSIGNMAS" ToRole="HRP_COMPUNIT" />
+    <NavigationProperty Name="HRP_SECTION" Relationship="Self.FK2_PRP_ASSIGNMAS" FromRole="PRP_ASSIGNMAS" ToRole="HRP_SECTION" />
+    <NavigationProperty Name="MER_ORDERDET" Relationship="Self.FK3_PRP_ASSIGNMAS" FromRole="PRP_ASSIGNMAS" ToRole="MER_ORDERDET" />
+    <NavigationProperty Name="PRP_ASSIGNDET" Relationship="Self.FK1_PRP_ASSIGNDET" FromRole="PRP_ASSIGNMAS" ToRole="PRP_ASSIGNDET" />
+    <NavigationProperty Name="PRP_DISTTOFACT" Relationship="Self.FK4_PRP_ASSIGNMAS" FromRole="PRP_ASSIGNMAS" ToRole="PRP_DISTTOFACT" />
+  </EntityType>
+  <EntityType Name="PRP_DISTTOFACT">
+    <Key>
+      <PropertyRef Name="DISTFACTCD" />
+      <PropertyRef Name="COMPCD" />
+    </Key>
+    <Property Name="DISTFACTCD" Type="Int32" Nullable="false" />
+    <Property Name="COMPCD" Type="Byte" Nullable="false" />
+    <Property Name="SLNO" Type="Byte" Nullable="false" />
+    <Property Name="ORDSLNO" Type="Int32" Nullable="false" />
+    <Property Name="ORD_REFNO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UNITCD" Type="Byte" Nullable="false" />
+    <Property Name="DISTQTY" Type="Int32" Nullable="false" />
+    <Property Name="ALLOCATE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="INSERTBY" Type="Int16" Nullable="false" />
+    <Property Name="INSERTDT" Type="DateTime" Nullable="false" />
+    <Property Name="UPDATEBY" Type="Int16" />
+    <Property Name="UPDATEDT" Type="DateTime" />
+    <NavigationProperty Name="HRP_COMPUNIT" Relationship="Self.FK1_PRP_DISTTOFACT" FromRole="PRP_DISTTOFACT" ToRole="HRP_COMPUNIT" />
+    <NavigationProperty Name="MER_ORDERDET" Relationship="Self.FK2_PRP_DISTTOFACT" FromRole="PRP_DISTTOFACT" ToRole="MER_ORDERDET" />
+    <NavigationProperty Name="MER_UNIT" Relationship="Self.FK3_PRP_DISTTOFACT" FromRole="PRP_DISTTOFACT" ToRole="MER_UNIT" />
+    <NavigationProperty Name="PRP_ASSIGNMAS" Relationship="Self.FK4_PRP_ASSIGNMAS" FromRole="PRP_DISTTOFACT" ToRole="PRP_ASSIGNMAS" />
+  </EntityType>
+  <EntityType Name="PRP_MODULE">
+    <Key>
+      <PropertyRef Name="MODCD" />
+    </Key>
+    <Property Name="MODCD" Type="Int32" Nullable="false" />
+    <Property Name="COMPCD" Type="Byte" />
+    <Property Name="SECCODE" Type="Byte" Nullable="false" />
+    <Property Name="MODULENM" Type="Int32" Nullable="false" />
+    <Property Name="MACTYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="GAUGECD" Type="Byte" Nullable="false" />
+    <Property Name="WORKMINTS" Type="Int16" Nullable="false" />
+    <Property Name="MACQTY" Type="Int16" Nullable="false" />
+    <Property Name="MACEFF" Type="Byte" Nullable="false" />
+    <Property Name="PERDAYMINTS" Type="Int32" Nullable="false" />
+    <Property Name="CATEGORY" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="INSERTBY" Type="Int16" Nullable="false" />
+    <Property Name="INSERTDT" Type="DateTime" Nullable="false" />
+    <Property Name="UPDATEBY" Type="Int16" />
+    <Property Name="UPDATEDT" Type="DateTime" />
+    <NavigationProperty Name="HRP_COMPUNIT" Relationship="Self.FK1_PRP_MODULE" FromRole="PRP_MODULE" ToRole="HRP_COMPUNIT" />
+    <NavigationProperty Name="HRP_SECTION" Relationship="Self.FK2_PRP_MODULE" FromRole="PRP_MODULE" ToRole="HRP_SECTION" />
+    <NavigationProperty Name="MER_GAUGE" Relationship="Self.FK3_PRP_MODULE" FromRole="PRP_MODULE" ToRole="MER_GAUGE" />
+    <NavigationProperty Name="PRP_ASSIGNDET" Relationship="Self.FK2_PRP_ASSIGNDET" FromRole="PRP_MODULE" ToRole="PRP_ASSIGNDET" />
+    <NavigationProperty Name="PRP_PRODDET" Relationship="Self.FK3_PRP_PRODDET" FromRole="PRP_MODULE" ToRole="PRP_PRODDET" />
+  </EntityType>
+  <EntityType Name="PRP_PRODDET">
+    <Key>
+      <PropertyRef Name="PRODCD" />
+      <PropertyRef Name="PRODDETCD" />
+    </Key>
+    <Property Name="PRODCD" Type="Int32" Nullable="false" />
+    <Property Name="PRODDETCD" Type="Int16" Nullable="false" />
+    <Property Name="SLNO" Type="Byte" Nullable="false" />
+    <Property Name="ORDSLNO" Type="Int32" Nullable="false" />
+    <Property Name="MODCD" Type="Int32" />
+    <Property Name="PRODQTY" Type="Int32" Nullable="false" />
+    <Property Name="UNITCD" Type="Byte" Nullable="false" />
+    <Property Name="INSERTBY" Type="Int16" Nullable="false" />
+    <Property Name="INSERTDT" Type="DateTime" Nullable="false" />
+    <Property Name="UPDATEBY" Type="Int16" />
+    <Property Name="UPDATEDT" Type="DateTime" />
+    <Property Name="BODY_MC" Type="Byte" />
+    <Property Name="NECK_MC" Type="Byte" />
+    <Property Name="MAC_TYPE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="MER_ORDERDET" Relationship="Self.FK2_PRP_PRODDET" FromRole="PRP_PRODDET" ToRole="MER_ORDERDET" />
+    <NavigationProperty Name="MER_UNIT" Relationship="Self.FK4_PRP_PRODDET" FromRole="PRP_PRODDET" ToRole="MER_UNIT" />
+    <NavigationProperty Name="PRP_MODULE" Relationship="Self.FK3_PRP_PRODDET" FromRole="PRP_PRODDET" ToRole="PRP_MODULE" />
+    <NavigationProperty Name="PRP_PRODMAS" Relationship="Self.FK1_PRP_PRODDET" FromRole="PRP_PRODDET" ToRole="PRP_PRODMAS" />
+  </EntityType>
+  <EntityType Name="PRP_PRODMAS">
+    <Key>
+      <PropertyRef Name="PRODCD" />
+    </Key>
+    <Property Name="PRODCD" Type="Int32" Nullable="false" />
+    <Property Name="COMPCD" Type="Byte" Nullable="false" />
+    <Property Name="SECCODE" Type="Byte" Nullable="false" />
+    <Property Name="PRODDATE" Type="DateTime" Nullable="false" />
+    <Property Name="INSERTBY" Type="Int16" Nullable="false" />
+    <Property Name="INSERTDT" Type="DateTime" Nullable="false" />
+    <Property Name="UPDATEBY" Type="Int16" />
+    <Property Name="UPDATEDT" Type="DateTime" />
+    <NavigationProperty Name="HRP_COMPUNIT" Relationship="Self.FK1_PRP_PRODMAS" FromRole="PRP_PRODMAS" ToRole="HRP_COMPUNIT" />
+    <NavigationProperty Name="HRP_SECTION" Relationship="Self.FK2_PRP_PRODMAS" FromRole="PRP_PRODMAS" ToRole="HRP_SECTION" />
+    <NavigationProperty Name="PRP_PRODDET" Relationship="Self.FK1_PRP_PRODDET" FromRole="PRP_PRODMAS" ToRole="PRP_PRODDET" />
+  </EntityType>
+  <Association Name="FK2_MER_COMPCODE">
+    <End Role="CMN_COUNTRY" Type="Self.CMN_COUNTRY" Multiplicity="1" />
+    <End Role="MER_COMPCODE" Type="Self.MER_COMPCODE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CMN_COUNTRY">
+        <PropertyRef Name="CONCD" />
+      </Principal>
+      <Dependent Role="MER_COMPCODE">
+        <PropertyRef Name="CONCD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK1_PRP_ASSIGNMAS">
+    <End Role="HRP_COMPUNIT" Type="Self.HRP_COMPUNIT" Multiplicity="1" />
+    <End Role="PRP_ASSIGNMAS" Type="Self.PRP_ASSIGNMAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HRP_COMPUNIT">
+        <PropertyRef Name="COMPCD" />
+      </Principal>
+      <Dependent Role="PRP_ASSIGNMAS">
+        <PropertyRef Name="COMPCD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK1_PRP_DISTTOFACT">
+    <End Role="HRP_COMPUNIT" Type="Self.HRP_COMPUNIT" Multiplicity="1" />
+    <End Role="PRP_DISTTOFACT" Type="Self.PRP_DISTTOFACT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HRP_COMPUNIT">
+        <PropertyRef Name="COMPCD" />
+      </Principal>
+      <Dependent Role="PRP_DISTTOFACT">
+        <PropertyRef Name="COMPCD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK1_PRP_MODULE">
+    <End Role="HRP_COMPUNIT" Type="Self.HRP_COMPUNIT" Multiplicity="0..1" />
+    <End Role="PRP_MODULE" Type="Self.PRP_MODULE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HRP_COMPUNIT">
+        <PropertyRef Name="COMPCD" />
+      </Principal>
+      <Dependent Role="PRP_MODULE">
+        <PropertyRef Name="COMPCD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK1_PRP_PRODMAS">
+    <End Role="HRP_COMPUNIT" Type="Self.HRP_COMPUNIT" Multiplicity="1" />
+    <End Role="PRP_PRODMAS" Type="Self.PRP_PRODMAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HRP_COMPUNIT">
+        <PropertyRef Name="COMPCD" />
+      </Principal>
+      <Dependent Role="PRP_PRODMAS">
+        <PropertyRef Name="COMPCD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK2_MER_CP">
+    <End Role="HRP_SECTION" Type="Self.HRP_SECTION" Multiplicity="1" />
+    <End Role="MER_CP" Type="Self.MER_CP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HRP_SECTION">
+        <PropertyRef Name="SECCODE" />
+      </Principal>
+      <Dependent Role="MER_CP">
+        <PropertyRef Name="SECCODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK2_MER_CP_ORDER">
+    <End Role="HRP_SECTION" Type="Self.HRP_SECTION" Multiplicity="1" />
+    <End Role="MER_CP_ORDER" Type="Self.MER_CP_ORDER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HRP_SECTION">
+        <PropertyRef Name="SECCODE" />
+      </Principal>
+      <Dependent Role="MER_CP_ORDER">
+        <PropertyRef Name="SECCODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK2_MER_ORDER_CATEGORY">
+    <End Role="HRP_SECTION" Type="Self.HRP_SECTION" Multiplicity="1" />
+    <End Role="MER_ORDER_CATEGORY" Type="Self.MER_ORDER_CATEGORY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HRP_SECTION">
+        <PropertyRef Name="SECCODE" />
+      </Principal>
+      <Dependent Role="MER_ORDER_CATEGORY">
+        <PropertyRef Name="SECCODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK2_MER_SMV">
+    <End Role="HRP_SECTION" Type="Self.HRP_SECTION" Multiplicity="1" />
+    <End Role="MER_SMV" Type="Self.MER_SMV" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HRP_SECTION">
+        <PropertyRef Name="SECCODE" />
+      </Principal>
+      <Dependent Role="MER_SMV">
+        <PropertyRef Name="SECCODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK2_PRP_ASSIGNMAS">
+    <End Role="HRP_SECTION" Type="Self.HRP_SECTION" Multiplicity="1" />
+    <End Role="PRP_ASSIGNMAS" Type="Self.PRP_ASSIGNMAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HRP_SECTION">
+        <PropertyRef Name="SECCODE" />
+      </Principal>
+      <Dependent Role="PRP_ASSIGNMAS">
+        <PropertyRef Name="SECCODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK2_PRP_MODULE">
+    <End Role="HRP_SECTION" Type="Self.HRP_SECTION" Multiplicity="1" />
+    <End Role="PRP_MODULE" Type="Self.PRP_MODULE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HRP_SECTION">
+        <PropertyRef Name="SECCODE" />
+      </Principal>
+      <Dependent Role="PRP_MODULE">
+        <PropertyRef Name="SECCODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK2_PRP_PRODMAS">
+    <End Role="HRP_SECTION" Type="Self.HRP_SECTION" Multiplicity="1" />
+    <End Role="PRP_PRODMAS" Type="Self.PRP_PRODMAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HRP_SECTION">
+        <PropertyRef Name="SECCODE" />
+      </Principal>
+      <Dependent Role="PRP_PRODMAS">
+        <PropertyRef Name="SECCODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK1_MER_COMPCODE">
+    <End Role="MER_COMPCODE" Type="Self.MER_COMPCODE" Multiplicity="0..1" />
+    <End Role="MER_COMPCODE1" Type="Self.MER_COMPCODE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MER_COMPCODE">
+        <PropertyRef Name="COMPCD" />
+      </Principal>
+      <Dependent Role="MER_COMPCODE1">
+        <PropertyRef Name="BHCD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK1_MER_SKETCHMAS">
+    <End Role="MER_COMPCODE" Type="Self.MER_COMPCODE" Multiplicity="0..1" />
+    <End Role="MER_SKETCHMAS" Type="Self.MER_SKETCHMAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MER_COMPCODE">
+        <PropertyRef Name="COMPCD" />
+      </Principal>
+      <Dependent Role="MER_SKETCHMAS">
+        <PropertyRef Name="COMPCD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK3_MER_ORDERMAS">
+    <End Role="MER_COMPCODE" Type="Self.MER_COMPCODE" Multiplicity="1" />
+    <End Role="MER_ORDERMAS" Type="Self.MER_ORDERMAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MER_COMPCODE">
+        <PropertyRef Name="COMPCD" />
+      </Principal>
+      <Dependent Role="MER_ORDERMAS">
+        <PropertyRef Name="COMPCD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK1_MER_CP">
+    <End Role="MER_ORDERMAS" Type="Self.MER_ORDERMAS" Multiplicity="1" />
+    <End Role="MER_CP" Type="Self.MER_CP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MER_ORDERMAS">
+        <PropertyRef Name="ORDSLNO" />
+      </Principal>
+      <Dependent Role="MER_CP">
+        <PropertyRef Name="ORDSLNO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK1_MER_CP_ORDER">
+    <End Role="MER_ORDERDET" Type="Self.MER_ORDERDET" Multiplicity="1" />
+    <End Role="MER_CP_ORDER" Type="Self.MER_CP_ORDER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MER_ORDERDET">
+        <PropertyRef Name="SLNO" />
+        <PropertyRef Name="ORDSLNO" />
+      </Principal>
+      <Dependent Role="MER_CP_ORDER">
+        <PropertyRef Name="SLNO" />
+        <PropertyRef Name="ORDSLNO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK2_MER_SKETCHMAS">
+    <End Role="MER_GAUGE" Type="Self.MER_GAUGE" Multiplicity="0..1" />
+    <End Role="MER_SKETCHMAS" Type="Self.MER_SKETCHMAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MER_GAUGE">
+        <PropertyRef Name="GAUGECD" />
+      </Principal>
+      <Dependent Role="MER_SKETCHMAS">
+        <PropertyRef Name="GAUGECD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK3_PRP_MODULE">
+    <End Role="MER_GAUGE" Type="Self.MER_GAUGE" Multiplicity="1" />
+    <End Role="PRP_MODULE" Type="Self.PRP_MODULE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MER_GAUGE">
+        <PropertyRef Name="GAUGECD" />
+      </Principal>
+      <Dependent Role="PRP_MODULE">
+        <PropertyRef Name="GAUGECD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK4_MER_ORDERMAS">
+    <End Role="MER_GAUGE" Type="Self.MER_GAUGE" Multiplicity="1" />
+    <End Role="MER_ORDERMAS" Type="Self.MER_ORDERMAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MER_GAUGE">
+        <PropertyRef Name="GAUGECD" />
+      </Principal>
+      <Dependent Role="MER_ORDERMAS">
+        <PropertyRef Name="GAUGECD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK4_MER_LABDIP">
+    <End Role="MER_YARNCOLOR" Type="Self.MER_YARNCOLOR" Multiplicity="1" />
+    <End Role="MER_LABDIP" Type="Self.MER_LABDIP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MER_YARNCOLOR">
+        <PropertyRef Name="COLCD" />
+      </Principal>
+      <Dependent Role="MER_LABDIP">
+        <PropertyRef Name="COLCD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK2_MER_ORDERMAS">
+    <End Role="MER_LCREGIS" Type="Self.MER_LCREGIS" Multiplicity="0..1" />
+    <End Role="MER_ORDERMAS" Type="Self.MER_ORDERMAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MER_LCREGIS">
+        <PropertyRef Name="YEAR" />
+        <PropertyRef Name="LCSLNO" />
+      </Principal>
+      <Dependent Role="MER_ORDERMAS">
+        <PropertyRef Name="LCYEAR" />
+        <PropertyRef Name="LCSLNO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK1_MER_ORDER_CATEGORY">
+    <End Role="MER_ORDERDET" Type="Self.MER_ORDERDET" Multiplicity="1" />
+    <End Role="MER_ORDER_CATEGORY" Type="Self.MER_ORDER_CATEGORY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MER_ORDERDET">
+        <PropertyRef Name="SLNO" />
+        <PropertyRef Name="ORDSLNO" />
+      </Principal>
+      <Dependent Role="MER_ORDER_CATEGORY">
+        <PropertyRef Name="SLNO" />
+        <PropertyRef Name="ORDSLNO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK2_MER_SKETCHDET">
+    <End Role="MER_ORDERCOLOR" Type="Self.MER_ORDERCOLOR" Multiplicity="0..1" />
+    <End Role="MER_SKETCHDET" Type="Self.MER_SKETCHDET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MER_ORDERCOLOR">
+        <PropertyRef Name="ORDCOLCD" />
+      </Principal>
+      <Dependent Role="MER_SKETCHDET">
+        <PropertyRef Name="ORDCOLCD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK3_MER_ORDERDET">
+    <End Role="MER_ORDERCOLOR" Type="Self.MER_ORDERCOLOR" Multiplicity="0..1" />
+    <End Role="MER_ORDERDET" Type="Self.MER_ORDERDET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MER_ORDERCOLOR">
+        <PropertyRef Name="ORDCOLCD" />
+      </Principal>
+      <Dependent Role="MER_ORDERDET">
+        <PropertyRef Name="ORDCOLCD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK1_MER_ORDERDET">
+    <End Role="MER_ORDERMAS" Type="Self.MER_ORDERMAS" Multiplicity="1" />
+    <End Role="MER_ORDERDET" Type="Self.MER_ORDERDET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MER_ORDERMAS">
+        <PropertyRef Name="ORDSLNO" />
+      </Principal>
+      <Dependent Role="MER_ORDERDET">
+        <PropertyRef Name="ORDSLNO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK1_MER_SMV">
+    <End Role="MER_ORDERDET" Type="Self.MER_ORDERDET" Multiplicity="1" />
+    <End Role="MER_SMV" Type="Self.MER_SMV" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MER_ORDERDET">
+        <PropertyRef Name="SLNO" />
+        <PropertyRef Name="ORDSLNO" />
+      </Principal>
+      <Dependent Role="MER_SMV">
+        <PropertyRef Name="SLNO" />
+        <PropertyRef Name="ORDSLNO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK2_MER_ORDERDET">
+    <End Role="MER_SKETCHDET" Type="Self.MER_SKETCHDET" Multiplicity="0..1" />
+    <End Role="MER_ORDERDET" Type="Self.MER_ORDERDET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MER_SKETCHDET">
+        <PropertyRef Name="SKETCHID" />
+        <PropertyRef Name="SKETCHSLNO" />
+      </Principal>
+      <Dependent Role="MER_ORDERDET">
+        <PropertyRef Name="SKETCHID" />
+        <PropertyRef Name="SKETCHSLNO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK2_PRP_DISTTOFACT">
+    <End Role="MER_ORDERDET" Type="Self.MER_ORDERDET" Multiplicity="1" />
+    <End Role="PRP_DISTTOFACT" Type="Self.PRP_DISTTOFACT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MER_ORDERDET">
+        <PropertyRef Name="SLNO" />
+        <PropertyRef Name="ORDSLNO" />
+      </Principal>
+      <Dependent Role="PRP_DISTTOFACT">
+        <PropertyRef Name="SLNO" />
+        <PropertyRef Name="ORDSLNO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK2_PRP_PRODDET">
+    <End Role="MER_ORDERDET" Type="Self.MER_ORDERDET" Multiplicity="1" />
+    <End Role="PRP_PRODDET" Type="Self.PRP_PRODDET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MER_ORDERDET">
+        <PropertyRef Name="SLNO" />
+        <PropertyRef Name="ORDSLNO" />
+      </Principal>
+      <Dependent Role="PRP_PRODDET">
+        <PropertyRef Name="SLNO" />
+        <PropertyRef Name="ORDSLNO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK3_PRP_ASSIGNMAS">
+    <End Role="MER_ORDERDET" Type="Self.MER_ORDERDET" Multiplicity="1" />
+    <End Role="PRP_ASSIGNMAS" Type="Self.PRP_ASSIGNMAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MER_ORDERDET">
+        <PropertyRef Name="SLNO" />
+        <PropertyRef Name="ORDSLNO" />
+      </Principal>
+      <Dependent Role="PRP_ASSIGNMAS">
+        <PropertyRef Name="SLNO" />
+        <PropertyRef Name="ORDSLNO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK4_MER_ORDERDET">
+    <End Role="MER_SIZEINFO" Type="Self.MER_SIZEINFO" Multiplicity="0..1" />
+    <End Role="MER_ORDERDET" Type="Self.MER_ORDERDET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MER_SIZEINFO">
+        <PropertyRef Name="SIZECD" />
+      </Principal>
+      <Dependent Role="MER_ORDERDET">
+        <PropertyRef Name="SIZECD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK5_MER_ORDERDET">
+    <End Role="MER_YARNINFO" Type="Self.MER_YARNINFO" Multiplicity="0..1" />
+    <End Role="MER_ORDERDET" Type="Self.MER_ORDERDET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MER_YARNINFO">
+        <PropertyRef Name="YARNCD" />
+      </Principal>
+      <Dependent Role="MER_ORDERDET">
+        <PropertyRef Name="YARNCD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK1_MER_ORDERMAS">
+    <End Role="MER_SKETCHMAS" Type="Self.MER_SKETCHMAS" Multiplicity="0..1" />
+    <End Role="MER_ORDERMAS" Type="Self.MER_ORDERMAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MER_SKETCHMAS">
+        <PropertyRef Name="SKETCHID" />
+      </Principal>
+      <Dependent Role="MER_ORDERMAS">
+        <PropertyRef Name="SKETCHID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK3_MER_SKETCHDET">
+    <End Role="MER_SIZEINFO" Type="Self.MER_SIZEINFO" Multiplicity="0..1" />
+    <End Role="MER_SKETCHDET" Type="Self.MER_SKETCHDET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MER_SIZEINFO">
+        <PropertyRef Name="SIZECD" />
+      </Principal>
+      <Dependent Role="MER_SKETCHDET">
+        <PropertyRef Name="SIZECD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK1_MER_SKETCHDET">
+    <End Role="MER_SKETCHMAS" Type="Self.MER_SKETCHMAS" Multiplicity="1" />
+    <End Role="MER_SKETCHDET" Type="Self.MER_SKETCHDET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MER_SKETCHMAS">
+        <PropertyRef Name="SKETCHID" />
+      </Principal>
+      <Dependent Role="MER_SKETCHDET">
+        <PropertyRef Name="SKETCHID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK4_MER_SKETCHDET">
+    <End Role="MER_YARNINFO" Type="Self.MER_YARNINFO" Multiplicity="0..1" />
+    <End Role="MER_SKETCHDET" Type="Self.MER_SKETCHDET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MER_YARNINFO">
+        <PropertyRef Name="YARNCD" />
+      </Principal>
+      <Dependent Role="MER_SKETCHDET">
+        <PropertyRef Name="YARNCD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK1_MER_YARNINFO">
+    <End Role="MER_UNIT" Type="Self.MER_UNIT" Multiplicity="1" />
+    <End Role="MER_YARNINFO" Type="Self.MER_YARNINFO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MER_UNIT">
+        <PropertyRef Name="UNITCD" />
+      </Principal>
+      <Dependent Role="MER_YARNINFO">
+        <PropertyRef Name="UNITCD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK3_PRP_ASSIGNDET">
+    <End Role="MER_UNIT" Type="Self.MER_UNIT" Multiplicity="1" />
+    <End Role="PRP_ASSIGNDET" Type="Self.PRP_ASSIGNDET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MER_UNIT">
+        <PropertyRef Name="UNITCD" />
+      </Principal>
+      <Dependent Role="PRP_ASSIGNDET">
+        <PropertyRef Name="UNITCD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK3_PRP_DISTTOFACT">
+    <End Role="MER_UNIT" Type="Self.MER_UNIT" Multiplicity="1" />
+    <End Role="PRP_DISTTOFACT" Type="Self.PRP_DISTTOFACT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MER_UNIT">
+        <PropertyRef Name="UNITCD" />
+      </Principal>
+      <Dependent Role="PRP_DISTTOFACT">
+        <PropertyRef Name="UNITCD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK4_PRP_PRODDET">
+    <End Role="MER_UNIT" Type="Self.MER_UNIT" Multiplicity="1" />
+    <End Role="PRP_PRODDET" Type="Self.PRP_PRODDET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MER_UNIT">
+        <PropertyRef Name="UNITCD" />
+      </Principal>
+      <Dependent Role="PRP_PRODDET">
+        <PropertyRef Name="UNITCD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK1_PRP_ASSIGNDET">
+    <End Role="PRP_ASSIGNMAS" Type="Self.PRP_ASSIGNMAS" Multiplicity="1" />
+    <End Role="PRP_ASSIGNDET" Type="Self.PRP_ASSIGNDET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRP_ASSIGNMAS">
+        <PropertyRef Name="ASSIGNCD" />
+      </Principal>
+      <Dependent Role="PRP_ASSIGNDET">
+        <PropertyRef Name="ASSIGNCD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK2_PRP_ASSIGNDET">
+    <End Role="PRP_MODULE" Type="Self.PRP_MODULE" Multiplicity="1" />
+    <End Role="PRP_ASSIGNDET" Type="Self.PRP_ASSIGNDET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRP_MODULE">
+        <PropertyRef Name="MODCD" />
+      </Principal>
+      <Dependent Role="PRP_ASSIGNDET">
+        <PropertyRef Name="MODCD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK4_PRP_ASSIGNMAS">
+    <End Role="PRP_DISTTOFACT" Type="Self.PRP_DISTTOFACT" Multiplicity="0..1" />
+    <End Role="PRP_ASSIGNMAS" Type="Self.PRP_ASSIGNMAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRP_DISTTOFACT">
+        <PropertyRef Name="DISTFACTCD" />
+        <PropertyRef Name="COMPCD" />
+      </Principal>
+      <Dependent Role="PRP_ASSIGNMAS">
+        <PropertyRef Name="DISTFACTCD" />
+        <PropertyRef Name="COMPCD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK3_PRP_PRODDET">
+    <End Role="PRP_MODULE" Type="Self.PRP_MODULE" Multiplicity="0..1" />
+    <End Role="PRP_PRODDET" Type="Self.PRP_PRODDET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRP_MODULE">
+        <PropertyRef Name="MODCD" />
+      </Principal>
+      <Dependent Role="PRP_PRODDET">
+        <PropertyRef Name="MODCD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK1_PRP_PRODDET">
+    <End Role="PRP_PRODMAS" Type="Self.PRP_PRODMAS" Multiplicity="1" />
+    <End Role="PRP_PRODDET" Type="Self.PRP_PRODDET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRP_PRODMAS">
+        <PropertyRef Name="PRODCD" />
+      </Principal>
+      <Dependent Role="PRP_PRODDET">
+        <PropertyRef Name="PRODCD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ProductionPlannerEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CMN_COUNTRY" EntityType="Self.CMN_COUNTRY" />
+    <EntitySet Name="HRP_COMPUNIT" EntityType="Self.HRP_COMPUNIT" />
+    <EntitySet Name="HRP_HOLIDAY" EntityType="Self.HRP_HOLIDAY" />
+    <EntitySet Name="HRP_SECTION" EntityType="Self.HRP_SECTION" />
+    <EntitySet Name="MER_COMPCODE" EntityType="Self.MER_COMPCODE" />
+    <EntitySet Name="MER_CP" EntityType="Self.MER_CP" />
+    <EntitySet Name="MER_CP_ORDER" EntityType="Self.MER_CP_ORDER" />
+    <EntitySet Name="MER_GAUGE" EntityType="Self.MER_GAUGE" />
+    <EntitySet Name="MER_LABDIP" EntityType="Self.MER_LABDIP" />
+    <EntitySet Name="MER_LCREGIS" EntityType="Self.MER_LCREGIS" />
+    <EntitySet Name="MER_ORDER_CATEGORY" EntityType="Self.MER_ORDER_CATEGORY" />
+    <EntitySet Name="MER_ORDERCOLOR" EntityType="Self.MER_ORDERCOLOR" />
+    <EntitySet Name="MER_ORDERDET" EntityType="Self.MER_ORDERDET" />
+    <EntitySet Name="MER_ORDERMAS" EntityType="Self.MER_ORDERMAS" />
+    <EntitySet Name="MER_SIZEINFO" EntityType="Self.MER_SIZEINFO" />
+    <EntitySet Name="MER_SKETCHDET" EntityType="Self.MER_SKETCHDET" />
+    <EntitySet Name="MER_SKETCHMAS" EntityType="Self.MER_SKETCHMAS" />
+    <EntitySet Name="MER_SMV" EntityType="Self.MER_SMV" />
+    <EntitySet Name="MER_UNIT" EntityType="Self.MER_UNIT" />
+    <EntitySet Name="MER_YARNCOLOR" EntityType="Self.MER_YARNCOLOR" />
+    <EntitySet Name="MER_YARNINFO" EntityType="Self.MER_YARNINFO" />
+    <EntitySet Name="PRP_ASSIGNDET" EntityType="Self.PRP_ASSIGNDET" />
+    <EntitySet Name="PRP_ASSIGNMAS" EntityType="Self.PRP_ASSIGNMAS" />
+    <EntitySet Name="PRP_DISTTOFACT" EntityType="Self.PRP_DISTTOFACT" />
+    <EntitySet Name="PRP_MODULE" EntityType="Self.PRP_MODULE" />
+    <EntitySet Name="PRP_PRODDET" EntityType="Self.PRP_PRODDET" />
+    <EntitySet Name="PRP_PRODMAS" EntityType="Self.PRP_PRODMAS" />
+    <AssociationSet Name="FK2_MER_COMPCODE" Association="Self.FK2_MER_COMPCODE">
+      <End Role="CMN_COUNTRY" EntitySet="CMN_COUNTRY" />
+      <End Role="MER_COMPCODE" EntitySet="MER_COMPCODE" />
+    </AssociationSet>
+    <AssociationSet Name="FK1_PRP_ASSIGNMAS" Association="Self.FK1_PRP_ASSIGNMAS">
+      <End Role="HRP_COMPUNIT" EntitySet="HRP_COMPUNIT" />
+      <End Role="PRP_ASSIGNMAS" EntitySet="PRP_ASSIGNMAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK1_PRP_DISTTOFACT" Association="Self.FK1_PRP_DISTTOFACT">
+      <End Role="HRP_COMPUNIT" EntitySet="HRP_COMPUNIT" />
+      <End Role="PRP_DISTTOFACT" EntitySet="PRP_DISTTOFACT" />
+    </AssociationSet>
+    <AssociationSet Name="FK1_PRP_MODULE" Association="Self.FK1_PRP_MODULE">
+      <End Role="HRP_COMPUNIT" EntitySet="HRP_COMPUNIT" />
+      <End Role="PRP_MODULE" EntitySet="PRP_MODULE" />
+    </AssociationSet>
+    <AssociationSet Name="FK1_PRP_PRODMAS" Association="Self.FK1_PRP_PRODMAS">
+      <End Role="HRP_COMPUNIT" EntitySet="HRP_COMPUNIT" />
+      <End Role="PRP_PRODMAS" EntitySet="PRP_PRODMAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK2_MER_CP" Association="Self.FK2_MER_CP">
+      <End Role="HRP_SECTION" EntitySet="HRP_SECTION" />
+      <End Role="MER_CP" EntitySet="MER_CP" />
+    </AssociationSet>
+    <AssociationSet Name="FK2_MER_CP_ORDER" Association="Self.FK2_MER_CP_ORDER">
+      <End Role="HRP_SECTION" EntitySet="HRP_SECTION" />
+      <End Role="MER_CP_ORDER" EntitySet="MER_CP_ORDER" />
+    </AssociationSet>
+    <AssociationSet Name="FK2_MER_ORDER_CATEGORY" Association="Self.FK2_MER_ORDER_CATEGORY">
+      <End Role="HRP_SECTION" EntitySet="HRP_SECTION" />
+      <End Role="MER_ORDER_CATEGORY" EntitySet="MER_ORDER_CATEGORY" />
+    </AssociationSet>
+    <AssociationSet Name="FK2_MER_SMV" Association="Self.FK2_MER_SMV">
+      <End Role="HRP_SECTION" EntitySet="HRP_SECTION" />
+      <End Role="MER_SMV" EntitySet="MER_SMV" />
+    </AssociationSet>
+    <AssociationSet Name="FK2_PRP_ASSIGNMAS" Association="Self.FK2_PRP_ASSIGNMAS">
+      <End Role="HRP_SECTION" EntitySet="HRP_SECTION" />
+      <End Role="PRP_ASSIGNMAS" EntitySet="PRP_ASSIGNMAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK2_PRP_MODULE" Association="Self.FK2_PRP_MODULE">
+      <End Role="HRP_SECTION" EntitySet="HRP_SECTION" />
+      <End Role="PRP_MODULE" EntitySet="PRP_MODULE" />
+    </AssociationSet>
+    <AssociationSet Name="FK2_PRP_PRODMAS" Association="Self.FK2_PRP_PRODMAS">
+      <End Role="HRP_SECTION" EntitySet="HRP_SECTION" />
+      <End Role="PRP_PRODMAS" EntitySet="PRP_PRODMAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK1_MER_COMPCODE" Association="Self.FK1_MER_COMPCODE">
+      <End Role="MER_COMPCODE" EntitySet="MER_COMPCODE" />
+      <End Role="MER_COMPCODE1" EntitySet="MER_COMPCODE" />
+    </AssociationSet>
+    <AssociationSet Name="FK1_MER_SKETCHMAS" Association="Self.FK1_MER_SKETCHMAS">
+      <End Role="MER_COMPCODE" EntitySet="MER_COMPCODE" />
+      <End Role="MER_SKETCHMAS" EntitySet="MER_SKETCHMAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK3_MER_ORDERMAS" Association="Self.FK3_MER_ORDERMAS">
+      <End Role="MER_COMPCODE" EntitySet="MER_COMPCODE" />
+      <End Role="MER_ORDERMAS" EntitySet="MER_ORDERMAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK1_MER_CP" Association="Self.FK1_MER_CP">
+      <End Role="MER_ORDERMAS" EntitySet="MER_ORDERMAS" />
+      <End Role="MER_CP" EntitySet="MER_CP" />
+    </AssociationSet>
+    <AssociationSet Name="FK1_MER_CP_ORDER" Association="Self.FK1_MER_CP_ORDER">
+      <End Role="MER_ORDERDET" EntitySet="MER_ORDERDET" />
+      <End Role="MER_CP_ORDER" EntitySet="MER_CP_ORDER" />
+    </AssociationSet>
+    <AssociationSet Name="FK2_MER_SKETCHMAS" Association="Self.FK2_MER_SKETCHMAS">
+      <End Role="MER_GAUGE" EntitySet="MER_GAUGE" />
+      <End Role="MER_SKETCHMAS" EntitySet="MER_SKETCHMAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK3_PRP_MODULE" Association="Self.FK3_PRP_MODULE">
+      <End Role="MER_GAUGE" EntitySet="MER_GAUGE" />
+      <End Role="PRP_MODULE" EntitySet="PRP_MODULE" />
+    </AssociationSet>
+    <AssociationSet Name="FK4_MER_ORDERMAS" Association="Self.FK4_MER_ORDERMAS">
+      <End Role="MER_GAUGE" EntitySet="MER_GAUGE" />
+      <End Role="MER_ORDERMAS" EntitySet="MER_ORDERMAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK4_MER_LABDIP" Association="Self.FK4_MER_LABDIP">
+      <End Role="MER_YARNCOLOR" EntitySet="MER_YARNCOLOR" />
+      <End Role="MER_LABDIP" EntitySet="MER_LABDIP" />
+    </AssociationSet>
+    <AssociationSet Name="FK2_MER_ORDERMAS" Association="Self.FK2_MER_ORDERMAS">
+      <End Role="MER_LCREGIS" EntitySet="MER_LCREGIS" />
+      <End Role="MER_ORDERMAS" EntitySet="MER_ORDERMAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK1_MER_ORDER_CATEGORY" Association="Self.FK1_MER_ORDER_CATEGORY">
+      <End Role="MER_ORDERDET" EntitySet="MER_ORDERDET" />
+      <End Role="MER_ORDER_CATEGORY" EntitySet="MER_ORDER_CATEGORY" />
+    </AssociationSet>
+    <AssociationSet Name="FK2_MER_SKETCHDET" Association="Self.FK2_MER_SKETCHDET">
+      <End Role="MER_ORDERCOLOR" EntitySet="MER_ORDERCOLOR" />
+      <End Role="MER_SKETCHDET" EntitySet="MER_SKETCHDET" />
+    </AssociationSet>
+    <AssociationSet Name="FK3_MER_ORDERDET" Association="Self.FK3_MER_ORDERDET">
+      <End Role="MER_ORDERCOLOR" EntitySet="MER_ORDERCOLOR" />
+      <End Role="MER_ORDERDET" EntitySet="MER_ORDERDET" />
+    </AssociationSet>
+    <AssociationSet Name="FK1_MER_ORDERDET" Association="Self.FK1_MER_ORDERDET">
+      <End Role="MER_ORDERMAS" EntitySet="MER_ORDERMAS" />
+      <End Role="MER_ORDERDET" EntitySet="MER_ORDERDET" />
+    </AssociationSet>
+    <AssociationSet Name="FK1_MER_SMV" Association="Self.FK1_MER_SMV">
+      <End Role="MER_ORDERDET" EntitySet="MER_ORDERDET" />
+      <End Role="MER_SMV" EntitySet="MER_SMV" />
+    </AssociationSet>
+    <AssociationSet Name="FK2_MER_ORDERDET" Association="Self.FK2_MER_ORDERDET">
+      <End Role="MER_SKETCHDET" EntitySet="MER_SKETCHDET" />
+      <End Role="MER_ORDERDET" EntitySet="MER_ORDERDET" />
+    </AssociationSet>
+    <AssociationSet Name="FK2_PRP_DISTTOFACT" Association="Self.FK2_PRP_DISTTOFACT">
+      <End Role="MER_ORDERDET" EntitySet="MER_ORDERDET" />
+      <End Role="PRP_DISTTOFACT" EntitySet="PRP_DISTTOFACT" />
+    </AssociationSet>
+    <AssociationSet Name="FK2_PRP_PRODDET" Association="Self.FK2_PRP_PRODDET">
+      <End Role="MER_ORDERDET" EntitySet="MER_ORDERDET" />
+      <End Role="PRP_PRODDET" EntitySet="PRP_PRODDET" />
+    </AssociationSet>
+    <AssociationSet Name="FK3_PRP_ASSIGNMAS" Association="Self.FK3_PRP_ASSIGNMAS">
+      <End Role="MER_ORDERDET" EntitySet="MER_ORDERDET" />
+      <End Role="PRP_ASSIGNMAS" EntitySet="PRP_ASSIGNMAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK4_MER_ORDERDET" Association="Self.FK4_MER_ORDERDET">
+      <End Role="MER_SIZEINFO" EntitySet="MER_SIZEINFO" />
+      <End Role="MER_ORDERDET" EntitySet="MER_ORDERDET" />
+    </AssociationSet>
+    <AssociationSet Name="FK5_MER_ORDERDET" Association="Self.FK5_MER_ORDERDET">
+      <End Role="MER_YARNINFO" EntitySet="MER_YARNINFO" />
+      <End Role="MER_ORDERDET" EntitySet="MER_ORDERDET" />
+    </AssociationSet>
+    <AssociationSet Name="FK1_MER_ORDERMAS" Association="Self.FK1_MER_ORDERMAS">
+      <End Role="MER_SKETCHMAS" EntitySet="MER_SKETCHMAS" />
+      <End Role="MER_ORDERMAS" EntitySet="MER_ORDERMAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK3_MER_SKETCHDET" Association="Self.FK3_MER_SKETCHDET">
+      <End Role="MER_SIZEINFO" EntitySet="MER_SIZEINFO" />
+      <End Role="MER_SKETCHDET" EntitySet="MER_SKETCHDET" />
+    </AssociationSet>
+    <AssociationSet Name="FK1_MER_SKETCHDET" Association="Self.FK1_MER_SKETCHDET">
+      <End Role="MER_SKETCHMAS" EntitySet="MER_SKETCHMAS" />
+      <End Role="MER_SKETCHDET" EntitySet="MER_SKETCHDET" />
+    </AssociationSet>
+    <AssociationSet Name="FK4_MER_SKETCHDET" Association="Self.FK4_MER_SKETCHDET">
+      <End Role="MER_YARNINFO" EntitySet="MER_YARNINFO" />
+      <End Role="MER_SKETCHDET" EntitySet="MER_SKETCHDET" />
+    </AssociationSet>
+    <AssociationSet Name="FK1_MER_YARNINFO" Association="Self.FK1_MER_YARNINFO">
+      <End Role="MER_UNIT" EntitySet="MER_UNIT" />
+      <End Role="MER_YARNINFO" EntitySet="MER_YARNINFO" />
+    </AssociationSet>
+    <AssociationSet Name="FK3_PRP_ASSIGNDET" Association="Self.FK3_PRP_ASSIGNDET">
+      <End Role="MER_UNIT" EntitySet="MER_UNIT" />
+      <End Role="PRP_ASSIGNDET" EntitySet="PRP_ASSIGNDET" />
+    </AssociationSet>
+    <AssociationSet Name="FK3_PRP_DISTTOFACT" Association="Self.FK3_PRP_DISTTOFACT">
+      <End Role="MER_UNIT" EntitySet="MER_UNIT" />
+      <End Role="PRP_DISTTOFACT" EntitySet="PRP_DISTTOFACT" />
+    </AssociationSet>
+    <AssociationSet Name="FK4_PRP_PRODDET" Association="Self.FK4_PRP_PRODDET">
+      <End Role="MER_UNIT" EntitySet="MER_UNIT" />
+      <End Role="PRP_PRODDET" EntitySet="PRP_PRODDET" />
+    </AssociationSet>
+    <AssociationSet Name="FK1_PRP_ASSIGNDET" Association="Self.FK1_PRP_ASSIGNDET">
+      <End Role="PRP_ASSIGNMAS" EntitySet="PRP_ASSIGNMAS" />
+      <End Role="PRP_ASSIGNDET" EntitySet="PRP_ASSIGNDET" />
+    </AssociationSet>
+    <AssociationSet Name="FK2_PRP_ASSIGNDET" Association="Self.FK2_PRP_ASSIGNDET">
+      <End Role="PRP_MODULE" EntitySet="PRP_MODULE" />
+      <End Role="PRP_ASSIGNDET" EntitySet="PRP_ASSIGNDET" />
+    </AssociationSet>
+    <AssociationSet Name="FK4_PRP_ASSIGNMAS" Association="Self.FK4_PRP_ASSIGNMAS">
+      <End Role="PRP_DISTTOFACT" EntitySet="PRP_DISTTOFACT" />
+      <End Role="PRP_ASSIGNMAS" EntitySet="PRP_ASSIGNMAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK3_PRP_PRODDET" Association="Self.FK3_PRP_PRODDET">
+      <End Role="PRP_MODULE" EntitySet="PRP_MODULE" />
+      <End Role="PRP_PRODDET" EntitySet="PRP_PRODDET" />
+    </AssociationSet>
+    <AssociationSet Name="FK1_PRP_PRODDET" Association="Self.FK1_PRP_PRODDET">
+      <End Role="PRP_PRODMAS" EntitySet="PRP_PRODMAS" />
+      <End Role="PRP_PRODDET" EntitySet="PRP_PRODDET" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

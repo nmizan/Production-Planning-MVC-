@@ -1,0 +1,300 @@
+﻿@model Production_Planner.Models.PRP_MODULE
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<h2 style=" text-align: center; text-decoration: underline;">Module Information</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+      
+        <hr />
+        @Html.ValidationSummary(true)
+
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.MODCD, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MODCD)
+                @Html.ValidationMessageFor(model => model.MODCD)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.COMPCD, "COMPCD", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("COMPCD", String.Empty)
+                @Html.ValidationMessageFor(model => model.COMPCD)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SECCODE, "SECCODE", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("SECCODE", String.Empty)
+                @Html.ValidationMessageFor(model => model.SECCODE)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MODULENM, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MODULENM)
+                @Html.ValidationMessageFor(model => model.MODULENM)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MACTYPE, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MACTYPE)
+                @Html.ValidationMessageFor(model => model.MACTYPE)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.GAUGECD, "GAUGECD", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("GAUGECD", String.Empty)
+                @Html.ValidationMessageFor(model => model.GAUGECD)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.WORKMINTS, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.WORKMINTS)
+                @Html.ValidationMessageFor(model => model.WORKMINTS)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MACQTY, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MACQTY)
+                @Html.ValidationMessageFor(model => model.MACQTY)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MACEFF, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MACEFF)
+                @Html.ValidationMessageFor(model => model.MACEFF)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PERDAYMINTS, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PERDAYMINTS)
+                @Html.ValidationMessageFor(model => model.PERDAYMINTS)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CATEGORY, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CATEGORY)
+                @Html.ValidationMessageFor(model => model.CATEGORY)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.INSERTBY, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.INSERTBY)
+                @Html.ValidationMessageFor(model => model.INSERTBY)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.INSERTDT, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.INSERTDT)
+                @Html.ValidationMessageFor(model => model.INSERTDT)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.UPDATEBY, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.UPDATEBY)
+                @Html.ValidationMessageFor(model => model.UPDATEBY)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.UPDATEDT, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.UPDATEDT)
+                @Html.ValidationMessageFor(model => model.UPDATEDT)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>*@
+
+        <style type="text/css">
+            table, td {
+                padding: 5px;
+                margin-left: 20px;
+                margin-top: 0px;
+            }
+        </style>
+
+        <table>
+            <tr>
+                <td>Module Code</td>
+                <td>
+                    @Html.TextBoxFor(model => model.MODCD, new { @style = "width:240px;" })
+                    @Html.ValidationMessageFor(model => model.MODCD)
+                </td>
+            </tr>
+            <tr>
+                <td>Company Name</td>
+                <td>
+                  @Html.DropDownList("COMPCD", null, "------Select Company------",new { @style = "width:240px;" })
+                  @Html.ValidationMessageFor(model => model.COMPCD)
+                </td>
+            </tr>
+
+            <tr>
+                <td>Section Name</td>
+        
+                <td>
+                    @Html.DropDownList("SECCODE", null, "-------Select Section-------",new { @style = "width:240px;" })
+                    @Html.ValidationMessageFor(model => model.SECCODE)
+                </td>
+            </tr>
+            <tr>
+                <td>Module Name</td>
+                <td>
+                    @Html.TextBoxFor(model => model.MODULENM, new { @style = "width:240px;" })
+                    @Html.ValidationMessageFor(model => model.MODULENM)
+                </td>
+            </tr>
+            <tr>
+                <td> Machine Type </td>
+                <td>
+                    @Html.TextBoxFor(model => model.MACTYPE, new { @style = "width:240px;" })
+                    @Html.ValidationMessageFor(model => model.MACTYPE)
+                </td>
+            </tr>
+            <tr>
+                <td> Gauge Name</td>
+                <td>
+                    @Html.DropDownList("GAUGECD", null, "--------Select Gauge--------", new { @style = "width:240px;" })
+                    @Html.ValidationMessageFor(model => model.GAUGECD)
+                </td>
+            </tr>
+            <tr>
+                <td>Working Minutes</td>
+                <td>
+                    @Html.TextBoxFor(model => model.WORKMINTS, new { @style = "width:240px;background-color:#e0e0d1;", @Value = "1440", id = "workingMints", @readonly = true })
+                    @Html.ValidationMessageFor(model => model.WORKMINTS)
+                </td>
+            </tr>
+            <tr>
+                <td> Machine Quantity</td>
+                <td>
+                    @Html.TextBoxFor(model => model.MACQTY, new { @style = "width:240px;", id = "machineQty", onchange = "CalculatePerdaymints()", onkeyup = "this.onchange();", oninput = "this.onchange();" })
+                    @Html.ValidationMessageFor(model => model.MACQTY)
+                </td>
+
+            </tr>
+          
+            <tr>
+                <td>Machine Efficiency(%)</td>
+                <td>
+                    @Html.TextBoxFor(model => model.MACEFF, new { @style = "width:240px;", id = "machineEfficncy" , onchange= "CalculatePerdaymints()", onkeyup="this.onchange();" , oninput="this.onchange();"})
+                    @Html.ValidationMessageFor(model => model.MACEFF)
+                </td>
+            </tr>
+            <tr>
+                <td> Per Day Minutes</td>
+                <td>
+                    @Html.TextBoxFor(model => model.PERDAYMINTS, new { @style = "width:240px;", id = "perdayMints"})
+                    @Html.ValidationMessageFor(model => model.PERDAYMINTS)
+                </td>
+            </tr>
+            <tr>
+                <td>Category</td>
+                <td>
+                    @*@Html.TextBoxFor(model => model.CATEGORY, new { @style = "width:240px;" })*@
+                    @Html.DropDownList("Category", null, "------Select Category------", new { @style = "width:240px;" })
+                    @Html.ValidationMessageFor(model => model.CATEGORY)
+                </td>
+            </tr>
+    
+            <tr>
+                <td>Inserted By</td>
+                <td>
+                    @Html.TextBoxFor(model => model.INSERTBY, new { @style = "width:240px;" })
+                    @Html.ValidationMessageFor(model => model.INSERTBY)
+                </td>
+            </tr>
+            <tr>
+                <td>Inserted Date</td>
+                <td>
+                    @Html.TextBoxFor(model => model.INSERTDT, new { @style = "width:240px;" })
+                    @Html.ValidationMessageFor(model => model.INSERTDT)
+                </td>
+            <tr>
+                <td>Updated By</td>
+                <td>
+                    @Html.TextBoxFor(model => model.UPDATEBY, new { @style = "width:240px;" })
+                    @Html.ValidationMessageFor(model => model.UPDATEBY)
+                </td>
+            </tr>
+            <tr>
+                <td>Updated Date</td>
+                <td>
+                    @Html.TextBoxFor(model => model.UPDATEDT, new { @style = "width:240px;" })
+                    @Html.ValidationMessageFor(model => model.UPDATEDT)
+                </td>
+            </tr>
+
+        </table>
+
+        <div class="form-group" style=" margin-left:25px;padding-top:10px;">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-sm btn-success" />
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        </div>
+    </div>
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+<script>
+    function CalculatePerdaymints() {
+        
+        if ($.trim($('#machineQty').val()) != '' &&  $.trim($('#machineEfficncy').val())!= '') {
+            document.getElementById("perdayMints").value = parseInt(document.getElementById("machineEfficncy").value / 100 * parseInt(document.getElementById("machineQty").value) * parseInt(document.getElementById("workingMints").value));
+            
+        }
+        else if ($.trim($('#machineQty').val()) != '' && $.trim($('#machineEfficncy').val()) == '') {
+            document.getElementById("perdayMints").value = parseInt(parseInt(document.getElementById("machineQty").value) * parseInt(document.getElementById("workingMints").value));
+        }
+        else if ($.trim($('#machineQty').val()) == '' && $.trim($('#machineEfficncy').val()) != '') {
+            document.getElementById("perdayMints").value = parseInt(document.getElementById("machineEfficncy").value / 100 * parseInt(document.getElementById("workingMints").value));
+        }
+        else if ($.trim($('#machineQty').val()) == '' && $.trim($('#machineEfficncy').val()) == '') {
+            document.getElementById("perdayMints").value = 0;
+             
+        }
+
+    };
+</script>
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>AngularJS.Utils.Pagination</id>
+    <version>0.11.1</version>
+    <title>AngularJS.Utils.Pagination</title>
+    <authors>Michael Bromley</authors>
+    <owners>Michael Bromley</owners>
+    <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>https://github.com/michaelbromley/angularUtils/tree/master/src/directives/pagination</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Magical automatic pagination for anything in AngularJS</description>
+    <summary />
+    <tags>AngularJS Utils Pagination</tags>
+    <dependencies>
+      <dependency id="AngularJS.Core" version="1.2.0" />
+    </dependencies>
+  </metadata>
+</package>

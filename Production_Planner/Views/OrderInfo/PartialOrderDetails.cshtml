@@ -1,0 +1,39 @@
+﻿
+
+<link href="http://code.jquery.com/ui/1.12.1/themes/redmond/jquery-ui.css" rel="stylesheet" />
+
+
+<table>
+    <tr>
+        <td><br /></td>
+
+    </tr>
+
+    <tr>
+
+        <td>@Html.TextBox("OrderRefNo", null, new { style = "width:100px;" })</td>
+        <td>@Html.DropDownList("Section", "-- Select Section --")</td>
+        <td>@Html.TextBox("SMV", null, new { style = "width:100px;" })</td>
+        <td>
+            @Html.DropDownList("Category", new List<SelectListItem>
+            {
+                new SelectListItem {Text = "A", Value = "A"},
+                new SelectListItem {Text = "B", Value = "B"},
+                new SelectListItem {Text = "C", Value = "C"},
+                new SelectListItem {Text = "D", Value = "D"},
+                new SelectListItem {Text = "E", Value = "E"},
+                new SelectListItem {Text = "F", Value = "F"},
+                new SelectListItem {Text = "G", Value = "G"},
+                new SelectListItem {Text = "H", Value = "H"}
+            }, "--Select Category--")
+    </td>
+        <td>@Html.TextBox("StartDate", null, new { style = "width:100px;", @readonly = "readonly" })</td>
+        <td>@Html.TextBox("EndDate", null, new { style = "width:100px;",  @readonly = "readonly" })</td>
+        <td><input type="button" class="btn btn-primary btn-xs" value="Add Order" onclick='addNewOrderDetailsRow();' /></td>
+
+        <td>
+            <input type="button" class="btn btn-danger btn-xs" value="Delete" onclick='$(this).parent().parent().parent().remove();' />
+        </td>
+    </tr>
+</table>
+

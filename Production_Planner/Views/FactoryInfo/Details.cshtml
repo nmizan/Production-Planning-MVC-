@@ -1,0 +1,157 @@
+﻿@model Production_Planner.Models.HRP_COMPUNIT
+
+@{
+    ViewBag.Title = "Details";
+   
+}
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<h2 style=" text-align: center; text-decoration: underline;">Factory Information</h2>
+
+
+<div>
+  
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+           Company Name:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COMPNM)
+        </dd>
+
+        <dt>
+            Short Name:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SHORTNM)
+        </dd>
+
+        <dt>
+          Company Name(Bangla):
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COMPNMB)
+        </dd>
+
+        <dt>
+           Address :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ADDRS1)
+        </dd>
+
+        <dt>
+            @*Address 2:*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ADDRS2)
+        </dd>
+
+        <dt>
+            Address (Bangla):
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ADDRSBG1)
+        </dd>
+
+        <dt>
+            @*Address 2 BG:*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ADDRSBG2)
+        </dd>
+
+        <dt>
+           Phone:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PHONE)
+        </dd>
+
+        <dt>
+           Mobile No:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MOBILNO)
+        </dd>
+
+        <dt>
+            Fax:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FAX)
+        </dd>
+
+        <dt>
+            Email:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMAIL)
+        </dd>
+
+        <dt>
+           Web
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WEB)
+        </dd>
+
+        <dt>
+          Log Image:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LOGO_IMAGE)
+        </dd>
+
+        <dt>
+            Inserted By:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INSERTBY)
+        </dd>
+
+        <dt>
+            Inserted Date:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INSERTDT)
+        </dd>
+
+        <dt>
+           Updated By:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UPDATEBY)
+        </dd>
+
+        <dt>
+           Updated Date:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UPDATEDT)
+        </dd>
+
+    </dl>
+</div>
+<p style=" margin-left:90px; font-size:15px;">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.COMPCD }) |
+    @Html.ActionLink("Delete", "Delete", new { id = Model.COMPCD })|
+    @Html.ActionLink("Back to List", "Index")
+</p>

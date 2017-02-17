@@ -1,0 +1,516 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="ProductionPlannerEntities">
+    <EntitySetMapping Name="CMN_COUNTRY">
+      <EntityTypeMapping TypeName="Model.CMN_COUNTRY">
+        <MappingFragment StoreEntitySet="CMN_COUNTRY">
+          <ScalarProperty Name="CONCD" ColumnName="CONCD" />
+          <ScalarProperty Name="CONNM" ColumnName="CONNM" />
+          <ScalarProperty Name="COUNTRY_CODE" ColumnName="COUNTRY_CODE" />
+          <ScalarProperty Name="INSERTBY" ColumnName="INSERTBY" />
+          <ScalarProperty Name="INSERTDT" ColumnName="INSERTDT" />
+          <ScalarProperty Name="UPDATEBY" ColumnName="UPDATEBY" />
+          <ScalarProperty Name="UPDATEDT" ColumnName="UPDATEDT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HRP_COMPUNIT">
+      <EntityTypeMapping TypeName="Model.HRP_COMPUNIT">
+        <MappingFragment StoreEntitySet="HRP_COMPUNIT">
+          <ScalarProperty Name="COMPCD" ColumnName="COMPCD" />
+          <ScalarProperty Name="COMPNM" ColumnName="COMPNM" />
+          <ScalarProperty Name="SHORTNM" ColumnName="SHORTNM" />
+          <ScalarProperty Name="COMPNMB" ColumnName="COMPNMB" />
+          <ScalarProperty Name="ADDRS1" ColumnName="ADDRS1" />
+          <ScalarProperty Name="ADDRS2" ColumnName="ADDRS2" />
+          <ScalarProperty Name="ADDRSBG1" ColumnName="ADDRSBG1" />
+          <ScalarProperty Name="ADDRSBG2" ColumnName="ADDRSBG2" />
+          <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+          <ScalarProperty Name="MOBILNO" ColumnName="MOBILNO" />
+          <ScalarProperty Name="FAX" ColumnName="FAX" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="WEB" ColumnName="WEB" />
+          <ScalarProperty Name="LOGO_IMAGE" ColumnName="LOGO_IMAGE" />
+          <ScalarProperty Name="INSERTBY" ColumnName="INSERTBY" />
+          <ScalarProperty Name="INSERTDT" ColumnName="INSERTDT" />
+          <ScalarProperty Name="UPDATEBY" ColumnName="UPDATEBY" />
+          <ScalarProperty Name="UPDATEDT" ColumnName="UPDATEDT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HRP_HOLIDAY">
+      <EntityTypeMapping TypeName="Model.HRP_HOLIDAY">
+        <MappingFragment StoreEntitySet="HRP_HOLIDAY">
+          <ScalarProperty Name="HOLDATE" ColumnName="HOLDATE" />
+          <ScalarProperty Name="HOLTYPE" ColumnName="HOLTYPE" />
+          <ScalarProperty Name="WDAYBEFOREHDAY" ColumnName="WDAYBEFOREHDAY" />
+          <ScalarProperty Name="WDAYAFTERHDAY" ColumnName="WDAYAFTERHDAY" />
+          <ScalarProperty Name="WORKDAY" ColumnName="WORKDAY" />
+          <ScalarProperty Name="HOLREMARKS" ColumnName="HOLREMARKS" />
+          <ScalarProperty Name="INSERTBY" ColumnName="INSERTBY" />
+          <ScalarProperty Name="INSERTDT" ColumnName="INSERTDT" />
+          <ScalarProperty Name="UPDATEBY" ColumnName="UPDATEBY" />
+          <ScalarProperty Name="UPDATEDT" ColumnName="UPDATEDT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HRP_SECTION">
+      <EntityTypeMapping TypeName="Model.HRP_SECTION">
+        <MappingFragment StoreEntitySet="HRP_SECTION">
+          <ScalarProperty Name="SECCODE" ColumnName="SECCODE" />
+          <ScalarProperty Name="SECNAME" ColumnName="SECNAME" />
+          <ScalarProperty Name="SECNMBG" ColumnName="SECNMBG" />
+          <ScalarProperty Name="SECFLOOR" ColumnName="SECFLOOR" />
+          <ScalarProperty Name="PRSYMBOL" ColumnName="PRSYMBOL" />
+          <ScalarProperty Name="PSLNO" ColumnName="PSLNO" />
+          <ScalarProperty Name="INSERTBY" ColumnName="INSERTBY" />
+          <ScalarProperty Name="INSERTDT" ColumnName="INSERTDT" />
+          <ScalarProperty Name="UPDATEBY" ColumnName="UPDATEBY" />
+          <ScalarProperty Name="UPDATEDT" ColumnName="UPDATEDT" />
+          <ScalarProperty Name="LAGGING_SLNO" ColumnName="LAGGING_SLNO" />
+          <ScalarProperty Name="LAGGING_HEADING" ColumnName="LAGGING_HEADING" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MER_COMPCODE">
+      <EntityTypeMapping TypeName="Model.MER_COMPCODE">
+        <MappingFragment StoreEntitySet="MER_COMPCODE">
+          <ScalarProperty Name="COMPCD" ColumnName="COMPCD" />
+          <ScalarProperty Name="COMPTYPE" ColumnName="COMPTYPE" />
+          <ScalarProperty Name="COMPNM" ColumnName="COMPNM" />
+          <ScalarProperty Name="SHORTNM" ColumnName="SHORTNM" />
+          <ScalarProperty Name="ADDRS1" ColumnName="ADDRS1" />
+          <ScalarProperty Name="ADDRS2" ColumnName="ADDRS2" />
+          <ScalarProperty Name="CONCD" ColumnName="CONCD" />
+          <ScalarProperty Name="POSTCODE" ColumnName="POSTCODE" />
+          <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+          <ScalarProperty Name="FAX" ColumnName="FAX" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="CONPER" ColumnName="CONPER" />
+          <ScalarProperty Name="BHCD" ColumnName="BHCD" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="ATTN" ColumnName="ATTN" />
+          <ScalarProperty Name="CC" ColumnName="CC" />
+          <ScalarProperty Name="REF" ColumnName="REF" />
+          <ScalarProperty Name="TERRITORY" ColumnName="TERRITORY" />
+          <ScalarProperty Name="INSERTBY" ColumnName="INSERTBY" />
+          <ScalarProperty Name="INSERTDT" ColumnName="INSERTDT" />
+          <ScalarProperty Name="UPDATEBY" ColumnName="UPDATEBY" />
+          <ScalarProperty Name="UPDATEDT" ColumnName="UPDATEDT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MER_CP">
+      <EntityTypeMapping TypeName="Model.MER_CP">
+        <MappingFragment StoreEntitySet="MER_CP">
+          <ScalarProperty Name="CPCD" ColumnName="CPCD" />
+          <ScalarProperty Name="ORDSLNO" ColumnName="ORDSLNO" />
+          <ScalarProperty Name="SECCODE" ColumnName="SECCODE" />
+          <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+          <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+          <ScalarProperty Name="INSERTBY" ColumnName="INSERTBY" />
+          <ScalarProperty Name="INSERTDT" ColumnName="INSERTDT" />
+          <ScalarProperty Name="UPDATEBY" ColumnName="UPDATEBY" />
+          <ScalarProperty Name="UPDATEDT" ColumnName="UPDATEDT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MER_CP_ORDER">
+      <EntityTypeMapping TypeName="Model.MER_CP_ORDER">
+        <MappingFragment StoreEntitySet="MER_CP_ORDER">
+          <ScalarProperty Name="CPCD" ColumnName="CPCD" />
+          <ScalarProperty Name="SLNO" ColumnName="SLNO" />
+          <ScalarProperty Name="ORDSLNO" ColumnName="ORDSLNO" />
+          <ScalarProperty Name="SECCODE" ColumnName="SECCODE" />
+          <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+          <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+          <ScalarProperty Name="INSERTBY" ColumnName="INSERTBY" />
+          <ScalarProperty Name="INSERTDT" ColumnName="INSERTDT" />
+          <ScalarProperty Name="UPDATEBY" ColumnName="UPDATEBY" />
+          <ScalarProperty Name="UPDATEDT" ColumnName="UPDATEDT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MER_GAUGE">
+      <EntityTypeMapping TypeName="Model.MER_GAUGE">
+        <MappingFragment StoreEntitySet="MER_GAUGE">
+          <ScalarProperty Name="GAUGECD" ColumnName="GAUGECD" />
+          <ScalarProperty Name="GAUGENM" ColumnName="GAUGENM" />
+          <ScalarProperty Name="INSERTBY" ColumnName="INSERTBY" />
+          <ScalarProperty Name="INSERTDT" ColumnName="INSERTDT" />
+          <ScalarProperty Name="UPDATEBY" ColumnName="UPDATEBY" />
+          <ScalarProperty Name="UPDATEDT" ColumnName="UPDATEDT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MER_LABDIP">
+      <EntityTypeMapping TypeName="Model.MER_LABDIP">
+        <MappingFragment StoreEntitySet="MER_LABDIP">
+          <ScalarProperty Name="LABCD" ColumnName="LABCD" />
+          <ScalarProperty Name="LABDIPNO" ColumnName="LABDIPNO" />
+          <ScalarProperty Name="ORDSLNO" ColumnName="ORDSLNO" />
+          <ScalarProperty Name="SKETCHID" ColumnName="SKETCHID" />
+          <ScalarProperty Name="SKETCHSLNO" ColumnName="SKETCHSLNO" />
+          <ScalarProperty Name="YARNCD" ColumnName="YARNCD" />
+          <ScalarProperty Name="COLCD" ColumnName="COLCD" />
+          <ScalarProperty Name="PANTONNO" ColumnName="PANTONNO" />
+          <ScalarProperty Name="SHADE" ColumnName="SHADE" />
+          <ScalarProperty Name="REQDT" ColumnName="REQDT" />
+          <ScalarProperty Name="SENDDT" ColumnName="SENDDT" />
+          <ScalarProperty Name="APPDT" ColumnName="APPDT" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+          <ScalarProperty Name="INSERTBY" ColumnName="INSERTBY" />
+          <ScalarProperty Name="INSERTDATE" ColumnName="INSERTDATE" />
+          <ScalarProperty Name="INSERTTIME" ColumnName="INSERTTIME" />
+          <ScalarProperty Name="EDITBY" ColumnName="EDITBY" />
+          <ScalarProperty Name="EDITDATE" ColumnName="EDITDATE" />
+          <ScalarProperty Name="EDITTIME" ColumnName="EDITTIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MER_LCREGIS">
+      <EntityTypeMapping TypeName="Model.MER_LCREGIS">
+        <MappingFragment StoreEntitySet="MER_LCREGIS">
+          <ScalarProperty Name="YEAR" ColumnName="YEAR" />
+          <ScalarProperty Name="LCSLNO" ColumnName="LCSLNO" />
+          <ScalarProperty Name="LCDT" ColumnName="LCDT" />
+          <ScalarProperty Name="LCTYPE" ColumnName="LCTYPE" />
+          <ScalarProperty Name="LCNO" ColumnName="LCNO" />
+          <ScalarProperty Name="AMDT" ColumnName="AMDT" />
+          <ScalarProperty Name="LCCONBANK" ColumnName="LCCONBANK" />
+          <ScalarProperty Name="LCISSBANK" ColumnName="LCISSBANK" />
+          <ScalarProperty Name="LCPARTY" ColumnName="LCPARTY" />
+          <ScalarProperty Name="LCQTY" ColumnName="LCQTY" />
+          <ScalarProperty Name="LCAMNT" ColumnName="LCAMNT" />
+          <ScalarProperty Name="EXPDT" ColumnName="EXPDT" />
+          <ScalarProperty Name="SHIPDT" ColumnName="SHIPDT" />
+          <ScalarProperty Name="ATSIGHTDAYS" ColumnName="ATSIGHTDAYS" />
+          <ScalarProperty Name="PRCTYPE" ColumnName="PRCTYPE" />
+          <ScalarProperty Name="IRCNO" ColumnName="IRCNO" />
+          <ScalarProperty Name="LCANO" ColumnName="LCANO" />
+          <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+          <ScalarProperty Name="ATSIGHTTYPE" ColumnName="ATSIGHTTYPE" />
+          <ScalarProperty Name="INSERTBY" ColumnName="INSERTBY" />
+          <ScalarProperty Name="INSERTDATE" ColumnName="INSERTDATE" />
+          <ScalarProperty Name="INSERTTIME" ColumnName="INSERTTIME" />
+          <ScalarProperty Name="EDITBY" ColumnName="EDITBY" />
+          <ScalarProperty Name="EDITDATE" ColumnName="EDITDATE" />
+          <ScalarProperty Name="EDITTIME" ColumnName="EDITTIME" />
+          <ScalarProperty Name="CONTRACTNO" ColumnName="CONTRACTNO" />
+          <ScalarProperty Name="LCDISCOUNT" ColumnName="LCDISCOUNT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MER_ORDER_CATEGORY">
+      <EntityTypeMapping TypeName="Model.MER_ORDER_CATEGORY">
+        <MappingFragment StoreEntitySet="MER_ORDER_CATEGORY">
+          <ScalarProperty Name="SLNO" ColumnName="SLNO" />
+          <ScalarProperty Name="ORDSLNO" ColumnName="ORDSLNO" />
+          <ScalarProperty Name="SECCODE" ColumnName="SECCODE" />
+          <ScalarProperty Name="CATEGORY" ColumnName="CATEGORY" />
+          <ScalarProperty Name="INSERTBY" ColumnName="INSERTBY" />
+          <ScalarProperty Name="INSERTDT" ColumnName="INSERTDT" />
+          <ScalarProperty Name="UPDATEBY" ColumnName="UPDATEBY" />
+          <ScalarProperty Name="UPDATEDT" ColumnName="UPDATEDT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MER_ORDERCOLOR">
+      <EntityTypeMapping TypeName="Model.MER_ORDERCOLOR">
+        <MappingFragment StoreEntitySet="MER_ORDERCOLOR">
+          <ScalarProperty Name="ORDCOLCD" ColumnName="ORDCOLCD" />
+          <ScalarProperty Name="ORDCOLNM" ColumnName="ORDCOLNM" />
+          <ScalarProperty Name="INSERTBY" ColumnName="INSERTBY" />
+          <ScalarProperty Name="INSERTDT" ColumnName="INSERTDT" />
+          <ScalarProperty Name="UPDATEBY" ColumnName="UPDATEBY" />
+          <ScalarProperty Name="UPDATEDT" ColumnName="UPDATEDT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MER_ORDERDET">
+      <EntityTypeMapping TypeName="Model.MER_ORDERDET">
+        <MappingFragment StoreEntitySet="MER_ORDERDET">
+          <ScalarProperty Name="SLNO" ColumnName="SLNO" />
+          <ScalarProperty Name="ORDSLNO" ColumnName="ORDSLNO" />
+          <ScalarProperty Name="SKETCHID" ColumnName="SKETCHID" />
+          <ScalarProperty Name="SKETCHSLNO" ColumnName="SKETCHSLNO" />
+          <ScalarProperty Name="ORDCD" ColumnName="ORDCD" />
+          <ScalarProperty Name="ORDERNO" ColumnName="ORDERNO" />
+          <ScalarProperty Name="ORD_REFNO" ColumnName="ORD_REFNO" />
+          <ScalarProperty Name="ORDCOLCD" ColumnName="ORDCOLCD" />
+          <ScalarProperty Name="ORDCOLNM" ColumnName="ORDCOLNM" />
+          <ScalarProperty Name="SIZECD" ColumnName="SIZECD" />
+          <ScalarProperty Name="ORDQTY" ColumnName="ORDQTY" />
+          <ScalarProperty Name="PRDPERCENT" ColumnName="PRDPERCENT" />
+          <ScalarProperty Name="PRODQTY" ColumnName="PRODQTY" />
+          <ScalarProperty Name="UNPRICE" ColumnName="UNPRICE" />
+          <ScalarProperty Name="TOTPRICE" ColumnName="TOTPRICE" />
+          <ScalarProperty Name="TOTPRICEUSD" ColumnName="TOTPRICEUSD" />
+          <ScalarProperty Name="ORDDATED" ColumnName="ORDDATED" />
+          <ScalarProperty Name="SHIPDATE" ColumnName="SHIPDATE" />
+          <ScalarProperty Name="KNITTYPE" ColumnName="KNITTYPE" />
+          <ScalarProperty Name="YARNCD" ColumnName="YARNCD" />
+          <ScalarProperty Name="YARNDESC" ColumnName="YARNDESC" />
+          <ScalarProperty Name="YARNQTY" ColumnName="YARNQTY" />
+          <ScalarProperty Name="PERYARNWATG" ColumnName="PERYARNWATG" />
+          <ScalarProperty Name="TOTYARNQTY" ColumnName="TOTYARNQTY" />
+          <ScalarProperty Name="SMV_TYPE" ColumnName="SMV_TYPE" />
+          <ScalarProperty Name="SMV" ColumnName="SMV" />
+          <ScalarProperty Name="INSERTBY" ColumnName="INSERTBY" />
+          <ScalarProperty Name="INSERTDT" ColumnName="INSERTDT" />
+          <ScalarProperty Name="UPDATEBY" ColumnName="UPDATEBY" />
+          <ScalarProperty Name="UPDATEDT" ColumnName="UPDATEDT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MER_ORDERMAS">
+      <EntityTypeMapping TypeName="Model.MER_ORDERMAS">
+        <MappingFragment StoreEntitySet="MER_ORDERMAS">
+          <ScalarProperty Name="ORDSLNO" ColumnName="ORDSLNO" />
+          <ScalarProperty Name="SKETCHID" ColumnName="SKETCHID" />
+          <ScalarProperty Name="SKETCHNO" ColumnName="SKETCHNO" />
+          <ScalarProperty Name="LCYEAR" ColumnName="LCYEAR" />
+          <ScalarProperty Name="LCSLNO" ColumnName="LCSLNO" />
+          <ScalarProperty Name="STYLENO" ColumnName="STYLENO" />
+          <ScalarProperty Name="COMPCD" ColumnName="COMPCD" />
+          <ScalarProperty Name="GAUGECD" ColumnName="GAUGECD" />
+          <ScalarProperty Name="ORDTYPE" ColumnName="ORDTYPE" />
+          <ScalarProperty Name="ORDMETHOD" ColumnName="ORDMETHOD" />
+          <ScalarProperty Name="ORDDATE" ColumnName="ORDDATE" />
+          <ScalarProperty Name="DELDATE" ColumnName="DELDATE" />
+          <ScalarProperty Name="ORDFLAG" ColumnName="ORDFLAG" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="FLAGIMG" ColumnName="FLAGIMG" />
+          <ScalarProperty Name="GOODSDESC" ColumnName="GOODSDESC" />
+          <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+          <ScalarProperty Name="INSERTBY" ColumnName="INSERTBY" />
+          <ScalarProperty Name="INSERTDT" ColumnName="INSERTDT" />
+          <ScalarProperty Name="UPDATEBY" ColumnName="UPDATEBY" />
+          <ScalarProperty Name="UPDATEDT" ColumnName="UPDATEDT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MER_SIZEINFO">
+      <EntityTypeMapping TypeName="Model.MER_SIZEINFO">
+        <MappingFragment StoreEntitySet="MER_SIZEINFO">
+          <ScalarProperty Name="SIZECD" ColumnName="SIZECD" />
+          <ScalarProperty Name="SIZENM" ColumnName="SIZENM" />
+          <ScalarProperty Name="INSERTBY" ColumnName="INSERTBY" />
+          <ScalarProperty Name="INSERTDT" ColumnName="INSERTDT" />
+          <ScalarProperty Name="UPDATEBY" ColumnName="UPDATEBY" />
+          <ScalarProperty Name="UPDATEDT" ColumnName="UPDATEDT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MER_SKETCHDET">
+      <EntityTypeMapping TypeName="Model.MER_SKETCHDET">
+        <MappingFragment StoreEntitySet="MER_SKETCHDET">
+          <ScalarProperty Name="SKETCHID" ColumnName="SKETCHID" />
+          <ScalarProperty Name="SKETCHSLNO" ColumnName="SKETCHSLNO" />
+          <ScalarProperty Name="ORDCD" ColumnName="ORDCD" />
+          <ScalarProperty Name="ORDERNO" ColumnName="ORDERNO" />
+          <ScalarProperty Name="YARNCD" ColumnName="YARNCD" />
+          <ScalarProperty Name="ORDCOLCD" ColumnName="ORDCOLCD" />
+          <ScalarProperty Name="SIZECD" ColumnName="SIZECD" />
+          <ScalarProperty Name="ORDQTY" ColumnName="ORDQTY" />
+          <ScalarProperty Name="PRODQTY" ColumnName="PRODQTY" />
+          <ScalarProperty Name="WEIGHT" ColumnName="WEIGHT" />
+          <ScalarProperty Name="SHIPDT" ColumnName="SHIPDT" />
+          <ScalarProperty Name="IMGFLAG" ColumnName="IMGFLAG" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="SEASON" ColumnName="SEASON" />
+          <ScalarProperty Name="KNITTYPE" ColumnName="KNITTYPE" />
+          <ScalarProperty Name="BRANDCD" ColumnName="BRANDCD" />
+          <ScalarProperty Name="FLAGIMG" ColumnName="FLAGIMG" />
+          <ScalarProperty Name="SAMPLECD" ColumnName="SAMPLECD" />
+          <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+          <ScalarProperty Name="INSERTBY" ColumnName="INSERTBY" />
+          <ScalarProperty Name="INSERTDT" ColumnName="INSERTDT" />
+          <ScalarProperty Name="UPDATEBY" ColumnName="UPDATEBY" />
+          <ScalarProperty Name="UPDATEDT" ColumnName="UPDATEDT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MER_SKETCHMAS">
+      <EntityTypeMapping TypeName="Model.MER_SKETCHMAS">
+        <MappingFragment StoreEntitySet="MER_SKETCHMAS">
+          <ScalarProperty Name="SKETCHID" ColumnName="SKETCHID" />
+          <ScalarProperty Name="SKETCHNO" ColumnName="SKETCHNO" />
+          <ScalarProperty Name="STYLENO" ColumnName="STYLENO" />
+          <ScalarProperty Name="ORDERTYPE" ColumnName="ORDERTYPE" />
+          <ScalarProperty Name="SKECTHCRDT" ColumnName="SKECTHCRDT" />
+          <ScalarProperty Name="SKECTHDLDT" ColumnName="SKECTHDLDT" />
+          <ScalarProperty Name="COMPCD" ColumnName="COMPCD" />
+          <ScalarProperty Name="GAUGECD" ColumnName="GAUGECD" />
+          <ScalarProperty Name="IMGFLAG" ColumnName="IMGFLAG" />
+          <ScalarProperty Name="FLAGIMG" ColumnName="FLAGIMG" />
+          <ScalarProperty Name="INSERTBY" ColumnName="INSERTBY" />
+          <ScalarProperty Name="INSERTDT" ColumnName="INSERTDT" />
+          <ScalarProperty Name="UPDATEBY" ColumnName="UPDATEBY" />
+          <ScalarProperty Name="UPDATEDT" ColumnName="UPDATEDT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MER_SMV">
+      <EntityTypeMapping TypeName="Model.MER_SMV">
+        <MappingFragment StoreEntitySet="MER_SMV">
+          <ScalarProperty Name="SLNO" ColumnName="SLNO" />
+          <ScalarProperty Name="ORDSLNO" ColumnName="ORDSLNO" />
+          <ScalarProperty Name="SECCODE" ColumnName="SECCODE" />
+          <ScalarProperty Name="SMV_TYPE" ColumnName="SMV_TYPE" />
+          <ScalarProperty Name="SMV" ColumnName="SMV" />
+          <ScalarProperty Name="INSERTBY" ColumnName="INSERTBY" />
+          <ScalarProperty Name="INSERTDT" ColumnName="INSERTDT" />
+          <ScalarProperty Name="UPDATEBY" ColumnName="UPDATEBY" />
+          <ScalarProperty Name="UPDATEDT" ColumnName="UPDATEDT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MER_UNIT">
+      <EntityTypeMapping TypeName="Model.MER_UNIT">
+        <MappingFragment StoreEntitySet="MER_UNIT">
+          <ScalarProperty Name="UNITCD" ColumnName="UNITCD" />
+          <ScalarProperty Name="UNITNM" ColumnName="UNITNM" />
+          <ScalarProperty Name="BASEFLAG" ColumnName="BASEFLAG" />
+          <ScalarProperty Name="CONVUNITCD" ColumnName="CONVUNITCD" />
+          <ScalarProperty Name="CONVVALUE" ColumnName="CONVVALUE" />
+          <ScalarProperty Name="INSERTBY" ColumnName="INSERTBY" />
+          <ScalarProperty Name="INSERTDT" ColumnName="INSERTDT" />
+          <ScalarProperty Name="UPDATEBY" ColumnName="UPDATEBY" />
+          <ScalarProperty Name="UPDATEDT" ColumnName="UPDATEDT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MER_YARNCOLOR">
+      <EntityTypeMapping TypeName="Model.MER_YARNCOLOR">
+        <MappingFragment StoreEntitySet="MER_YARNCOLOR">
+          <ScalarProperty Name="COLCD" ColumnName="COLCD" />
+          <ScalarProperty Name="COLNM" ColumnName="COLNM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MER_YARNINFO">
+      <EntityTypeMapping TypeName="Model.MER_YARNINFO">
+        <MappingFragment StoreEntitySet="MER_YARNINFO">
+          <ScalarProperty Name="YARNCD" ColumnName="YARNCD" />
+          <ScalarProperty Name="YARNDESC" ColumnName="YARNDESC" />
+          <ScalarProperty Name="UNITCD" ColumnName="UNITCD" />
+          <ScalarProperty Name="INSERTBY" ColumnName="INSERTBY" />
+          <ScalarProperty Name="INSERTDT" ColumnName="INSERTDT" />
+          <ScalarProperty Name="UPDATEBY" ColumnName="UPDATEBY" />
+          <ScalarProperty Name="UPDATEDT" ColumnName="UPDATEDT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRP_ASSIGNDET">
+      <EntityTypeMapping TypeName="Model.PRP_ASSIGNDET">
+        <MappingFragment StoreEntitySet="PRP_ASSIGNDET">
+          <ScalarProperty Name="ASSIGNCD" ColumnName="ASSIGNCD" />
+          <ScalarProperty Name="ASSIGNDETCD" ColumnName="ASSIGNDETCD" />
+          <ScalarProperty Name="MODCD" ColumnName="MODCD" />
+          <ScalarProperty Name="MACQTY" ColumnName="MACQTY" />
+          <ScalarProperty Name="MACEFF" ColumnName="MACEFF" />
+          <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+          <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+          <ScalarProperty Name="DAYS" ColumnName="DAYS" />
+          <ScalarProperty Name="ASSIGNQTY" ColumnName="ASSIGNQTY" />
+          <ScalarProperty Name="UNITCD" ColumnName="UNITCD" />
+          <ScalarProperty Name="INSERTBY" ColumnName="INSERTBY" />
+          <ScalarProperty Name="INSERTDT" ColumnName="INSERTDT" />
+          <ScalarProperty Name="UPDATEBY" ColumnName="UPDATEBY" />
+          <ScalarProperty Name="UPDATEDT" ColumnName="UPDATEDT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRP_ASSIGNMAS">
+      <EntityTypeMapping TypeName="Model.PRP_ASSIGNMAS">
+        <MappingFragment StoreEntitySet="PRP_ASSIGNMAS">
+          <ScalarProperty Name="ASSIGNCD" ColumnName="ASSIGNCD" />
+          <ScalarProperty Name="DISTFACTCD" ColumnName="DISTFACTCD" />
+          <ScalarProperty Name="COMPCD" ColumnName="COMPCD" />
+          <ScalarProperty Name="SECCODE" ColumnName="SECCODE" />
+          <ScalarProperty Name="SLNO" ColumnName="SLNO" />
+          <ScalarProperty Name="ORDSLNO" ColumnName="ORDSLNO" />
+          <ScalarProperty Name="INSERTBY" ColumnName="INSERTBY" />
+          <ScalarProperty Name="INSERTDT" ColumnName="INSERTDT" />
+          <ScalarProperty Name="UPDATEBY" ColumnName="UPDATEBY" />
+          <ScalarProperty Name="UPDATEDT" ColumnName="UPDATEDT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRP_DISTTOFACT">
+      <EntityTypeMapping TypeName="Model.PRP_DISTTOFACT">
+        <MappingFragment StoreEntitySet="PRP_DISTTOFACT">
+          <ScalarProperty Name="DISTFACTCD" ColumnName="DISTFACTCD" />
+          <ScalarProperty Name="COMPCD" ColumnName="COMPCD" />
+          <ScalarProperty Name="SLNO" ColumnName="SLNO" />
+          <ScalarProperty Name="ORDSLNO" ColumnName="ORDSLNO" />
+          <ScalarProperty Name="ORD_REFNO" ColumnName="ORD_REFNO" />
+          <ScalarProperty Name="UNITCD" ColumnName="UNITCD" />
+          <ScalarProperty Name="DISTQTY" ColumnName="DISTQTY" />
+          <ScalarProperty Name="ALLOCATE" ColumnName="ALLOCATE" />
+          <ScalarProperty Name="INSERTBY" ColumnName="INSERTBY" />
+          <ScalarProperty Name="INSERTDT" ColumnName="INSERTDT" />
+          <ScalarProperty Name="UPDATEBY" ColumnName="UPDATEBY" />
+          <ScalarProperty Name="UPDATEDT" ColumnName="UPDATEDT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRP_MODULE">
+      <EntityTypeMapping TypeName="Model.PRP_MODULE">
+        <MappingFragment StoreEntitySet="PRP_MODULE">
+          <ScalarProperty Name="MODCD" ColumnName="MODCD" />
+          <ScalarProperty Name="COMPCD" ColumnName="COMPCD" />
+          <ScalarProperty Name="SECCODE" ColumnName="SECCODE" />
+          <ScalarProperty Name="MODULENM" ColumnName="MODULENM" />
+          <ScalarProperty Name="MACTYPE" ColumnName="MACTYPE" />
+          <ScalarProperty Name="GAUGECD" ColumnName="GAUGECD" />
+          <ScalarProperty Name="WORKMINTS" ColumnName="WORKMINTS" />
+          <ScalarProperty Name="MACQTY" ColumnName="MACQTY" />
+          <ScalarProperty Name="MACEFF" ColumnName="MACEFF" />
+          <ScalarProperty Name="PERDAYMINTS" ColumnName="PERDAYMINTS" />
+          <ScalarProperty Name="CATEGORY" ColumnName="CATEGORY" />
+          <ScalarProperty Name="INSERTBY" ColumnName="INSERTBY" />
+          <ScalarProperty Name="INSERTDT" ColumnName="INSERTDT" />
+          <ScalarProperty Name="UPDATEBY" ColumnName="UPDATEBY" />
+          <ScalarProperty Name="UPDATEDT" ColumnName="UPDATEDT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRP_PRODDET">
+      <EntityTypeMapping TypeName="Model.PRP_PRODDET">
+        <MappingFragment StoreEntitySet="PRP_PRODDET">
+          <ScalarProperty Name="PRODCD" ColumnName="PRODCD" />
+          <ScalarProperty Name="PRODDETCD" ColumnName="PRODDETCD" />
+          <ScalarProperty Name="SLNO" ColumnName="SLNO" />
+          <ScalarProperty Name="ORDSLNO" ColumnName="ORDSLNO" />
+          <ScalarProperty Name="MODCD" ColumnName="MODCD" />
+          <ScalarProperty Name="PRODQTY" ColumnName="PRODQTY" />
+          <ScalarProperty Name="UNITCD" ColumnName="UNITCD" />
+          <ScalarProperty Name="INSERTBY" ColumnName="INSERTBY" />
+          <ScalarProperty Name="INSERTDT" ColumnName="INSERTDT" />
+          <ScalarProperty Name="UPDATEBY" ColumnName="UPDATEBY" />
+          <ScalarProperty Name="UPDATEDT" ColumnName="UPDATEDT" />
+          <ScalarProperty Name="BODY_MC" ColumnName="BODY_MC" />
+          <ScalarProperty Name="NECK_MC" ColumnName="NECK_MC" />
+          <ScalarProperty Name="MAC_TYPE" ColumnName="MAC_TYPE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRP_PRODMAS">
+      <EntityTypeMapping TypeName="Model.PRP_PRODMAS">
+        <MappingFragment StoreEntitySet="PRP_PRODMAS">
+          <ScalarProperty Name="PRODCD" ColumnName="PRODCD" />
+          <ScalarProperty Name="COMPCD" ColumnName="COMPCD" />
+          <ScalarProperty Name="SECCODE" ColumnName="SECCODE" />
+          <ScalarProperty Name="PRODDATE" ColumnName="PRODDATE" />
+          <ScalarProperty Name="INSERTBY" ColumnName="INSERTBY" />
+          <ScalarProperty Name="INSERTDT" ColumnName="INSERTDT" />
+          <ScalarProperty Name="UPDATEBY" ColumnName="UPDATEBY" />
+          <ScalarProperty Name="UPDATEDT" ColumnName="UPDATEDT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

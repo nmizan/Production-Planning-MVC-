@@ -1,0 +1,71 @@
+﻿@model Production_Planner.Models.MER_GAUGE
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<h2 style="text-align: center; text-decoration: underline; ">Gauge Information</h2>
+
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Gauge Name:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GAUGENM)
+        </dd>
+
+        <dt>
+            Inserted By:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INSERTBY)
+        </dd>
+
+        <dt>
+            Inserted Date:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INSERTDT)
+        </dd>
+
+        <dt>
+            Updated By:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UPDATEBY)
+        </dd>
+
+        <dt>
+            Updated Date:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UPDATEDT)
+        </dd>
+
+    </dl>
+
+
+    @*@using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color" style=" margin-left :150px;">
+        <input type="submit" value="Delete" class="btn btn-xs btn-danger" /> 
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+    }*@
+
+    <div class="form-actions no-color" style=" margin-left :150px;">
+        @Html.ActionLink("Delete", "DeleteConfirmed", new { id = Model.GAUGECD }, new { onclick = "return confirm('Are you sure you want to delete this item ?');", @class = "btn btn-sm btn-danger" })
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</div>

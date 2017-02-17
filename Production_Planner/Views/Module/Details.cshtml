@@ -1,0 +1,131 @@
+﻿@model Production_Planner.Models.PRP_MODULE
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<h2 style=" text-align: center; text-decoration: underline;">Module Information</h2>
+
+<div>
+
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Module Name:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MODULENM)
+        </dd>
+
+        <dt>
+            Machine Type: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MACTYPE)
+        </dd>
+        <dt>
+            Factory Name:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HRP_COMPUNIT.COMPNM)
+        </dd>
+
+        <dt>
+            Section Name:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HRP_SECTION.SECNAME)
+        </dd>
+
+        <dt>
+            Gauge Name:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MER_GAUGE.GAUGENM)
+        </dd>
+        <dt>
+           Working Minutes:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WORKMINTS)
+        </dd>
+
+        <dt>
+            Machine Quantity:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MACQTY)
+        </dd>
+
+        <dt>
+            Machine Efficiency:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MACEFF)
+        </dd>
+
+        <dt>
+            Per Day Minutes:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PERDAYMINTS)
+        </dd>
+
+        <dt>
+           Category:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CATEGORY)
+        </dd>
+
+        <dt>
+          Inserted By:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INSERTBY)
+        </dd>
+
+        <dt>
+            Inserted Date:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INSERTDT)
+        </dd>
+
+        <dt>
+            Updated By:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UPDATEBY)
+        </dd>
+
+        <dt>
+            Updated Date:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UPDATEDT)
+        </dd>
+
+   
+    </dl>
+</div>
+<p style=" margin-left:90px; font-size:15px;">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MODCD }) |
+    @Html.ActionLink("Delete", "Delete", new { id = Model.MODCD })|
+    @Html.ActionLink("Back to List", "Index")
+</p>

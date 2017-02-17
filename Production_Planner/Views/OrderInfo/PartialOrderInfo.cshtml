@@ -1,0 +1,26 @@
+﻿
+  <link href="http://code.jquery.com/ui/1.12.1/themes/redmond/jquery-ui.css" rel="stylesheet" />
+
+
+<table>
+<tr>
+    <td><br /></td>
+
+</tr>
+
+    <tr>
+
+        <td>@Html.TextBox("OrderRefNo", null, new { style = "width:100px;" })</td>
+        <td>@Html.TextBox("OrderNo", null, new { style = "width:100px;" })</td>
+        <td>@Html.DropDownList("OrderColor", "-- Select Order Color --")</td>
+        <td>@Html.DropDownList("YarnType", "-- Select Yarn Type --")</td>
+        <td>@Html.TextBox("OrderQty", null, new { style = "width:100px;" })</td>
+        <td>@Html.TextBox("OrderDate", null, new { style = "width:100px;", @readonly = "readonly"})</td>
+        <td>@Html.TextBox("ShipDate", null, new { style = "width:100px;", @readonly = "readonly"})</td>
+        <td><input type="button" class="btn btn-primary btn-xs" value="Add Order" onclick='addNewOrderRow();' /></td>
+
+        <td>
+            <input type="button" class="btn btn-danger btn-xs" value="Delete" onclick='$(this).parent().parent().parent().remove();' />
+        </td>
+    </tr>
+</table>

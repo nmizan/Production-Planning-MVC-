@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+    <title>@ViewBag.Title - Production Planner</title>
+
+    @*@Styles.Render("~/Content/css")*@
+    @Scripts.Render("~/bundles/modernizr")
+
+
+
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link href="~/Content/AdminLTE.min.css" rel="stylesheet" />
+    <link href="~/Content/_all-skins.min.css" rel="stylesheet" />
+
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  
+    
+ 
+    
+    @* for Calender *@
+   
+    <link href="~/Content/fullcalendar.min.css" rel="stylesheet" />
+    <link href="~/Content/fullcalendar.print.css" rel="stylesheet" media="print" />
+    <link href="~/Content/scheduler.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="~/Content/tooltipster.bundle.min.css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    
+    <script src="~/Scripts/moment.min.js"></script>
+    <script src="~/Scripts/jquery-2.2.3.min.js"></script>
+    <script src="~/Scripts/fullcalendar.min.js"></script>
+
+ 
+    <script src="~/Scripts/scheduler.min.js"></script>
+    <script src="~/Scripts/tooltipster.bundle.min.js"></script>
+   
+    <style>
+        #calendar {
+            max-width: 1000px;
+            margin: 50px auto;
+        }
+
+        th.fc-widget-header > div > div.fc-cell-content {
+            text-align: center;
+        }
+
+            th.fc-widget-header > div > div.fc-cell-content > span {
+                white-space: normal;
+                word-wrap: break-word;
+            }
+
+        #script-warning {
+            display: none;
+            background: #eee;
+            border-bottom: 1px solid red;
+            padding: 0 10px;
+            line-height: 40px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 12px;
+            color: red;
+        }
+
+        #loading {
+            display: none;
+            color: green;
+            top: 10px;
+            right: 10px;
+        }
+    </style>
+
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini" style=" padding :0px;">
+    <div class="wrapper">
+        <header class="main-header">
+            <a href="@Url.Action("Index","Home")" class="logo">
+                <span class="logo-mini">Planner</span>
+                <span class="logo-lg"><b>Production Planner</span>
+            </a>
+
+            <nav class="navbar navbar-static-top">
+               
+                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+              
+                <div class="navbar-custom-menu">
+
+                </div>
+            </nav>
+        </header>
+       
+        <aside class="main-sidebar" style="width: 260px;">
+
+            <section class="sidebar">
+
+                <div class="user-panel">
+                    <div class="pull-left image">
+
+                    </div>
+                    <div class="pull-left info">
+
+
+                    </div>
+                </div>
+
+                <form action="#" method="get" class="sidebar-form" >
+                    <div class="input-group">
+                        <input type="text" name="q" class="form-control" placeholder="Search...">
+                        <span class="input-group-btn">
+                            <button type="submit" name="search" id="search-btn" class="btn btn-flat">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+
+                <ul class="sidebar-menu" style="width: 260px;">
+                    @*<li class="header">Production Planning</li>*@
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-product-hunt"></i> <span>parameter</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="@Url.Action("Index","FactoryInfo")"><i class="fa fa-circle-o"></i> Factory Information(PRP_1001)</a></li>
+                            <li><a href="@Url.Action("Index","Section")"><i class="fa fa-circle-o"></i> Section Information(PRP_1006)</a></li>
+                            <li><a href="@Url.Action("Index", "Gauge")"><i class="fa fa-circle-o"></i> Gauge(PRP_1007)</a></li>
+                            <li><a href="@Url.Action("Index", "Country")"><i class="fa fa-circle-o"></i> Country Information(PRP_1009)</a></li>
+                            <li><a href="@Url.Action("Index", "BuyerInfo")"><i class="fa fa-circle-o"></i> Buyer Information(PRP_1008)</a></li>
+                            <li><a href="@Url.Action("Index","Holiday")"><i class="fa fa-circle-o"></i> Holiday Information(PRP_1010)</a></li>
+                            <li><a href="@Url.Action("Index", "Unit")"><i class="fa fa-circle-o"></i> Unit (PRP_1013)</a></li>
+                            <li><a href="@Url.Action("Index", "Yarn")"><i class="fa fa-circle-o"></i> yarn Info(PRP_1011)</a></li>
+                            <li><a href="@Url.Action("Index", "OrderColor")"><i class="fa fa-circle-o"></i> Order Color(PRP_1012)</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-info -o"></i>
+                            <span>Information </span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="#"><i class="fa fa-circle-o"></i> Module Information(PRP_1002)</a>
+                                <ul class="treeview-menu">
+                                    <li><a href="@Url.Action("Index","Module")"><i class="fa fa-circle-o"></i> All Module Information</a></li>
+                                    @{
+                                        Production_Planner.Models.ProductionPlannerEntities db = new Production_Planner.Models.ProductionPlannerEntities();
+                                        var Factory = db.HRP_COMPUNIT.Select(x=>x.COMPNM).ToList();
+                                      
+                                        foreach (var i in Factory)
+                                        { 
+                                              int Id = db.HRP_COMPUNIT.Where(x=>x.COMPNM==i).Select(y=>y.COMPCD).Single();
+                                              <li><a href="@Url.Action("ModuleListForFactory", "Module", new { id = Id })"><i class="fa fa-circle-o"></i>@i</a></li>
+                                        }
+                                          
+                                    }
+                                </ul>
+                                                      
+                            </li>
+                            <li><a href="@Url.Action("CREATE","ORDERINFO")"><i class="fa fa-circle-o"></i> Order/Style Info(PRP_1003)</a></li>
+                            <li><a href="@Url.Action("Contact","Home")"><i class="fa fa-circle-o"></i> Distribute To factory(PRP_1004)</a></li>
+                            <li><a href="@Url.Action("Contact","Home")"><i class="fa fa-circle-o"></i> Assign To Module(PRP_1005) </a></li>
+                            <li><a href="@Url.Action("Contact","Home")"><i class="fa fa-circle-o"></i> Production info(PRP_1014) </a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </section>
+
+        </aside>
+
+        <div class="content-wrapper" style="margin-left: 250px;">
+
+            <section class="content">
+
+                @RenderBody()
+
+            </section>
+        </div>
+
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @Scripts.Render("~/bundles/angularJS")
+        @RenderSection("scripts", required: false)
+        @RenderSection("Theme", required: false)
+
+
+
+    </div>
+
+
+
+   
+
+  
+ 
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+    <!-- SlimScroll -->
+
+    <script src="~/Scripts/jquery.slimscroll.min.js"></script>
+    <!-- AdminLTE App -->
+
+    <script src="~/Scripts/app.min.js"></script>
+  
+    <script src="~/Scripts/jquery-ui-1.12.1.js"></script>
+
+    
+</body>
+</html>
+
+

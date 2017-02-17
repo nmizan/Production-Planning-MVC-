@@ -1,0 +1,251 @@
+﻿@model IEnumerable<Production_Planner.Models.PRP_MODULE>
+@Html.Raw(TempData["msg"])
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> 
+@*<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>*@
+<script src="~/Scripts/angular.min.js"></script>
+<script src="~/Scripts/dirPagination.js"></script>
+
+<h2 style=" text-align:center; text-decoration: underline ;">Module Information</h2>
+
+<style type="text/css">
+    th {
+        font-size: 15px;
+        text-align: center;
+        
+    }
+
+    td {
+        font-size: 12px;
+    }
+</style>
+
+<div ng-app="searchApp">
+    <div ng-controller="searchController">
+        <div class="form-inline">
+            <p>
+                <a href="@Url.Action("Create", "Module")" class="btn btn-primary"> Add Module</a>
+                @* Factory Name :
+                <select data-ng-model="factory">
+                    <option></option>
+                    <option data-ng-repeat="factory in factories" value=" {{factory.id}}"> {{factory.name}}</option>
+                </select>*@
+
+                Section :
+                <select data-ng-model="Section" ng-change="SectionChange(Section)" style=" width:180px;" class=" form-control">
+                    <option></option>
+                    <option data-ng-repeat="Section in Sections" value=" {{Section.id}}"> {{Section.name}}</option>
+                </select>
+                Gauge :
+                <select data-ng-model="Gauge" ng-change="GaugeChange(Gauge)" style=" width:180px;" class=" form-control">
+                    <option></option>
+                    <option data-ng-repeat="Gauge in Gauges" value=" {{Gauge.id}}"> {{Gauge.name}}</option>
+                </select>
+
+            </p>
+        </div>
+
+        <table class="table table-striped table-bordered">
+            <tr>
+                <th>
+                    Module
+                </th>
+                <th>
+                    Machine Type
+                </th>
+                <th>
+                    Working Min
+                </th>
+                <th>
+                    Machine Qty
+                </th>
+                <th>
+                    Machine EF
+                </th>
+                <th>
+                    Per Day/mins
+                </th>
+                <th>
+                    Category
+                </th>
+
+                <th>
+                    Factory Name
+                </th>
+                <th>
+                    Section
+                </th>
+                <th>
+                    Gauge
+                </th>
+                <th colspan="3" style="text-align :center ">Action</th>
+            </tr>
+
+            @*@foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MODULENM)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MACTYPE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.WORKMINTS)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MACQTY)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MACEFF)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PERDAYMINTS)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CATEGORY)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HRP_COMPUNIT.COMPNM)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HRP_SECTION.SECNAME)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MER_GAUGE.GAUGENM)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.MODCD }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.MODCD }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.MODCD })
+                    </td>
+                </tr>
+            }*@
+        
+            <tr dir-paginate = " module in modules |itemsPerPage: 6 | filter: Section | filter: Gauge | orderBy:'ModuleName'">
+                <td>
+                    {{module.MODULENM}}
+                </td>
+                <td>
+                    {{module.MACTYPE}}
+                </td>
+                <td>
+                    {{module.WORKMINTS}}
+                </td>
+                <td>
+                    {{module.MACQTY}}
+                </td>
+                <td>
+                    {{module.MACEFF}}
+                </td>
+                <td>
+                    {{module.PERDAYMINTS}}
+                </td>
+                <td>
+                    {{module.CATEGORY}}
+                </td>
+
+                <td>
+                    {{module.FactoryName}}
+                </td>
+                <td>
+                    {{module.SectionName}}
+                </td>
+                <td>
+                    {{module.GaugeName}}
+                </td>
+                <td>
+                    <a data-ng-href="@HttpUtility.UrlDecode(Url.Action("Edit", "Module", new { id = "{{id = module.ModuleCode}}" }))">Edit</a> |
+                    <a data-ng-href="@HttpUtility.UrlDecode(Url.Action("Details", "Module", new { id = "{{id = module.ModuleCode}}" }))">Details</a> |
+                    <a data-ng-href="@HttpUtility.UrlDecode(Url.Action("Delete", "Module", new { id = "{{id = module.ModuleCode}}" }))">Delete</a>
+                </td>
+            </tr>
+
+           
+        </table>
+
+        <dir-pagination-controls 
+            max-size="10" 
+            direction-links="true" 
+            boundary-links="true">
+        </dir-pagination-controls>
+    </div>
+</div>
+
+<script>
+   
+    rootUrl = '@Url.Content("~")'
+</script>
+
+<script>
+
+    var url = rootUrl + 'Module/ModuleListToFilter';
+    var searchApp = angular.module("searchApp", ['angularUtils.directives.dirPagination']);  
+    var sectionurl = rootUrl + 'Module/GetSections';
+    var gaugeurl = rootUrl + 'Module/GetGauges';
+    searchApp.controller('searchController', function ($scope, $http) {
+
+        $http.get(url).success(function (result) {
+            $scope.modules = result;
+        });
+             
+        $http.get(sectionurl).success(function (resultSections) {
+            $scope.Sections = resultSections;
+        });
+        $http.get(gaugeurl).success(function (resultGauges) {
+            $scope.Gauges = resultGauges;
+        });
+
+
+        $scope.SectionChange = function (Section) {
+           
+            var asection = { sectionid: Section }
+                 
+            $http({
+
+              traditional: true,
+              url: '@Url.Action("SearchBySection", "Module")',
+              method: "POST",
+              data: JSON.stringify(asection),
+              dataType: "json"
+            }).success(function (data) {
+                 $scope.modules = data;
+          }).error(function (data) {
+             alert("Error Found!!");
+             });
+          
+        };
+        $scope.GaugeChange = function (Gauge) {
+
+             var agauge =   { gaugeid: Gauge }
+
+
+            $http({
+
+                traditional: true,
+                url: '@Url.Action("SearchByGauge", "Module")',
+                method: "POST",
+                data: JSON.stringify(agauge),
+                dataType: "json"
+            }).success(function (data) {
+                $scope.modules = data;
+            }).error(function (data) {
+                alert("Error Found!!");
+            });
+
+        };
+  
+ });
+ </script>
+
+
+
+
+
+    

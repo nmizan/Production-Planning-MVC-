@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="00cb4533d69e459c910dc5cac095095f" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.CMN_COUNTRY" Width="1.5" PointX="1.5" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.HRP_COMPUNIT" Width="1.5" PointX="5.25" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.HRP_HOLIDAY" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.HRP_SECTION" Width="1.5" PointX="10.5" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MER_COMPCODE" Width="1.5" PointX="0.75" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MER_CP" Width="1.5" PointX="13.75" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MER_CP_ORDER" Width="1.5" PointX="10.5" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MER_GAUGE" Width="1.5" PointX="0.75" PointY="26.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MER_LABDIP" Width="1.5" PointX="18" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MER_LCREGIS" Width="1.5" PointX="0.75" PointY="29.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MER_ORDER_CATEGORY" Width="1.5" PointX="10.5" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MER_ORDERCOLOR" Width="1.5" PointX="3" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MER_ORDERDET" Width="1.5" PointX="5.25" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MER_ORDERMAS" Width="1.5" PointX="3" PointY="27.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MER_SIZEINFO" Width="1.5" PointX="6" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MER_SKETCHDET" Width="1.5" PointX="8.25" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MER_SKETCHMAS" Width="1.5" PointX="0.75" PointY="37" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MER_SMV" Width="1.5" PointX="10.5" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MER_UNIT" Width="1.5" PointX="0.75" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MER_YARNCOLOR" Width="1.5" PointX="15.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MER_YARNINFO" Width="1.5" PointX="3" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PRP_ASSIGNDET" Width="1.5" PointX="16" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PRP_ASSIGNMAS" Width="1.5" PointX="12.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PRP_DISTTOFACT" Width="1.5" PointX="7.5" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PRP_MODULE" Width="1.5" PointX="13.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PRP_PRODDET" Width="1.5" PointX="13.5" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PRP_PRODMAS" Width="1.5" PointX="11.25" PointY="22.875" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK2_MER_COMPCODE" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK1_PRP_ASSIGNMAS" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK1_PRP_DISTTOFACT" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK1_PRP_MODULE" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK1_PRP_PRODMAS" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK2_MER_CP" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK2_MER_CP_ORDER" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK2_MER_ORDER_CATEGORY" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK2_MER_SMV" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK2_PRP_ASSIGNMAS" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK2_PRP_MODULE" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK2_PRP_PRODMAS" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK1_MER_COMPCODE" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK1_MER_SKETCHMAS" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK3_MER_ORDERMAS" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK1_MER_CP" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK1_MER_CP_ORDER" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK2_MER_SKETCHMAS" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK3_PRP_MODULE" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK4_MER_ORDERMAS" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK4_MER_LABDIP" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK2_MER_ORDERMAS" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK1_MER_ORDER_CATEGORY" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK2_MER_SKETCHDET" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK3_MER_ORDERDET" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK1_MER_ORDERDET" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK1_MER_SMV" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK2_MER_ORDERDET" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK2_PRP_DISTTOFACT" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK2_PRP_PRODDET" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK3_PRP_ASSIGNMAS" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK4_MER_ORDERDET" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK5_MER_ORDERDET" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK1_MER_ORDERMAS" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK3_MER_SKETCHDET" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK1_MER_SKETCHDET" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK4_MER_SKETCHDET" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK1_MER_YARNINFO" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK3_PRP_ASSIGNDET" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK3_PRP_DISTTOFACT" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK4_PRP_PRODDET" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK1_PRP_ASSIGNDET" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK2_PRP_ASSIGNDET" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK4_PRP_ASSIGNMAS" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK3_PRP_PRODDET" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK1_PRP_PRODDET" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

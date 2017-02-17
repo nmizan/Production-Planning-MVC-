@@ -1,0 +1,65 @@
+﻿@model Production_Planner.Models.MER_YARNINFO
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<h2 style=" text-align: center; text-decoration: underline;">Yarn Information</h2>
+
+<div>
+    
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+          Yarn Description:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YARNDESC)
+        </dd>
+        <dt>
+           Unit:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MER_UNIT.UNITNM)
+        </dd>
+        <dt>
+           Inserted By:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INSERTBY)
+        </dd>
+
+        <dt>
+            Inserted Date:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INSERTDT)
+        </dd>
+
+        <dt>
+            Updated By:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UPDATEBY)
+        </dd>
+
+        <dt>
+            Updated Date:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UPDATEDT)
+        </dd>
+    </dl>
+</div>
+<p style=" margin-left:90px; font-size:15px;">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.YARNCD }) |
+    @Html.ActionLink("Delete", "Delete", new { id = Model.YARNCD })|
+    @Html.ActionLink("Back to List", "Index")
+</p>

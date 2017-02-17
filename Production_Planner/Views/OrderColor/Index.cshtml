@@ -1,0 +1,63 @@
+﻿@*@model IEnumerable<Production_Planner.Models.MER_ORDERCOLOR>*@
+
+@model PagedList.IPagedList<Production_Planner.Models.MER_ORDERCOLOR>
+@using PagedList.Mvc;
+@Html.Raw(TempData["msg"])
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+<h2 style=" text-align:center; text-decoration: underline ;">Order Color Information</h2>
+
+<style type="text/css">
+    th {
+        font-size: 15px;
+        text-align: center;
+    }
+
+    td {
+        font-size: 12px;
+    }
+</style>
+
+<p>
+    <a href="@Url.Action("Create", "OrderColor")" class="btn btn-primary"> Add Order Color</a>
+</p>
+
+<table class="table table-striped table-bordered">
+    <tr>
+        <th>
+            Order Color Name
+        </th>
+        
+        <th colspan="3" style="text-align :center ">Action</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ORDCOLNM)
+            </td>
+            
+            <td style=" text-align: center;">
+                @Html.ActionLink("Edit", "Edit", new { id = item.ORDCOLCD }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ORDCOLCD }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ORDCOLCD })
+            </td>
+        </tr>
+    }
+
+</table>
+
+@if (Model.PageCount > 1)
+{
+    <p>Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount  </p>
+    @Html.PagedListPager(Model, page => Url.Action("Index", "OrderColor", new { page }))
+}
+
+

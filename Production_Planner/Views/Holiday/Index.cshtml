@@ -1,0 +1,422 @@
+﻿@model IEnumerable<Production_Planner.Models.HRP_HOLIDAY>
+@Html.Raw(TempData["msg"])
+
+@*@model PagedList.IPagedList<Production_Planner.Models.HRP_HOLIDAY>
+@using PagedList.Mvc;*@
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="http://code.jquery.com/ui/1.12.1/themes/redmond/jquery-ui.css" rel="stylesheet" />
+<script>
+
+    $(document).ready(function () {
+
+        // page is now ready, initialize the calendar...
+
+        $('#calendar').fullCalendar({
+            schedulerLicenseKey: 'GPL-My-Project-Is-Open-Source',
+            // put your options and callbacks here
+            theme: true,
+
+            dayClick: function (start) {
+                $('#ModalAddHolyDay #hdate').val(moment(start).format('DD-MM-YYYY'));
+                $('#ModalAddHolyDay #htype').val('');
+                $('#ModalAddHolyDay #wday').val('');
+                $('#ModalAddHolyDay #remarks').val('');
+                $('#ModalAddHolyDay').modal('show');
+            },
+
+
+            eventOverlap: false,
+            eventClick: function (event, jsEvent, view) {
+
+             
+                $('#ModalEditHolyDay #id').val(event.id);
+                $('#ModalEditHolyDay #hdate').val(event.id);
+                $('#ModalEditHolyDay #htype').val(event.htype);
+                $('#ModalEditHolyDay #wday').val(event.wday);
+                $('#ModalEditHolyDay #remarks').val(event.remarks);
+                $('#ModalEditHolyDay #insid').val(event.insid);
+                $('#ModalEditHolyDay').modal('show');
+
+
+            },
+
+
+
+            eventSources: [
+
+
+        {
+            url: '/Holiday/GetAllHolidays', // use the `url` property
+            // color: 'yellow',    // an option!
+            //  textColor: 'black'  // an option!
+        }
+
+        // any other sources...
+
+            ],
+            editable: true,
+            header: {
+                left: 'today prev,next',
+                center: 'title',
+                right: 'basicDay,basicWeek,month'
+            },
+
+
+      
+
+            eventRender: function (event, element) {
+                var type;
+                var vday;
+                if (event.htype == 'W') {
+                    type='Weekly Holiday'
+                }
+                else if (event.htype == 'N') {
+                    type = 'National Holiday'
+                }
+                else if (event.htype == 'F') {
+                    type = 'Full Holiday'
+                }
+                else if (event.htype == 'O') {
+                    type = 'Others Holiday'
+                }
+                if (event.wday == '100') {
+                    vday = 'Full'
+                }
+                else if (event.wday == '50') {
+                    vday = 'Half'
+                }
+                else if (event.wday == '0') {
+                    vday = 'Close'
+                }
+                element.tooltipster({
+
+
+                    
+                   
+                     content: 'Holiday Type: ' + type + '<br/>Working Day: ' + vday + '<br/>Remarks: ' + event.remarks,
+                 
+                    contentAsHTML: true
+                });
+            },
+
+            eventDrop: function (event, delta, revertFunc) {
+
+                editEvent(event);
+
+            }
+
+        });
+
+        function editEvent(event) {
+            start = event.start.format('YYYY-MM-DD');
+            if (event.end) {
+                end = event.end.format('YYYY-MM-DD');
+            } else {
+                end = start;
+            }
+
+
+            //------------
+            var request = $.ajax({
+                url: "/Holiday/EditHolidays",
+                
+                method: "POST",
+                //  data: { id: event.id, start: start, end: end, modNo: event.resourceId },
+
+                //       data: { DateTime id, DateTime start, string htype, byte wday, string remarks,short insid },
+                data: { id:event.id, start:start, htype:event.htype, wday:event.wday, remarks:event.remarks, insid:event.insid},
+                dataType: "html"
+            });
+
+            request.done(function (msg) {
+                //$("#log").html(msg);
+
+                if (msg == '"failed"') {
+                    alert('!! Could not be saved. try again. !!');
+                    return;
+                }
+                else {
+                    alert('Saved.');
+                }
+            });
+
+            request.fail(function (jqXHR, textStatus) {
+                alert("Request failed: " + textStatus+"xxxx");
+
+             
+
+            });
+            //----------
+        }
+
+       
+        $('.tooltip').tooltipster({
+            contentAsHTML: true
+        });
+
+
+
+    });
+
+  
+
+</script>
+
+
+
+
+
+
+
+<div id='calendar'></div>
+
+<div class="modal fade" id="ModalAddHolyDay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document" >
+        <div class="modal-content">
+           
+          
+              @using (Html.BeginForm("create", "Holiday", FormMethod.Post))
+            {
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel">Add Holiday</h4>
+        </div>
+        <div class="modal-body">
+
+            <div class="form-group">
+                <label for="htype" class="col-md-4 control-label">Holiday Type</label>
+                <div class="col-xs-6 col-md-4">
+                    <select name="htype" class="form-control" id="htype">
+                        <option value="">Choose</option>
+                        <option value="W">Weekly Holiday</option>
+                        <option value="N">National Holiday</option>
+                        <option value="F">Festival Holiday</option>
+                        <option value="O">Others Holiday</option>
+
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="wday" class="col-md-4 control-label">Work Day</label>
+                <div class="col-xs-6 col-md-4">
+                    <select name="wday" class="form-control" id="wday">
+                        <option value="">Choose</option>
+                        <option value="50">Half</option>
+                        <option value="100">Full</option>
+                        <option value="0">Close</option>
+
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="hdate" class="col-md-4 control-label">Holiday date</label>
+                <div class="col-xs-6 col-md-4">
+                    <input type="text" name="hdate" class="form-control" id="hdate" readonly>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="remarks" class="col-md-4 control-label">Holiday Remarks</label>
+                <div class="col-xs-6 col-md-4">
+                    <input type="text" name="remarks" class="form-control" id="remarks" placeholder="Remarks">
+                </div>
+            </div>
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <input type="submit" class="btn btn-primary" value="Add Holiday" />
+        </div>
+        </div>
+              }
+            </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="modal fade" id="ModalEditHolyDay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <script>
+
+        function editHoliday() {
+
+            var holiId = $('#ModalEditHolyDay #id').val();
+               var request = $.ajax({
+                   url: "/Holiday/EditHolidays",
+                   method: "POST",
+                    data: {
+                        id: holiId,
+                        htype: $('#ModalEditHolyDay #htype').val().trim(),
+                        wday:$('#ModalEditHolyDay #wday').val().trim(),
+                        remarks:$('#ModalEditHolyDay #remarks').val().trim(),
+                        start:$('#ModalEditHolyDay #hdate').val().trim(),
+                        insid:$('#ModalEditHolyDay #insid').val().trim()
+                   },
+                   dataType: "html"
+               });
+
+               request.done(function (msg) {
+
+                   if (msg == '"failed"') {
+                       alert('!! Could not be saved. try again. !!');
+                       return;
+                   }
+                   else {
+                       alert('Save Changes Successfully !');
+                   }
+               });
+
+               request.fail(function (jqXHR, textStatus) {
+                   alert("Request failed: " + textStatus + "xxxx");
+
+
+
+               });
+        
+        }
+
+    </script>
+    <script>
+
+        function deleteHoliday() {
+
+            var holiId = $('#ModalEditHolyDay #id').val();
+
+            if (confirm("Do you really want to delete?")) {
+
+                var request = $.ajax({
+                    url: "/Holiday/DeleteHolidays",
+                    method: "POST",
+                    data: {
+                        id: holiId
+                    },
+                    dataType: "html"
+                });
+
+                request.done(function (msg) {
+
+                    if (msg == '"failed"') {
+                        alert('!! Could not be deleted. try again. !!');
+                        return;
+                    }
+                    else {
+                        alert('Delete Successfully !');
+                        location.reload();
+                    }
+                });
+
+                request.fail(function (jqXHR, textStatus) {
+                    alert("Request failed: " + textStatus + "xxxx");
+
+
+
+                });
+            }
+        }
+
+    </script>
+
+
+
+
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+
+            @using (Html.BeginForm())
+            {
+              
+                <div class="form-horizontal">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">Edit Holiday</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group" style="display:none">
+                            <label for="htype" class="col-md-4 control-label">Id</label>
+                            <div class="col-xs-6 col-md-4">
+                                <input type="text" name="hdate" class="form-control" id="id" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group" style="display:none">
+                            <label for="htype" class="col-md-4 control-label">Insert Id</label>
+                            <div class="col-xs-6 col-md-4">
+                                <input type="text" name="hdate" class="form-control" id="insid" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="htype" class="col-md-4 control-label">Holiday Type</label>
+                            <div class="col-xs-6 col-md-4">
+                                <select name="htype" class="form-control" id="htype">
+                                    <option value="">Choose</option>
+                                    <option value="W">Weekly Holiday</option>
+                                    <option value="N">National Holiday</option>
+                                    <option value="F">Festival Holiday</option>
+                                    <option value="O">Others Holiday</option>
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="wday" class="col-md-4 control-label">Work Day</label>
+                            <div class="col-xs-6 col-md-4">
+                                <select name="wday" class="form-control" id="wday">
+                                    <option value="">Choose</option>
+                                    <option value="50">Half</option>
+                                    <option value="100">Full</option>
+                                    <option value="0">Close</option>
+
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hdate" class="col-md-4 control-label">Holiday date</label>
+                            <div class="col-xs-6 col-md-4">
+                                <input type="text" name="hdate" class="form-control" id="hdate" readonly>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="remarks" class="col-md-4 control-label">Holiday Remarks</label>
+                            <div class="col-xs-6 col-md-4">
+                                <input type="text" name="remarks" class="form-control" id="remarks" placeholder="Remarks">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" onclick="return deleteHoliday()"><span class="glyphicon glyphicon glyphicon-trash" style="color:red"></span></button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <input type="submit" class="btn btn-primary" onclick="return editHoliday()" value="Save Changes" />
+                    </div>
+                </div>
+            }
+        </div>
+
+    </div>
+</div>
